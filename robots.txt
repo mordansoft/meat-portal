@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://meat.mordansoft.com/sitemap.xml

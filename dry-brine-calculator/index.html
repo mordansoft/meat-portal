@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="nojs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <title>Dry Brine Calculator — Salt by Weight for Turkey, Chicken, Steak and Pork</title>
+  <meta name="description" content="Dry brine calculator: salt as a percentage of the meat’s own weight, in grams, with timing by thickness and the food-safety limits that have a published source. No water, no guessing.">
+  <link rel="canonical" href="https://meat.mordansoft.com/dry-brine-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Dry Brine Calculator — Salt by Weight for Turkey, Chicken, Steak and Pork">
+  <meta property="og:description" content="Dry brine calculator: salt as a percentage of the meat’s own weight, in grams, with timing by thickness and the food-safety limits that have a published source. No water, no guessing.">
+  <meta property="og:url" content="https://meat.mordansoft.com/dry-brine-calculator/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>document.documentElement.classList.remove('nojs');</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
+      <span class="topbar__right"><span class="topbar__links">
+          <a href="/brine-calculator/">Brine</a>
+          <a href="/dry-brine-calculator/" aria-current="page">Dry brine</a>
+          <a href="/curing-salt-calculator/">Curing salt</a>
+      </span></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Dry brine calculator</h1>
+          <p class="detail__blurb">No water, no bucket, no finding fridge space for a cooler. Salt as a percentage of what the meat itself weighs — rubbed on, left uncovered, and better crackling for it.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="calc-col">
+            <div class="cc">
+              <span class="eyebrow">Dry brine</span>
+              <label class="fld"><span class="lbl">Meat weight</span>
+                <span class="pair"><input class="ms-input" type="number" id="meat" value="5000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>grams</option><option value="kg">kilograms</option><option value="lb">pounds</option><option value="oz">ounces</option></select></span>
+              </label>
+              <label class="fld"><span class="lbl">Salt — <u>percentage of the meat's weight</u></span>
+                <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
+                <span class="hint">1.0–1.5% for poultry · 0.8–1.2% for steak · 1.5–2.0% for pork shoulder and loin. Taste ranges, not safety limits.</span>
+              </label>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Sugar, share of the salt</span>
+                  <input class="ms-input" type="number" id="sugar" value="33" min="0" max="100" step="1" inputmode="decimal">
+                </label>
+                <label class="fld"><span class="lbl">Your salt</span><select class="ms-input" id="saltType"><option value="fine" selected>Table / fine sea salt</option><option value="mortonK">Morton kosher</option><option value="diamondK">Diamond Crystal kosher</option><option value="coarse">Coarse sea salt</option></select>
+                  <span class="hint">A teaspoon of fine salt weighs roughly twice a teaspoon of Diamond Crystal — which is why recipes in spoons travel so badly.</span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Thickness at the thickest point</span>
+                <span class="pair"><input class="ms-input" type="number" id="thick" value="80" min="0" step="any" inputmode="decimal"><select class="ms-input" id="thickUnit"><option value="mm" selected>mm</option><option value="in">inches</option></select></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="cc cc--strong jsonly" aria-live="polite">
+              <span class="eyebrow">Weigh out</span>
+              <div class="headline" id="saltOut">—</div>
+              <p class="calc-hint" id="saltAlt"></p>
+              <div class="cells">
+                <div class="cell"><span class="eyebrow">Sugar</span><b id="sugarOut">—</b></div>
+                <div class="cell"><span class="eyebrow">In the fridge</span><b id="timeOut" style="font-size:16px">—</b></div>
+              </div>
+              <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
+                <b>Too thick for a plain dry brine</b>
+                <p>A piece this size needs longer than the two days a cure without curing salt may
+                safely run. Use the <a href="/curing-salt-calculator/">curing calculator</a>, or cut
+                it down.</p>
+              </div>
+            </div>
+            <div class="calc-banner nojsonly">
+              <b>The arithmetic.</b> Salt in grams = meat grams × percentage ÷ 100.
+              A 5 kg turkey at 1.2% takes 60 g of salt.
+            </div>
+          </div>
+        </div>
+
+        <div class="prose">
+        <h2>Read the basis before you trust any number</h2>
+        <p>A dry brine is salt against the <strong>weight of the meat</strong>. A wet brine is
+        salt against the <strong>meat and the water together</strong>. The same “1.5%” means two
+        different dinners depending on which the author meant — and most of them never say.
+        On this page it is always the meat.</p>
+
+        <h2>Dry or wet?</h2>
+        <p>A wet brine adds water. The bird comes out heavier and juicier, the flavour a little
+        diluted, and the skin — having sat in liquid for a day — fights you at roasting time.
+        A dry brine pulls moisture out, dissolves the salt in it, and draws it back in seasoned.
+        The surface dries. The skin crisps.</p>
+        <p>For a roast bird, uncovered on a rack, a dry brine is usually the better dinner. It
+        also needs no container, no gallon of water and no space in the fridge for either. Most
+        people search for the wet one out of habit.
+        <a href="/brine-calculator/">The wet brine calculator is here</a> if that is what you came for.</p>
+
+        <h2>Starting points by cut</h2>
+        <p>Percentage of the meat's own weight.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Cut</th><th>Range</th><th>Working point</th></tr></thead>
+          <tbody>
+            <tr><td>Whole turkey</td><td class="num">1.0–1.5%</td><td class="num">1.2%</td></tr>
+            <tr><td>Whole chicken, chicken pieces</td><td class="num">1.0–1.5%</td><td class="num">1.2%</td></tr>
+            <tr><td>Steak, chops — before frying</td><td class="num">0.8–1.2%</td><td class="num">1.0%</td></tr>
+            <tr><td>Pork shoulder, loin</td><td class="num">1.5–2.0%</td><td class="num">1.75%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Practice, not a published standard.</p>
+
+        <h2>Time by thickness</h2>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Thickness at the thickest point</th><th>Dry brine</th></tr></thead>
+          <tbody>
+            <tr><td>Up to 25 mm / 1 in</td><td class="num">8–12 h</td></tr>
+            <tr><td>25–50 mm / 1–2 in</td><td class="num">12–24 h</td></tr>
+            <tr><td>Whole bird</td><td class="num">24–48 h</td></tr>
+          </tbody>
+        </table></div>
+        <p>A dry brine runs slower than a wet one — less salt in play, and no water to carry it.
+        Uncovered on a rack is not a detail: it is the whole reason to do it this way.</p>
+
+        <h2>What is actually regulated</h2>
+        <p>The three rules below have a published source. Everything else on this page — how
+        salty, how much sugar, how long for flavour — is a cook's choice, which is exactly why
+        the numbers differ everywhere you look.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Rule</th><th>Figure</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Meat and brine, the whole time</td><td class="num">4.4&nbsp;°C / 40&nbsp;°F or below</td><td>USDA, brining guidance</td></tr>
+            <tr><td>Cold holding of food needing temperature control</td><td class="num">5&nbsp;°C / 41&nbsp;°F or below</td><td>FDA Food Code §3-501.16</td></tr>
+            <tr><td>Longest safe cure without curing salt</td><td class="num">2 days</td><td>USDA — salting does not extend the life of fresh poultry</td></tr>
+          </tbody>
+        </table></div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Three more rules from the same guidance, with no number attached</b>
+          <p>Cool a brine that was heated before the meat goes in. Do not rinse poultry —
+          splashing spreads contamination around the kitchen. Never salt at room temperature;
+          if the fridge is full, put ice in the container rather than the meat on the counter.</p>
+        </div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Do not wash the bird</b>
+          <p>Not before salting and not after. Rinsing raw poultry sprays contamination around
+          the kitchen. Wipe excess salt off with a paper towel instead.</p>
+        </div>
+
+        <h2>When salt alone is not enough</h2>
+        <p>Everything here assumes one thing: <strong>you salt the meat and then you cook
+        it</strong> — within two days, at or below 4&nbsp;°C, finished at a temperature that
+        actually cooks. That covers turkey, chicken, pork, brisket before hot smoking, and fish
+        before hot smoking or baking.</p>
+        <div class="calc-alert calc-alert--bad">
+          <b>Curing salt is required, not optional, for any of these</b>
+          <p>Cold smoking, where the smoke runs below about 32&nbsp;°C / 90&nbsp;°F and nothing
+          ever gets hot enough to make the food safe. Air-dried whole muscle — pancetta, coppa,
+          bresaola. Fermented or air-dried sausage. And any cure running longer than two days.
+          <a href="/curing-salt-calculator/">Use the curing calculator</a> for those.</p>
+        </div>
+        <h2>Sources</h2>
+        <ul>
+          <li>USDA — brining and handling poultry: 40&nbsp;°F or below throughout, two days at
+          most, cool the brine first, do not rinse the bird.</li>
+          <li>FDA Food Code §3-501.16 — cold holding at 41&nbsp;°F / 5&nbsp;°C or below.</li>
+          <li>FDA guidance for smoked fishery products — finished water-phase salt of 3.5% or
+          more, salting step at 40&nbsp;°F or less.</li>
+          <li>9 CFR 424.21(c) and 424.22(b) — nitrite limits, used on the
+          <a href="/curing-salt-calculator/">curing calculator</a>.</li>
+        </ul>
+        <p class="calc-disclaimer">Published US rules are written for inspected plants and do not
+        regulate home kitchens. We cite them because the alternative, in a calculation that can
+        make somebody ill, is a forum post. This page describes published guidance and certifies
+        nothing you make.</p>
+        </div>
+
+        <div class="ms-card ms-card--pad calc-cta">
+          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">A brine finishes overnight. A cure does not.</h2>
+          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
+            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches
+            that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that
+            product. Free, offline, no account.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
+        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
+        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script type="module">
+    import { dryBrine, timeByThickness, inSpoons, SALTS, LB, OZ, INCH } from '/assets/js/brine.mjs';
+
+    const $ = (id) => document.getElementById(id);
+    const n = (id) => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : NaN; };
+    const set = (id, t) => { $(id).textContent = t; };
+    const g = (x) => !isFinite(x) ? '\u2014'
+      : x >= 100 ? Math.round(x) + ' g'
+      : x >= 10 ? (Math.round(x * 10) / 10) + ' g'
+      : (Math.round(x * 100) / 100) + ' g';
+    const wUnits = { g: 1, kg: 1000, lb: LB, oz: OZ };
+
+    function hoursText(h) {
+      if (!h) return '\u2014';
+      const days = h.lo >= 24
+        ? ' (' + (Math.round(h.lo / 24 * 10) / 10) + '\u2013' + (Math.round(h.hi / 24 * 10) / 10) + ' days)'
+        : '';
+      return h.lo + '\u2013' + h.hi + ' h' + days;
+    }
+
+    function recalc() {
+      const meat = n('meat') * (wUnits[$('meatUnit').value] || 1);
+      const r = dryBrine({ meatGrams: meat, targetPct: n('target'),
+                           sugarShareOfSaltPct: n('sugar') || 0 });
+      if (!r) {
+        set('saltOut', '\u2014'); set('saltAlt', 'Enter the weight of the meat.');
+        set('sugarOut', '\u2014'); set('timeOut', '\u2014'); $('capWarn').hidden = true;
+        return;
+      }
+      const saltKey = $('saltType').value;
+      set('saltOut', g(r.saltGrams) + ' of salt');
+      set('saltAlt', '\u2248 ' + inSpoons(r.saltGrams, saltKey) + ' of '
+        + SALTS[saltKey].label.toLowerCase() + ' \u00b7 '
+        + (Math.round(r.saltGrams / OZ * 100) / 100) + ' oz. Spread it over every surface, '
+        + 'including inside.');
+      set('sugarOut', r.sugarGrams > 0 ? g(r.sugarGrams) : 'none');
+
+      const mm = n('thick') * ($('thickUnit').value === 'in' ? INCH : 1);
+      const h = timeByThickness(mm, { dry: true });
+      set('timeOut', h ? hoursText(h) + ', uncovered on a rack' : 'enter a thickness');
+      $('capWarn').hidden = !(h && h.overCap);
+    }
+
+    ['meat','meatUnit','target','sugar','saltType','thick','thickUnit'].forEach((id) => {
+      $(id).addEventListener('input', recalc); $(id).addEventListener('change', recalc);
+    });
+    recalc();
+  </script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>
