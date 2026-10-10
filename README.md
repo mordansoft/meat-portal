@@ -28,7 +28,12 @@ node assets/js/brine.test.mjs       # brine + dry brine: 26 checks
 node curing-salt-calculator/curing.test.mjs
 ```
 
-Both must pass before a push. The workflow deploys every push to `main`.
+Both must pass before a push.
+
+Pages serves this repository straight from `main` — no workflow, because the token
+the team pushes with has no `workflow` scope. `.nojekyll` is load-bearing: without it
+Jekyll would silently drop `_ds/`, the design system, and every page would lose its
+styling.
 
 ## Sources of truth
 
