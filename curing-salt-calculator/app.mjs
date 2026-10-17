@@ -6,54 +6,12 @@ import {
   limitsOf, supportsWet, calcDryCure, calcBrine, nitriteAdvice, adviceNeedsPopup,
   saltBand, sugarBand, NITRITE_PROTECTIVE_MIN_PPM, G_PER_OZ, G_PER_LB,
 } from './curing.mjs';
-import { ARB } from './arb.mjs';
 
-const LANG = document.documentElement.lang === 'uk' ? 'uk' : 'en';
-const A = ARB[LANG];
-const ML_PER_FLOZ = 29.5735295625;
-
-const T = {
-  en: {
-    dish: 'Dish', dry: 'Dry cure', wet: 'Wet brine', dryOnly: 'dry cure only',
-    meatWeight: 'Meat weight', water: 'Water', waterOf: (p) => `Water · ${p}%`,
-    nitrite: 'Nitrite', salt: 'Salt', sugar: 'Sugar', pick: 'Choose the curing salt…',
-    cure1: 'Cure #1', cure2: 'Cure #2', peklosol: 'Peklosól', nps: 'NPS', custom: 'Custom',
-    saltHint: 'Check the nitrite % on your pack. European curing salt (Pökelsalz, peklosól) is usually 0.4–0.6% — about ten times weaker than Cure #1. Picking the wrong one throws the dose off tenfold.',
-    cure2Blocked: 'not available here', pct: 'Nitrite % on the pack', pctRange: 'Enter the nitrite % from the pack, between 0.1 and 7.',
-    recMark: (r) => `rec. ${r} ppm`, normSalt: 'norm 2.0–3.5%', normSugar: 'usual 0.3–2.5%',
-    fromCure: (g) => `${g} g of it already comes from the curing salt`,
-    results: 'Your numbers', cCuring: 'Curing salt', cSalt: 'Salt', cSugar: 'Sugar', cNitrite: 'Nitrite', cNitrate: 'Nitrate', cWater: 'Water',
-    needSalt: 'Choose the curing salt to see the numbers.', invalid: 'Enter a weight above zero.',
-    over: 'Over limit', overCheck: (p, l) => `${p} ppm is over the ${l} ppm limit for this dish. Let go of the slider to bring it back to the limit.`,
-    system: 'across meat + water once it evens out',
-    weighTip: 'Weigh the curing salt on a 0.1 g scale — never by spoon. Cure in the fridge, at 4 °C or below.',
-    jerky: 'For jerky the main risk is bacteria, not nitrite. FSIS guidance is to heat the meat to 160 °F (71 °C), poultry to 165 °F (74 °C), in a humid environment before drying, then dry at about 130–140 °F (54–60 °C). After drying, heat it at 275 °F (135 °C) for 10 minutes; dry until a piece bends and cracks without snapping.',
-    biltong: 'Biltong is traditionally cured with vinegar and salt, without nitrite — the default here is 0 ppm.',
-    ctaTitle: 'Keep your batches in the app', ctaText: 'SaltCure tracks every batch from day one, with reminders and weight loss against the target. Offline, no account.',
-    disclaimer: 'Calculated from the published USDA/FSIS limits (9 CFR 424.21 and 424.22). Those rules were written for commercial plants, not home kitchens — we use them as the best public numeric reference. The result is not an approval and not a guarantee; responsibility for the finished product stays with you.',
-    faq: 'Questions about nitrite and safety', g: 'g', ml: 'ml', oz: 'oz', lb: 'lb', floz: 'fl oz',
-  },
-  uk: {
-    dish: 'Страва', dry: 'Сухий посол', wet: 'Мокрий посол', dryOnly: 'лише сухий посол',
-    meatWeight: "Вага м'яса", water: 'Вода', waterOf: (p) => `Вода · ${p}%`,
-    nitrite: 'Нітрит', salt: 'Сіль', sugar: 'Цукор', pick: 'Обери нітритну сіль…',
-    cure1: 'Cure #1', cure2: 'Cure #2', peklosol: 'Peklosól', nps: 'NPS', custom: 'Своя',
-    saltHint: 'Перевір відсоток нітриту на пачці. Європейська нітритна сіль (Pökelsalz, peklosól) зазвичай містить 0,4–0,6% — приблизно вдесятеро менше, ніж Cure #1. Не той тип — доза відрізняється в десять разів.',
-    cure2Blocked: 'тут недоступна', pct: 'Відсоток нітриту на пачці', pctRange: 'Введи відсоток нітриту з пачки — від 0,1 до 7.',
-    recMark: (r) => `рек. ${r} ppm`, normSalt: 'норма 2,0–3,5%', normSugar: 'звично 0,3–2,5%',
-    fromCure: (g) => `${g} г з них уже дає нітритна сіль`,
-    results: 'Твої числа', cCuring: 'Нітритна сіль', cSalt: 'Сіль', cSugar: 'Цукор', cNitrite: 'Нітрит', cNitrate: 'Нітрат', cWater: 'Вода',
-    needSalt: "Обери нітритну сіль — з'являться числа.", invalid: 'Введи вагу більше нуля.',
-    over: 'Понад ліміт', overCheck: (p, l) => `${p} ppm перевищує ліміт ${l} ppm для цієї страви. Відпусти повзунок — доза повернеться до ліміту.`,
-    system: 'у системі після вирівнювання',
-    weighTip: 'Нітритну сіль зважуй на вагах із точністю 0,1 г — не ложкою. Посол — у холодильнику, при 4 °C або нижче.',
-    jerky: "Для джерки головний ризик — бактерії, а не нітрит. Рекомендація FSIS: перед сушінням прогріти м'ясо до 160 °F (71 °C), птицю до 165 °F (74 °C) у вологому середовищі, а потім сушити приблизно при 130–140 °F (54–60 °C). Після сушіння прогріти при 135 °C (275 °F) 10 хв; сушити, доки шматок не гнеться з тріщинами, але не ламається.",
-    biltong: 'Білтонг традиційно солять з оцтом і сіллю, без нітриту — тому за замовчуванням тут 0 ppm.',
-    ctaTitle: 'Веди партії в застосунку', ctaText: 'SaltCure веде кожну партію від першого дня: нагадування та втрата ваги до цільової. Офлайн, без акаунта.',
-    disclaimer: 'Розраховано за опублікованими нормами USDA/FSIS (9 CFR 424.21 і 424.22). Ці норми написані для промислових підприємств, а не для домашньої кухні — ми беремо їх як найкраще публічне числове джерело. Результат — не схвалення і не гарантія; відповідальність за готовий продукт лишається на тобі.',
-    faq: 'Питання про нітрит і безпеку', g: 'г', ml: 'мл', oz: 'унц.', lb: 'фунт', floz: 'рід. унц.',
-  },
-}[LANG];
+// Strings live in /i18n/<lang>.mjs, picked by <html lang>. English is the master and the fallback.
+const LANG = document.documentElement.lang || 'en';
+const L = await import(`../i18n/${LANG}.mjs`).then((m) => m.default, () => import('../i18n/en.mjs').then((m) => m.default));
+const A = L.arb;
+const T = L.ui;
 
 const MEAT_KEYS = { bacon: 'meatBacon', canadianBacon: 'meatCanadianBacon', jerky: 'meatJerky', biltong: 'meatBiltong', pancetta: 'meatPancetta', salami: 'meatSalami', custom: 'meatCustom' };
 const CURES = ['cure1', 'cure2', 'peklosol', 'nps', 'custom'];
@@ -62,7 +20,7 @@ const UNIT_G = { g: 1, oz: G_PER_OZ, lb: G_PER_LB };
 const W_MIN = 100, W_MAX = 8000; // the app's meat / water slider range
 
 const $ = (id) => document.getElementById(id);
-const nfp = (d) => new Intl.NumberFormat(LANG === 'uk' ? 'uk-UA' : 'en-US', { maximumFractionDigits: d, minimumFractionDigits: d });
+const nfp = (d) => new Intl.NumberFormat(L.locale, { maximumFractionDigits: d, minimumFractionDigits: d });
 const fmtG = (g) => (g >= 10 ? nfp(0).format(Math.round(g)) : nfp(Math.abs(g - Math.round(g)) < 1e-9 ? 0 : 1).format(Math.round(g * 10) / 10));
 const fill = (str, v) => str.replace(/\{(\w+)\}/g, (_, k) => (k in v ? v[k] : `{${k}}`));
 const parse = (v) => parseFloat(String(v).replace(',', '.'));
@@ -186,7 +144,7 @@ function renderWeight() {
     const pct = s.meatG > 0 ? Math.round((s.waterMl / s.meatG) * 100) : 0;
     el.innerHTML = `<div class="cc__h"><span class="eyebrow">// ${T.meatWeight} · ${T.water}</span>${unitSelect()}</div>
       <div class="cols"><div><div class="eyebrow eyebrow--c">${T.meatWeight.toUpperCase()}</div>${bigNumber('meatIn', toDisplayW(s.meatG), T[s.unit], 'big--sm')}${slider('meatSl', s.meatG)}</div>
-      <div><div class="eyebrow eyebrow--c" id="water-lbl">${T.waterOf(pct).toUpperCase()}</div>${bigNumber('waterIn', toDisplayV(s.waterMl), T[vUnit()], 'big--sm')}${slider('waterSl', s.waterMl)}</div></div>`;
+      <div><div class="eyebrow eyebrow--c" id="water-lbl">${fill(T.waterOf, { p: pct }).toUpperCase()}</div>${bigNumber('waterIn', toDisplayV(s.waterMl), T[vUnit()], 'big--sm')}${slider('waterSl', s.waterMl)}</div></div>`;
   }
   $('unit').addEventListener('change', (e) => { s.unit = e.target.value; render(); });
   $('meatSl').addEventListener('input', (e) => { s.meatG = toGrams(+e.target.value); s.reducedFrom = null; softUpdate(); });
@@ -203,7 +161,7 @@ function nitriteHead(lim, c) {
   const [col, lab] = bandInfo(nitriteAdvice({ ppm, limits: lim, meat: s.meat }).band);
   return {
     head: `<div class="headline"><b>${c.over ? '— ' + T.g : fmtG(c.r.cureGrams) + ' ' + T.g}</b><span> · ${ppm} ppm</span></div>`,
-    stat: status(col, lab, T.recMark(lim.recommendedPpm)),
+    stat: status(col, lab, fill(T.recMark, { r: lim.recommendedPpm })),
   };
 }
 
@@ -214,7 +172,7 @@ function renderNitrite(lim, c) {
   const options = `<option value="">${T.pick}</option>` + CURES.map((k) => {
     const off = k === 'cure2' && !lim.allowsCure2;
     const p = k === 'custom' ? s.customPct : NIT_PCT[k];
-    return `<option value="${k}" ${off ? 'disabled' : ''} ${k === s.cure ? 'selected' : ''}>${T[k]} · ${String(p).replace('.', LANG === 'uk' ? ',' : '.')}%${off ? ' — ' + T.cure2Blocked : ''}</option>`;
+    return `<option value="${k}" ${off ? 'disabled' : ''} ${k === s.cure ? 'selected' : ''}>${T[k]} · ${new Intl.NumberFormat(L.locale, { maximumFractionDigits: 2 }).format(p)}%${off ? ' — ' + T.cure2Blocked : ''}</option>`;
   }).join('');
   const { head, stat } = nitriteHead(lim, c);
   $('card-nitrite').innerHTML = `<div class="cc__h"><span class="eyebrow">// ${T.nitrite}</span></div>
@@ -253,7 +211,7 @@ function renderSalt(c) {
   $('card-salt').innerHTML = `${pctHeader(T.salt, grams, s.salt)}
     ${zonedSlider('salt', 0, 6, 0.1, s.salt, zonesOf(SALT_BREAKS, SALT_COLORS))}
     ${status(col, lab, T.normSalt)}
-    <p class="calc-hint mono" id="from-cure" ${fc > 0.05 ? '' : 'hidden'}>${T.fromCure(nfp(1).format(fc))}</p>`;
+    <p class="calc-hint mono" id="from-cure" ${fc > 0.05 ? '' : 'hidden'}>${fill(T.fromCure, { g: nfp(1).format(fc) })}</p>`;
   $('salt').addEventListener('input', (e) => { let v = +e.target.value; const fl = saltFloor(compute(limits())); if (v < fl) v = fl; s.salt = Math.round(v * 100) / 100; softUpdate(); });
 }
 
@@ -275,7 +233,7 @@ function renderResults(lim, c) {
   const alerts = [];
   const rec = lim.recommendedPpm > 0 ? lim.recommendedPpm : lim.hardStopPpm;
   if (s.reducedFrom !== null) alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, fill(A.calcNitriteWarnOverBody, { ppm: s.reducedFrom, limit: lim.hardStopPpm })));
-  else if (over) alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, T.overCheck(c.target, lim.hardStopPpm)));
+  else if (over) alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, fill(T.overCheck, { p: c.target, l: lim.hardStopPpm })));
   else {
     const adv = nitriteAdvice({ ppm: r.nitritePpm, limits: lim, meat: s.meat });
     if (adviceNeedsPopup(adv)) {
@@ -308,7 +266,7 @@ function softUpdate() {
   paint();
   const meatIn = $('meatIn'); if (meatIn && document.activeElement !== meatIn) meatIn.value = toDisplayW(s.meatG);
   const wIn = $('waterIn'); if (wIn && document.activeElement !== wIn) wIn.value = toDisplayV(s.waterMl);
-  const wl = $('water-lbl'); if (wl) wl.textContent = T.waterOf(Math.round((s.waterMl / s.meatG) * 100)).toUpperCase();
+  const wl = $('water-lbl'); if (wl) wl.textContent = fill(T.waterOf, { p: Math.round((s.waterMl / s.meatG) * 100) }).toUpperCase();
   const { head, stat } = nitriteHead(lim, c);
   const nh = document.querySelector('#card-nitrite .headline'); if (nh) nh.outerHTML = head;
   const ns = document.querySelector('#card-nitrite .calc-status'); if (ns && stat) ns.outerHTML = stat;
@@ -321,7 +279,7 @@ function softUpdate() {
   const [gc, gl] = sugarInfo(sugarBand(s.sugar));
   const gst = document.querySelector('#card-sugar .calc-status'); if (gst) gst.outerHTML = status(gc, gl, T.normSugar);
   const fc = fromCureG(c), fe = $('from-cure');
-  if (fe) { fe.hidden = !(fc > 0.05); fe.textContent = T.fromCure(nfp(1).format(fc)); }
+  if (fe) { fe.hidden = !(fc > 0.05); fe.textContent = fill(T.fromCure, { g: nfp(1).format(fc) }); }
   renderResults(lim, c);
 }
 

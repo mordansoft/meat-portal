@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://meat.mordansoft.com/</loc></url>
   <url><loc>https://meat.mordansoft.com/brine-calculator/</loc></url>
   <url><loc>https://meat.mordansoft.com/dry-brine-calculator/</loc></url>
@@ -10,12 +9,48 @@
     <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/curing-salt-calculator/"/>
   </url>
   <url>
+    <loc>https://meat.mordansoft.com/bacon-cure-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/bacon-cure-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/bacon-cure-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/pink-salt-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/pink-salt-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/pink-salt-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/dry-cure-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/dry-cure-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/dry-cure-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/cure-1-per-kg/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/cure-1-per-kg/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/cure-1-per-kg/"/>
+  </url>
+  <url>
     <loc>https://meat.mordansoft.com/uk/curing-salt-calculator/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/curing-salt-calculator/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/curing-salt-calculator/"/>
   </url>
-  <url><loc>https://meat.mordansoft.com/bacon-cure-calculator/</loc></url>
-  <url><loc>https://meat.mordansoft.com/pink-salt-calculator/</loc></url>
-  <url><loc>https://meat.mordansoft.com/dry-cure-calculator/</loc></url>
-  <url><loc>https://meat.mordansoft.com/cure-1-per-kg/</loc></url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/bacon-cure-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/bacon-cure-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/bacon-cure-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/pink-salt-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/pink-salt-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/pink-salt-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/dry-cure-calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/dry-cure-calculator/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/dry-cure-calculator/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/cure-1-per-kg/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/cure-1-per-kg/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/cure-1-per-kg/"/>
+  </url>
 </urlset>

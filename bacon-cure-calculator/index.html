@@ -8,6 +8,9 @@
   <title>Bacon Cure Calculator — How Much Cure #1 for Bacon | SaltCure</title>
   <meta name="description" content="How much Cure #1 to weigh for home bacon, by the weight of the belly. Dry cure or brine, nitrite checked against the USDA/FSIS bacon limits of 200 and 120 ppm.">
   <link rel="canonical" href="https://meat.mordansoft.com/bacon-cure-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/bacon-cure-calculator/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/bacon-cure-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/bacon-cure-calculator/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
   <meta property="og:title" content="Bacon Cure Calculator — How Much Cure #1 for Bacon | SaltCure">
@@ -256,7 +259,7 @@
     @media (max-width: 640px) { .xnav { gap: var(--space-3); font-size: var(--text-xs); } }
     [hidden] { display: none !important; }
 
-    /* ── landing prose ── */
+    /* ── landing prose + languages ── */
     .seo-prose { max-width: 72ch; margin-top: var(--space-12); }
     .seo-prose h2 { font-size: var(--text-h4); font-weight: 600; color: var(--text-primary); margin: var(--space-8) 0 var(--space-3); }
     .seo-prose p { color: var(--text-secondary); line-height: var(--leading-normal); margin: 0 0 var(--space-3); }
@@ -266,8 +269,10 @@
     .seo-table thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
     .seo-table td { font-variant-numeric: tabular-nums; color: var(--text-primary); }
     .seo-note { font-size: var(--text-xs) !important; color: var(--text-muted) !important; }
+    .us-note { font-size: var(--text-sm); color: var(--text-muted); border-left: 3px solid var(--accent); padding-left: var(--space-3); margin: var(--space-3) 0 0; max-width: 60ch; }
+    .lang-select { font: 500 12px var(--font-mono); color: var(--text-secondary); background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; margin-left: var(--space-2); max-width: 9.5rem; }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SaltCure Curing Calculator","url":"https://meat.mordansoft.com/bacon-cure-calculator/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Curing calculator — SaltCure","url":"https://meat.mordansoft.com/bacon-cure-calculator/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 
@@ -284,7 +289,7 @@
         </span>
         <span class="brand__name">meat<b>.</b></span>
       </a>
-      <span class="topbar__right"><span class="xnav"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a></span></span>
+      <span class="topbar__right"><span class="xnav"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a></span><select class="lang-select" aria-label="Language" onchange="location.href=this.value"><option value="/bacon-cure-calculator/" selected>English</option><option value="/uk/bacon-cure-calculator/">Українська</option></select></span>
     </div>
   </div>
 
@@ -306,7 +311,7 @@
         </div>
         <article class="seo-prose">
       <h2>How much Cure #1 for bacon</h2>
-      <p>For a dry-cured belly the usual dose is 156 ppm of nitrite — 0.25% of the meat's weight in Cure #1. The rule for bacon allows up to 200 ppm with a dry cure (<a href="https://www.law.cornell.edu/cfr/text/9/424.22">9 CFR 424.22(b)(3)</a>) and up to 120 ppm in a brine (424.22(b)(2)). The calculator starts at 156 ppm and does not give a dose above the limit.</p>
+      <p>For a dry-cured belly the usual dose is 156 ppm of nitrite — 0.25% of the meat’s weight in Cure #1. The rule for bacon allows up to 200 ppm with a dry cure (<a href="https://www.law.cornell.edu/cfr/text/9/424.22">9 CFR 424.22</a>(b)(3)) and up to 120 ppm in a brine (424.22(b)(2)). The calculator starts at 156 ppm and does not give a dose above the limit.</p>
       <div class="seo-table"><table><thead><tr><th>Belly weight</th><th>Cure #1 at 156 ppm</th><th>Cure #1 at 200 ppm (limit)</th></tr></thead><tbody><tr><th scope="row">500 g</th><td>1.2 g</td><td>1.6 g</td></tr><tr><th scope="row">1 kg</th><td>2.4 g</td><td>3.2 g</td></tr><tr><th scope="row">2 kg</th><td>4.9 g</td><td>6.4 g</td></tr><tr><th scope="row">1 lb</th><td>1.1 g</td><td>1.4 g</td></tr><tr><th scope="row">3 lb</th><td>3.3 g</td><td>4.3 g</td></tr><tr><th scope="row">5 lb</th><td>5.6 g</td><td>7.2 g</td></tr></tbody></table></div>
       <p class="seo-note">Rounded down to 0.1 g (to 1 g once the dose is 10 g or more), never up — the same rule the SaltCure app uses.</p>
       <h2>Dry cure or brine</h2>
@@ -316,7 +321,7 @@
       <h2>European curing salt</h2>
       <p>Pökelsalz and peklosól usually hold 0.4–0.6% nitrite — roughly ten times less than Cure #1 — so the dose in grams is roughly ten times bigger: 26 g of a 0.6% salt for 1 kg at 156 ppm. Pick the salt you actually have before you read the numbers.</p>
       <h2>Related</h2>
-      <p><a href="/pink-salt-calculator/">Pink curing salt calculator</a> · <a href="/dry-cure-calculator/">Dry cure calculator</a> · <a href="/cure-1-per-kg/">Cure #1 per kg and per pound</a> · <a href="/curing-salt-calculator/">Curing salt calculator</a></p>
+      <p><a href="/curing-salt-calculator/">Curing salt calculator</a> · <a href="/pink-salt-calculator/">Pink curing salt calculator</a> · <a href="/dry-cure-calculator/">Dry cure calculator</a> · <a href="/cure-1-per-kg/">Cure #1 per kg and per pound</a></p>
         </article>
         <div class="ms-card ms-card--pad calc-cta">
           <h2 class="feature__title" id="cta-title"></h2>

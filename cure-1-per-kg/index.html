@@ -8,6 +8,9 @@
   <title>How Much Cure #1 per kg and per Pound — Curing Salt Chart | SaltCure</title>
   <meta name="description" content="Chart: grams of Cure #1 and European curing salt per kg and per pound of meat for 100, 120, 156 and 200 ppm nitrite. Rounded down, as in the SaltCure app.">
   <link rel="canonical" href="https://meat.mordansoft.com/cure-1-per-kg/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/cure-1-per-kg/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/cure-1-per-kg/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/cure-1-per-kg/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
   <meta property="og:title" content="How Much Cure #1 per kg and per Pound — Curing Salt Chart | SaltCure">
@@ -256,7 +259,7 @@
     @media (max-width: 640px) { .xnav { gap: var(--space-3); font-size: var(--text-xs); } }
     [hidden] { display: none !important; }
 
-    /* ── landing prose ── */
+    /* ── landing prose + languages ── */
     .seo-prose { max-width: 72ch; margin-top: var(--space-12); }
     .seo-prose h2 { font-size: var(--text-h4); font-weight: 600; color: var(--text-primary); margin: var(--space-8) 0 var(--space-3); }
     .seo-prose p { color: var(--text-secondary); line-height: var(--leading-normal); margin: 0 0 var(--space-3); }
@@ -266,8 +269,10 @@
     .seo-table thead th { font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 500; }
     .seo-table td { font-variant-numeric: tabular-nums; color: var(--text-primary); }
     .seo-note { font-size: var(--text-xs) !important; color: var(--text-muted) !important; }
+    .us-note { font-size: var(--text-sm); color: var(--text-muted); border-left: 3px solid var(--accent); padding-left: var(--space-3); margin: var(--space-3) 0 0; max-width: 60ch; }
+    .lang-select { font: 500 12px var(--font-mono); color: var(--text-secondary); background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; margin-left: var(--space-2); max-width: 9.5rem; }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"SaltCure Curing Calculator","url":"https://meat.mordansoft.com/cure-1-per-kg/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Curing calculator — SaltCure","url":"https://meat.mordansoft.com/cure-1-per-kg/","inLanguage":"en","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 </head>
 <body>
 
@@ -284,7 +289,7 @@
         </span>
         <span class="brand__name">meat<b>.</b></span>
       </a>
-      <span class="topbar__right"><span class="xnav"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a></span></span>
+      <span class="topbar__right"><span class="xnav"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a></span><select class="lang-select" aria-label="Language" onchange="location.href=this.value"><option value="/cure-1-per-kg/" selected>English</option><option value="/uk/cure-1-per-kg/">Українська</option></select></span>
     </div>
   </div>
 
@@ -310,11 +315,12 @@
       <p class="seo-note">Rounded down to 0.1 g (to 1 g once the dose is 10 g or more), never up — the same rule the SaltCure app uses.</p>
       <h2>European curing salt (Pökelsalz, peklosól)</h2>
       <p>Usually 0.4–0.6% nitrite, so the grams are roughly ten times bigger. Check the percentage on your own pack.</p>
-      <div class="seo-table"><table><thead><tr><th>Nitrite</th><th>0.6% salt, per 1 kg</th><th>0.5% salt, per 1 kg</th><th>0.6% salt, per 1 lb</th></tr></thead><tbody><tr><th scope="row">100 ppm</th><td>16 g</td><td>20 g</td><td>7.5 g</td></tr><tr><th scope="row">120 ppm</th><td>20 g</td><td>24 g</td><td>9.0 g</td></tr><tr><th scope="row">156 ppm</th><td>26 g</td><td>31 g</td><td>11 g</td></tr></tbody></table></div>
+      <div class="seo-table"><table><thead><tr><th>Nitrite</th><th>0.6% salt, per 1 kg</th><th>0.5% salt, per 1 kg</th><th>0.6% salt, per 1 lb</th></tr></thead><tbody><tr><th scope="row">100 ppm</th><td>16 g</td><td>20 g</td><td>7.5 g</td></tr><tr><th scope="row">120 ppm</th><td>20 g</td><td>24 g</td><td>9 g</td></tr><tr><th scope="row">156 ppm</th><td>26 g</td><td>31 g</td><td>11 g</td></tr></tbody></table></div>
       <h2>Where the limits come from</h2>
-      <p>Bacon: <a href="https://www.law.cornell.edu/cfr/text/9/424.22">9 CFR 424.22(b)</a>. Other cured meat: <a href="https://www.law.cornell.edu/cfr/text/9/424.21">9 CFR 424.21(c)</a>. These rules were written for commercial plants, not home kitchens; we use them as the best public numeric reference, and the result is not a guarantee.</p>
+      <p>Bacon: <a href="https://www.law.cornell.edu/cfr/text/9/424.22">9 CFR 424.22</a>(b). Other cured meat: <a href="https://www.law.cornell.edu/cfr/text/9/424.21">9 CFR 424.21</a>(c).</p>
+      <p>These rules were written for commercial plants, not home kitchens; we use them as the best public numeric reference, and the result is not a guarantee.</p>
       <h2>Related</h2>
-      <p><a href="/bacon-cure-calculator/">Bacon cure calculator</a> · <a href="/pink-salt-calculator/">Pink curing salt calculator</a> · <a href="/dry-cure-calculator/">Dry cure calculator</a> · <a href="/curing-salt-calculator/">Curing salt calculator</a></p>
+      <p><a href="/curing-salt-calculator/">Curing salt calculator</a> · <a href="/bacon-cure-calculator/">Bacon cure calculator</a> · <a href="/pink-salt-calculator/">Pink curing salt calculator</a> · <a href="/dry-cure-calculator/">Dry cure calculator</a></p>
         </article>
         <div class="ms-card ms-card--pad calc-cta">
           <h2 class="feature__title" id="cta-title"></h2>

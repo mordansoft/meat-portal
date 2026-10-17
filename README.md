@@ -9,7 +9,7 @@ The calculators, on their own subdomain. Static HTML, no build step, GitHub Page
 | `/dry-brine-calculator/` | dry brine, no nitrite |
 | `/curing-salt-calculator/` | nitrite and ppm — **moved here from mordansoft.com/saltcure/calculator/** |
 | `/uk/curing-salt-calculator/` | the Ukrainian copy of the same |
-| `/bacon-cure-calculator/`, `/pink-salt-calculator/`, `/dry-cure-calculator/`, `/cure-1-per-kg/` | search landing pages: the same calculator on a preset + prose and tables. **Generated** by `node tools/gen-landing.mjs` — edit the script, not the HTML; numbers come from the engine |
+| `/<lang>/curing-salt-calculator/` + `/bacon-cure-calculator/`, `/pink-salt-calculator/`, `/dry-cure-calculator/`, `/cure-1-per-kg/` | **generated** for every live language by `node tools/gen-pages.mjs` from `tools/template.html` + `i18n/<lang>.mjs` (English has no prefix). Edit the template, the i18n file or the script — never the HTML |
 
 ## Rules this site is built under
 
@@ -20,6 +20,13 @@ The calculators, on their own subdomain. Static HTML, no build step, GitHub Page
    is the port of `lib/domain/curing/` in the SaltCure repo, and `curing.test.mjs` holds the
    same vectors as the Dart tests. Change one, change both.
 3. **Every safety number names its source.** Taste figures are marked as taste figures.
+
+## Languages
+
+`i18n/en.mjs` is the master; every `i18n/<lang>.mjs` must have exactly the same keys or the build stops.
+A language is published by adding it to `LIVE` in `tools/gen-pages.mjs` — only after its safety lines
+(`arb.*`, the jerky/biltong notes, the page texts about limits) were back-translated and checked by Povar.
+Limits stay the US ones (USDA/FSIS) in every language, with `site.usNote` saying so on non-English pages.
 
 ## Tests
 
