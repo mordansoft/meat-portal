@@ -1,7 +1,7 @@
 // UI of the web curing calculator — laid out like the app's calculator screen:
 // cards with a big number, a log-scale weight slider, and zoned level sliders for
 // nitrite / salt / sugar. All maths and limits live in curing.mjs (a port of the
-// app core); the safety texts come from arb.mjs (the app's own strings).
+// app core); the safety texts come from i18n/<lang>.mjs (the app's own strings).
 import {
   limitsOf, supportsWet, calcDryCure, calcBrine, nitriteAdvice, adviceNeedsPopup,
   saltBand, sugarBand, NITRITE_PROTECTIVE_MIN_PPM, G_PER_OZ, G_PER_LB,
@@ -20,7 +20,10 @@ const UNIT_G = { g: 1, oz: G_PER_OZ, lb: G_PER_LB };
 const W_MIN = 100, W_MAX = 8000; // the app's meat / water slider range
 
 const $ = (id) => document.getElementById(id);
-const nfp = (d) => new Intl.NumberFormat(L.locale, { maximumFractionDigits: d, minimumFractionDigits: d });
+// Every language but English writes a decimal comma. Some browsers claim a locale yet format it
+// as English "2.4" (Chromium does for kk-KZ); borrow ru-RU then — same comma, same space grouping.
+const NUM = L.lang === 'en' || new Intl.NumberFormat(L.locale).format(1.5).includes(',') ? L.locale : 'ru-RU';
+const nfp = (d) => new Intl.NumberFormat(NUM, { maximumFractionDigits: d, minimumFractionDigits: d });
 const fmtG = (g) => (g >= 10 ? nfp(0).format(Math.round(g)) : nfp(Math.abs(g - Math.round(g)) < 1e-9 ? 0 : 1).format(Math.round(g * 10) / 10));
 const fill = (str, v) => str.replace(/\{(\w+)\}/g, (_, k) => (k in v ? v[k] : `{${k}}`));
 const parse = (v) => parseFloat(String(v).replace(',', '.'));
@@ -172,7 +175,7 @@ function renderNitrite(lim, c) {
   const options = `<option value="">${T.pick}</option>` + CURES.map((k) => {
     const off = k === 'cure2' && !lim.allowsCure2;
     const p = k === 'custom' ? s.customPct : NIT_PCT[k];
-    return `<option value="${k}" ${off ? 'disabled' : ''} ${k === s.cure ? 'selected' : ''}>${T[k]} · ${new Intl.NumberFormat(L.locale, { maximumFractionDigits: 2 }).format(p)}%${off ? ' — ' + T.cure2Blocked : ''}</option>`;
+    return `<option value="${k}" ${off ? 'disabled' : ''} ${k === s.cure ? 'selected' : ''}>${T[k]} · ${new Intl.NumberFormat(NUM, { maximumFractionDigits: 2 }).format(p)}%${off ? ' — ' + T.cure2Blocked : ''}</option>`;
   }).join('');
   const { head, stat } = nitriteHead(lim, c);
   $('card-nitrite').innerHTML = `<div class="cc__h"><span class="eyebrow">// ${T.nitrite}</span></div>

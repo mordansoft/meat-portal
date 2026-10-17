@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { cureGramsForPpm, calcDryCure, limitsOf, G_PER_LB } from '../curing-salt-calculator/curing.mjs';
 
-const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr'];
+const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk'];
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const BASE = 'https://meat.mordansoft.com';
