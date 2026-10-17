@@ -9,6 +9,7 @@ The calculators, on their own subdomain. Static HTML, no build step, GitHub Page
 | `/dry-brine-calculator/` | dry brine, no nitrite |
 | `/curing-salt-calculator/` | nitrite and ppm — **moved here from mordansoft.com/saltcure/calculator/** |
 | `/uk/curing-salt-calculator/` | the Ukrainian copy of the same |
+| `/bacon-cure-calculator/`, `/pink-salt-calculator/`, `/dry-cure-calculator/`, `/cure-1-per-kg/` | search landing pages: the same calculator on a preset + prose and tables. **Generated** by `node tools/gen-landing.mjs` — edit the script, not the HTML; numbers come from the engine |
 
 ## Rules this site is built under
 

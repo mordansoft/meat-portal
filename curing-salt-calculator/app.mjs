@@ -329,4 +329,14 @@ function softUpdate() {
 const setText = (id, txt) => { const e = $(id); if (e) e.textContent = txt; };
 setText('t-results', T.results); setText('disclaimer', T.disclaimer);
 setText('cta-title', T.ctaTitle); setText('cta-text', T.ctaText); setText('faq-link', T.faq);
+
+// Landing pages built for one search query start the calculator on that preset:
+// <div id="calc-app" data-meat="bacon" data-method="dry" data-cure="cure1" data-unit="lb">.
+// Only known values are taken; Cure #2 still falls back where the preset forbids it (refit).
+const preset = $('calc-app').dataset;
+if (preset.meat in MEAT_KEYS) s.meat = preset.meat;
+if (preset.method === 'wet' && supportsWet(s.meat)) s.wet = true;
+if (CURES.includes(preset.cure)) s.cure = preset.cure;
+if (preset.unit in UNIT_G) s.unit = preset.unit;
+
 build(); refit(); render();
