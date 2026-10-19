@@ -28,7 +28,7 @@ export default {
   },
 
   // The nitrite / salt / sugar advice the app shows — same meaning in every language.
-  // Back-translated and checked by Povar before a language goes live.
+  // Povar reads these in each language before it goes live.
   arb: {
     calcNitriteWarnHighTitle: 'More nitrite than you need',
     calcNitriteWarnHighBody: '{ppm} ppm is inside the limit the FSIS/USDA rules publish ({limit} ppm) but two to three times the recommended {rec} ppm. No home recipe needs that much — above {rec} ppm it protects no better and gives a bitter, metallic taste.',

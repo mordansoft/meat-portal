@@ -3,11 +3,11 @@
 // Pages: /<lang>/curing-salt-calculator/ and the four search landing pages (English has no prefix).
 // Every number in the tables is computed by curing-salt-calculator/curing.mjs — the port of the
 // app core. Texts: i18n/en.mjs is the master; a language with a missing or extra key is refused.
-// A language goes into LIVE only after its safety lines were back-translated and checked by Povar.
+// A language goes into LIVE only after Povar read its safety lines in the original and tools/check-numbers.mjs passed.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { cureGramsForPpm, calcDryCure, limitsOf, G_PER_LB } from '../curing-salt-calculator/curing.mjs';
 
-const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk'];
+const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk', 'fr', 'pt-BR', 'tr', 'de', 'id'];
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const BASE = 'https://meat.mordansoft.com';

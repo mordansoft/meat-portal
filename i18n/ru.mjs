@@ -1,5 +1,5 @@
 // Русский. Ключи — зеркало i18n/en.mjs. Перевод Ии, 17.10.2026.
-// Строки о нитрите прошли обратный перевод (iya/saltcure_l10n/site_backtranslation/ru.md).
+// Строки о нитрите Повар проверил в оригинале; числа — tools/check-numbers.mjs.
 export default {
   lang: 'ru', locale: 'ru-RU', name: 'Русский', dir: 'ru',
 
