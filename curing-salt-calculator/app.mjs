@@ -18,6 +18,7 @@ const CURES = ['cure1', 'cure2', 'peklosol', 'nps', 'custom'];
 const NIT_PCT = { cure1: 6.25, cure2: 6.25, peklosol: 0.6, nps: 0.5 };
 const UNIT_G = { g: 1, oz: G_PER_OZ, lb: G_PER_LB };
 const W_MIN = 100, W_MAX = 8000; // the app's meat / water slider range
+const ML_PER_FLOZ = 29.5735295625; // US fluid ounce, exact by definition — was used below but never declared
 
 const $ = (id) => document.getElementById(id);
 // Every language but English writes a decimal comma. Some browsers claim a locale yet format it
