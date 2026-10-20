@@ -70,7 +70,7 @@ export default {
     c1: 'Tacchino intero', c2: 'Pollo intero, pezzi di pollo', c3: 'Lonza, braciole, spalla di maiale', c4: 'Brisket di manzo, prima dell’affumicatura', c5: 'Salmone e altri pesci grassi',
     cutsNote: 'Intervalli di gusto dalla pratica, non uno standard pubblicato. Sotto l’1% circa la salamoia non vale il posto in frigo; sopra il 2% la maggior parte delle persone trova il pollame salato.',
     timeH: 'Il tempo dipende dallo spessore, non dal peso',
-    timeP: 'Il sale avanza verso l’interno da ogni superficie bagnata più o meno con la radice quadrata del tempo, quindi è lo spessore a decidere l’orologio. Due chili di braciole sottili sono pronti molto prima di due chili di arrosto.',
+    timeP: 'Il sale avanza verso l’interno da ogni superficie bagnata più o meno con la radice quadrata del tempo, quindi è lo spessore a decidere l’orologio. 2 kg di braciole sottili sono pronti molto prima di 2 kg di arrosto.',
     inBrine: 'In salamoia',
     t1: 'Fino a 25 mm / 1 in — braciole, filetti', t2: '25–50 mm / 1–2 in — pezzi di pollo, lonza', t3: '50–100 mm / 2–4 in — pollo intero, brisket piccolo', t4: 'Tacchino intero, 5–8 kg',
     timeNote: 'Valori dalla pratica. La regola tanto ripetuta del «quarto di pollice al giorno» era scritta per una salagione forte del 2,5–3%; una salamoia all’1–1,5% avanza più lentamente, quindi prendi l’estremo alto di ogni intervallo quando conta l’uniformità.',

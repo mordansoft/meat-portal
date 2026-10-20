@@ -70,7 +70,7 @@ export default {
     c1: 'Pavo entero', c2: 'Pollo entero, piezas de pollo', c3: 'Lomo, chuletas, paleta de cerdo', c4: 'Brisket de ternera, antes de ahumar', c5: 'Salmón y otros pescados grasos',
     cutsNote: 'Rangos de sabor de la práctica, no una norma publicada. Por debajo de un 1% la salmuera no compensa el sitio en la nevera; por encima del 2% a la mayoría las aves le resultan saladas.',
     timeH: 'El tiempo depende del grosor, no del peso',
-    timeP: 'La sal avanza desde cada superficie mojada más o menos con la raíz cuadrada del tiempo, así que el reloj lo marca el grosor. Dos kilos de chuletas finas están listos mucho antes que dos kilos de asado.',
+    timeP: 'La sal avanza desde cada superficie mojada más o menos con la raíz cuadrada del tiempo, así que el reloj lo marca el grosor. 2 kg de chuletas finas están listos mucho antes que 2 kg de asado.',
     inBrine: 'En salmuera',
     t1: 'Hasta 25 mm / 1 in — chuletas, filetes', t2: '25–50 mm / 1–2 in — piezas de pollo, lomo', t3: '50–100 mm / 2–4 in — pollo entero, brisket pequeño', t4: 'Pavo entero, 5–8 kg',
     timeNote: 'Cifras de la práctica. La regla tan repetida de «un cuarto de pulgada al día» se escribió para un curado fuerte del 2,5–3%; una salmuera del 1–1,5% avanza más despacio, así que toma el extremo alto de cada rango cuando importe que quede uniforme.',

@@ -31,7 +31,7 @@ function hoursText(h) {
 function spoons(grams, saltKey) {
   const s = spoonsOf(grams, saltKey);
   const unit = s.unit === 'cup' ? (s.n >= 1.9 ? T.cups : T.cup) : T[s.unit];
-  return fill(T.spoons, { spoons: `${nf(3).format(s.n)} ${unit}`, salt: I.salts[saltKey].toLowerCase(), oz: nf(2).format(grams / OZ) });
+  return fill(T.spoons, { spoons: `${nf(3).format(s.n)} ${unit}`, salt: I.lang === 'en' ? I.salts[saltKey].toLowerCase() : I.salts[saltKey], oz: nf(2).format(grams / OZ) });
 }
 
 function recalc() {
