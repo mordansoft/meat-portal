@@ -6,6 +6,7 @@
 // A language goes into LIVE only after Povar read its safety lines in the original and tools/check-numbers.mjs passed.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { buildBrine, BRINE_PAGES } from './gen-brine.mjs';
+import { buildLearn } from './gen-learn.mjs';
 import { cureGramsForPpm, calcDryCure, limitsOf, G_PER_LB } from '../curing-salt-calculator/curing.mjs';
 
 const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk', 'fr', 'pt-BR', 'tr', 'de', 'id'];
@@ -139,6 +140,8 @@ const CSS = `
 const built = [];
 for (const c of LIVE) for (const page of PAGES) built.push(build(c, page));
 built.push(...await buildBrine({ ROOT, LIVE: BRINE, LOC }));
+const learn = await buildLearn({ ROOT, LIVE, LOC, brineLangs: BRINE });
+built.push(...learn.built);
 
 // sitemap: the home page + every generated page with its language alternates
 const alt = (slug, langs = LIVE) => langs.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${urlOf(x, slug)}"/>`).join('\n');
@@ -146,6 +149,7 @@ const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www
   `  <url><loc>${BASE}/</loc></url>`,
   ...BRINE.flatMap((c) => BRINE_PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug, BRINE)}\n  </url>`)),
   ...LIVE.flatMap((c) => PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug)}\n  </url>`)),
+  ...learn.langs.flatMap((c) => learn.slugs.map((slug) => `  <url>\n    <loc>${learn.urlOf(c, slug)}</loc>\n${learn.langs.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${learn.urlOf(x, slug)}"/>`).join('\n')}\n  </url>`)),
   '</urlset>', ''].join('\n');
 writeFileSync(`${ROOT}sitemap.xml`, sm);
 console.log(`built ${built.length} pages in ${LIVE.length} languages; sitemap updated`);

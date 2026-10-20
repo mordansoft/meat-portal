@@ -2099,4 +2099,54 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://meat.mordansoft.com/de/cure-1-per-kg/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://meat.mordansoft.com/id/cure-1-per-kg/"/>
   </url>
+  <url>
+    <loc>https://meat.mordansoft.com/learn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/learn/what-is-curing-salt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/what-is-curing-salt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/what-is-curing-salt/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/learn/what-nitrite-does-in-meat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/what-nitrite-does-in-meat/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/what-nitrite-does-in-meat/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/learn/is-nitrite-dangerous/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/is-nitrite-dangerous/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/is-nitrite-dangerous/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/learn/curing-rules-and-sources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/curing-rules-and-sources/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/curing-rules-and-sources/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/learn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/learn/what-is-curing-salt/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/what-is-curing-salt/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/what-is-curing-salt/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/learn/what-nitrite-does-in-meat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/what-nitrite-does-in-meat/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/what-nitrite-does-in-meat/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/learn/is-nitrite-dangerous/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/is-nitrite-dangerous/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/is-nitrite-dangerous/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/learn/curing-rules-and-sources/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/learn/curing-rules-and-sources/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/learn/curing-rules-and-sources/"/>
+  </url>
 </urlset>

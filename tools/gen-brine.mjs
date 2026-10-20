@@ -4,11 +4,11 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 
 const BASE = 'https://meat.mordansoft.com';
-const DS = '/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4';
+export const DS = '/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4';
 const SALTCURE = 'https://mordansoft.com/saltcure/';
 export const BRINE_PAGES = [{ slug: 'brine-calculator', key: 'brine' }, { slug: 'dry-brine-calculator', key: 'dry' }];
 
-const MARK = '<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg>';
+export const MARK = '<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg>';
 
 const keysOf = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? keysOf(v, `${p}${k}.`) : [`${p}${k}`]));
 
