@@ -63,7 +63,8 @@ table.tbl td.num { font-family: var(--font-mono); font-variant-numeric: tabular-
 .fld .hint { display: block; font-size: var(--text-xs); color: var(--text-muted);
              line-height: var(--leading-normal); margin-top: 4px; }
 .pair { display: grid; grid-template-columns: 1fr 9rem; gap: var(--space-3); align-items: end; }
-.cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); margin-top: var(--space-3); }
+.cols > .fld { margin-top: 0; }
 @media (max-width: 560px) { .cols { grid-template-columns: 1fr; } .pair { grid-template-columns: 1fr 7.5rem; } }
 input.ms-input, select.ms-input { width: 100%; }
 .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
