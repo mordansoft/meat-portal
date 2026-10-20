@@ -82,6 +82,16 @@ export function strengthOf({ saltGrams, waterGrams, meatGrams = 0 }) {
 
 /** Grams to the nearest spoon or cup of a named salt — alongside grams, never
  *  instead of them. */
+// The same as inSpoons, as a number and a unit key (cup / tbsp / tsp) for pages in other languages.
+export function spoonsOf(grams, saltKey = 'fine') {
+  const s = SALTS[saltKey] || SALTS.fine;
+  const cups = grams / s.gPerCup;
+  if (cups >= 0.25) return { n: Math.round(cups * 8) / 8, unit: 'cup' };
+  const tsp = grams / s.gPerTsp;
+  if (tsp >= 3) return { n: Math.round(tsp / 3 * 4) / 4, unit: 'tbsp' };
+  return { n: Math.round(tsp * 4) / 4, unit: 'tsp' };
+}
+
 export function inSpoons(grams, saltKey = 'fine') {
   const s = SALTS[saltKey] || SALTS.fine;
   const cups = grams / s.gPerCup;

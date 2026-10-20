@@ -4,7 +4,8 @@
 // Every number in the tables is computed by curing-salt-calculator/curing.mjs — the port of the
 // app core. Texts: i18n/en.mjs is the master; a language with a missing or extra key is refused.
 // A language goes into LIVE only after Povar read its safety lines in the original and tools/check-numbers.mjs passed.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { buildBrine, BRINE_PAGES } from './gen-brine.mjs';
 import { cureGramsForPpm, calcDryCure, limitsOf, G_PER_LB } from '../curing-salt-calculator/curing.mjs';
 
 const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk', 'fr', 'pt-BR', 'tr', 'de', 'id'];
@@ -15,6 +16,9 @@ const CFR = 'https://www.law.cornell.edu/cfr/text/9';
 const tpl = readFileSync(`${ROOT}tools/template.html`, 'utf8');
 const LOC = Object.fromEntries(await Promise.all(LIVE.map(async (c) => [c, (await import(`../i18n/${c}.mjs`)).default])));
 const EN = LOC.en;
+// Brine / dry-brine pages exist in a language once i18n/brine/<lang>.mjs does; until then its links go to English.
+const BRINE = LIVE.filter((c) => existsSync(`${ROOT}i18n/brine/${c}.mjs`));
+const brinePath = (c, slug) => (BRINE.includes(c) ? pathOf(c, slug) : `/${slug}/`);
 
 // ── key parity with the English master ─────────────────────────────────────
 const keysOf = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? keysOf(v, `${p}${k}.`) : [`${p}${k}`]));
@@ -89,7 +93,7 @@ function build(c, page) {
     `  <link rel="alternate" hreflang="x-default" href="${urlOf('en', page.slug)}">`].join('\n');
   const langMenu = `<select class="lang-select" aria-label="${S.language}" onchange="location.href=this.value">${LIVE.map((x) =>
     `<option value="${pathOf(x, page.slug)}"${x === c ? ' selected' : ''}>${LOC[x].name}</option>`).join('')}</select>`;
-  const nav = `<span class="xnav"><a href="/brine-calculator/">${S.nav.brine}</a><a href="/dry-brine-calculator/">${S.nav.dryBrine}</a><a href="${pathOf(c, 'curing-salt-calculator')}"${page.slug === 'curing-salt-calculator' ? ' aria-current="page"' : ''}>${S.nav.curing}</a></span>`;
+  const nav = `<span class="xnav"><a href="${brinePath(c, 'brine-calculator')}">${S.nav.brine}</a><a href="${brinePath(c, 'dry-brine-calculator')}">${S.nav.dryBrine}</a><a href="${pathOf(c, 'curing-salt-calculator')}"${page.slug === 'curing-salt-calculator' ? ' aria-current="page"' : ''}>${S.nav.curing}</a></span>`;
   const attrs = Object.entries(page.preset).map(([k, v]) => ` data-${k}="${v}"`).join('');
 
   let h = tpl;
@@ -134,11 +138,13 @@ const CSS = `
 
 const built = [];
 for (const c of LIVE) for (const page of PAGES) built.push(build(c, page));
+built.push(...await buildBrine({ ROOT, LIVE: BRINE, LOC }));
 
-// sitemap: the EN-only brine pages + every generated page with its language alternates
-const alt = (slug) => LIVE.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${urlOf(x, slug)}"/>`).join('\n');
+// sitemap: the home page + every generated page with its language alternates
+const alt = (slug, langs = LIVE) => langs.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${urlOf(x, slug)}"/>`).join('\n');
 const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-  ...['', 'brine-calculator/', 'dry-brine-calculator/'].map((x) => `  <url><loc>${BASE}/${x}</loc></url>`),
+  `  <url><loc>${BASE}/</loc></url>`,
+  ...BRINE.flatMap((c) => BRINE_PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug, BRINE)}\n  </url>`)),
   ...LIVE.flatMap((c) => PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug)}\n  </url>`)),
   '</urlset>', ''].join('\n');
 writeFileSync(`${ROOT}sitemap.xml`, sm);

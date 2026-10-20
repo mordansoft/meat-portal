@@ -8,6 +8,8 @@
   <title>Dry Brine Calculator — Salt by Weight for Turkey, Chicken, Steak and Pork</title>
   <meta name="description" content="Dry brine calculator: salt as a percentage of the meat’s own weight, in grams, with timing by thickness and the food-safety limits that have a published source. No water, no guessing.">
   <link rel="canonical" href="https://meat.mordansoft.com/dry-brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/dry-brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/dry-brine-calculator/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
   <meta property="og:title" content="Dry Brine Calculator — Salt by Weight for Turkey, Chicken, Steak and Pork">
@@ -34,7 +36,7 @@
           <a href="/brine-calculator/">Brine</a>
           <a href="/dry-brine-calculator/" aria-current="page">Dry brine</a>
           <a href="/curing-salt-calculator/">Curing salt</a>
-      </span></span>
+      </span><select class="lang-select" aria-label="Language" onchange="location.href=this.value"><option value="/dry-brine-calculator/" selected>English</option></select></span>
     </div>
   </div>
 
@@ -53,7 +55,7 @@
               <label class="fld"><span class="lbl">Meat weight</span>
                 <span class="pair"><input class="ms-input" type="number" id="meat" value="5000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>grams</option><option value="kg">kilograms</option><option value="lb">pounds</option><option value="oz">ounces</option></select></span>
               </label>
-              <label class="fld"><span class="lbl">Salt — <u>percentage of the meat's weight</u></span>
+              <label class="fld"><span class="lbl">Salt — <u>percentage of the meat’s weight</u></span>
                 <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
                 <span class="hint">1.0–1.5% for poultry · 0.8–1.2% for steak · 1.5–2.0% for pork shoulder and loin. Taste ranges, not safety limits.</span>
               </label>
@@ -82,37 +84,23 @@
               </div>
               <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
                 <b>Too thick for a plain dry brine</b>
-                <p>A piece this size needs longer than the two days a cure without curing salt may
-                safely run. Use the <a href="/curing-salt-calculator/">curing calculator</a>, or cut
-                it down.</p>
+                <p>A piece this size needs longer than the two days a cure without curing salt may safely run. Use the <a href="/curing-salt-calculator/">curing calculator</a>, or cut it down.</p>
               </div>
             </div>
             <div class="calc-banner nojsonly">
-              <b>The arithmetic.</b> Salt in grams = meat grams × percentage ÷ 100.
-              A 5 kg turkey at 1.2% takes 60 g of salt.
+              <b>The arithmetic.</b> Salt in grams = meat grams × percentage ÷ 100. A 5 kg turkey at 1.2% takes 60 g of salt.
             </div>
           </div>
         </div>
 
         <div class="prose">
         <h2>Read the basis before you trust any number</h2>
-        <p>A dry brine is salt against the <strong>weight of the meat</strong>. A wet brine is
-        salt against the <strong>meat and the water together</strong>. The same “1.5%” means two
-        different dinners depending on which the author meant — and most of them never say.
-        On this page it is always the meat.</p>
-
+        <p>A dry brine is salt against the <strong>weight of the meat</strong>. A wet brine is salt against the <strong>meat and the water together</strong>. The same “1.5%” means two different dinners depending on which the author meant — and most of them never say. On this page it is always the meat.</p>
         <h2>Dry or wet?</h2>
-        <p>A wet brine adds water. The bird comes out heavier and juicier, the flavour a little
-        diluted, and the skin — having sat in liquid for a day — fights you at roasting time.
-        A dry brine pulls moisture out, dissolves the salt in it, and draws it back in seasoned.
-        The surface dries. The skin crisps.</p>
-        <p>For a roast bird, uncovered on a rack, a dry brine is usually the better dinner. It
-        also needs no container, no gallon of water and no space in the fridge for either. Most
-        people search for the wet one out of habit.
-        <a href="/brine-calculator/">The wet brine calculator is here</a> if that is what you came for.</p>
-
+        <p>A wet brine adds water. The bird comes out heavier and juicier, the flavour a little diluted, and the skin — having sat in liquid for a day — fights you at roasting time. A dry brine pulls moisture out, dissolves the salt in it, and draws it back in seasoned. The surface dries. The skin crisps.</p>
+        <p>For a roast bird, uncovered on a rack, a dry brine is usually the better dinner. It also needs no container, no gallon of water and no space in the fridge for either. Most people search for the wet one out of habit. <a href="/brine-calculator/">The wet brine calculator is here</a> if that is what you came for.</p>
         <h2>Starting points by cut</h2>
-        <p>Percentage of the meat's own weight.</p>
+        <p>Percentage of the meat’s own weight.</p>
         <div class="tbl-scroll"><table class="tbl">
           <thead><tr><th>Cut</th><th>Range</th><th>Working point</th></tr></thead>
           <tbody>
@@ -123,7 +111,6 @@
           </tbody>
         </table></div>
         <p class="calc-disclaimer">Practice, not a published standard.</p>
-
         <h2>Time by thickness</h2>
         <div class="tbl-scroll"><table class="tbl">
           <thead><tr><th>Thickness at the thickest point</th><th>Dry brine</th></tr></thead>
@@ -133,13 +120,9 @@
             <tr><td>Whole bird</td><td class="num">24–48 h</td></tr>
           </tbody>
         </table></div>
-        <p>A dry brine runs slower than a wet one — less salt in play, and no water to carry it.
-        Uncovered on a rack is not a detail: it is the whole reason to do it this way.</p>
-
+        <p>A dry brine runs slower than a wet one — less salt in play, and no water to carry it. Uncovered on a rack is not a detail: it is the whole reason to do it this way.</p>
         <h2>What is actually regulated</h2>
-        <p>The three rules below have a published source. Everything else on this page — how
-        salty, how much sugar, how long for flavour — is a cook's choice, which is exactly why
-        the numbers differ everywhere you look.</p>
+        <p>The three rules below have a published source. Everything else on this page — how salty, how much sugar, how long for flavour — is a cook’s choice, which is exactly why the numbers differ everywhere you look.</p>
         <div class="tbl-scroll"><table class="tbl">
           <thead><tr><th>Rule</th><th>Figure</th><th>Source</th></tr></thead>
           <tbody>
@@ -150,50 +133,32 @@
         </table></div>
         <div class="calc-alert calc-alert--warn">
           <b>Three more rules from the same guidance, with no number attached</b>
-          <p>Cool a brine that was heated before the meat goes in. Do not rinse poultry —
-          splashing spreads contamination around the kitchen. Never salt at room temperature;
-          if the fridge is full, put ice in the container rather than the meat on the counter.</p>
+          <p>Cool a brine that was heated before the meat goes in. Do not rinse poultry — splashing spreads contamination around the kitchen. Never salt at room temperature; if the fridge is full, put ice in the container rather than the meat on the counter.</p>
         </div>
         <div class="calc-alert calc-alert--warn">
           <b>Do not wash the bird</b>
-          <p>Not before salting and not after. Rinsing raw poultry sprays contamination around
-          the kitchen. Wipe excess salt off with a paper towel instead.</p>
+          <p>Not before salting and not after. Rinsing raw poultry sprays contamination around the kitchen. Wipe excess salt off with a paper towel instead.</p>
         </div>
-
         <h2>When salt alone is not enough</h2>
-        <p>Everything here assumes one thing: <strong>you salt the meat and then you cook
-        it</strong> — within two days, at or below 4&nbsp;°C, finished at a temperature that
-        actually cooks. That covers turkey, chicken, pork, brisket before hot smoking, and fish
-        before hot smoking or baking.</p>
+        <p>Everything here assumes one thing: <strong>you salt the meat and then you cook it</strong> — within two days, at or below 4&nbsp;°C, finished at a temperature that actually cooks. That covers turkey, chicken, pork, brisket before hot smoking, and fish before hot smoking or baking.</p>
         <div class="calc-alert calc-alert--bad">
           <b>Curing salt is required, not optional, for any of these</b>
-          <p>Cold smoking, where the smoke runs below about 32&nbsp;°C / 90&nbsp;°F and nothing
-          ever gets hot enough to make the food safe. Air-dried whole muscle — pancetta, coppa,
-          bresaola. Fermented or air-dried sausage. And any cure running longer than two days.
-          <a href="/curing-salt-calculator/">Use the curing calculator</a> for those.</p>
+          <p>Cold smoking, where the smoke runs below about 32&nbsp;°C / 90&nbsp;°F and nothing ever gets hot enough to make the food safe. Air-dried whole muscle — pancetta, coppa, bresaola. Fermented or air-dried sausage. And any cure running longer than two days. <a href="/curing-salt-calculator/">Use the curing calculator</a> for those.</p>
         </div>
         <h2>Sources</h2>
         <ul>
-          <li>USDA — brining and handling poultry: 40&nbsp;°F or below throughout, two days at
-          most, cool the brine first, do not rinse the bird.</li>
+          <li>USDA — brining and handling poultry: 40&nbsp;°F or below throughout, two days at most, cool the brine first, do not rinse the bird.</li>
           <li>FDA Food Code §3-501.16 — cold holding at 41&nbsp;°F / 5&nbsp;°C or below.</li>
-          <li>FDA guidance for smoked fishery products — finished water-phase salt of 3.5% or
-          more, salting step at 40&nbsp;°F or less.</li>
-          <li>9 CFR 424.21(c) and 424.22(b) — nitrite limits, used on the
-          <a href="/curing-salt-calculator/">curing calculator</a>.</li>
+          <li>FDA guidance for smoked fishery products — finished water-phase salt of 3.5% or more, salting step at 40&nbsp;°F or less.</li>
+          <li>9 CFR 424.21(c) and 424.22(b) — nitrite limits, used on the <a href="/curing-salt-calculator/">curing calculator</a>.</li>
         </ul>
-        <p class="calc-disclaimer">Published US rules are written for inspected plants and do not
-        regulate home kitchens. We cite them because the alternative, in a calculation that can
-        make somebody ill, is a forum post. This page describes published guidance and certifies
-        nothing you make.</p>
+        <p class="calc-disclaimer">Published US rules are written for inspected plants and do not regulate home kitchens. We cite them because the alternative, in a calculation that can make somebody ill, is a forum post. This page describes published guidance and certifies nothing you make.</p>
         </div>
 
         <div class="ms-card ms-card--pad calc-cta">
           <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">A brine finishes overnight. A cure does not.</h2>
           <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
-            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches
-            that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that
-            product. Free, offline, no account.</p>
+            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that product. Free, offline, no account.</p>
           <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">See what the app does: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
           <div class="store-badges">
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
@@ -222,54 +187,8 @@
     </div>
   </footer>
   <script>if (window.lucide) lucide.createIcons();</script>
-  <script type="module">
-    import { dryBrine, timeByThickness, inSpoons, SALTS, LB, OZ, INCH } from '/assets/js/brine.mjs';
-
-    const $ = (id) => document.getElementById(id);
-    const n = (id) => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : NaN; };
-    const set = (id, t) => { $(id).textContent = t; };
-    const g = (x) => !isFinite(x) ? '\u2014'
-      : x >= 100 ? Math.round(x) + ' g'
-      : x >= 10 ? (Math.round(x * 10) / 10) + ' g'
-      : (Math.round(x * 100) / 100) + ' g';
-    const wUnits = { g: 1, kg: 1000, lb: LB, oz: OZ };
-
-    function hoursText(h) {
-      if (!h) return '\u2014';
-      const days = h.lo >= 24
-        ? ' (' + (Math.round(h.lo / 24 * 10) / 10) + '\u2013' + (Math.round(h.hi / 24 * 10) / 10) + ' days)'
-        : '';
-      return h.lo + '\u2013' + h.hi + ' h' + days;
-    }
-
-    function recalc() {
-      const meat = n('meat') * (wUnits[$('meatUnit').value] || 1);
-      const r = dryBrine({ meatGrams: meat, targetPct: n('target'),
-                           sugarShareOfSaltPct: n('sugar') || 0 });
-      if (!r) {
-        set('saltOut', '\u2014'); set('saltAlt', 'Enter the weight of the meat.');
-        set('sugarOut', '\u2014'); set('timeOut', '\u2014'); $('capWarn').hidden = true;
-        return;
-      }
-      const saltKey = $('saltType').value;
-      set('saltOut', g(r.saltGrams) + ' of salt');
-      set('saltAlt', '\u2248 ' + inSpoons(r.saltGrams, saltKey) + ' of '
-        + SALTS[saltKey].label.toLowerCase() + ' \u00b7 '
-        + (Math.round(r.saltGrams / OZ * 100) / 100) + ' oz. Spread it over every surface, '
-        + 'including inside.');
-      set('sugarOut', r.sugarGrams > 0 ? g(r.sugarGrams) : 'none');
-
-      const mm = n('thick') * ($('thickUnit').value === 'in' ? INCH : 1);
-      const h = timeByThickness(mm, { dry: true });
-      set('timeOut', h ? hoursText(h) + ', uncovered on a rack' : 'enter a thickness');
-      $('capWarn').hidden = !(h && h.overCap);
-    }
-
-    ['meat','meatUnit','target','sugar','saltType','thick','thickUnit'].forEach((id) => {
-      $(id).addEventListener('input', recalc); $(id).addEventListener('change', recalc);
-    });
-    recalc();
-  </script>
+  <script type="application/json" id="brine-i18n">{"lang":"en","locale":"en-US","mode":"dry","salts":{"fine":"Table / fine sea salt","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Coarse sea salt"},"t":{"g":"g","oz":"oz","ofSalt":"{g} of salt","none":"none","enterThick":"enter a thickness","hours":"{lo}–{hi} h","days":"({lo}–{hi} days)","cup":"cup","cups":"cups","tbsp":"tbsp","tsp":"tsp","spoons":"≈ {spoons} of {salt} · {oz} oz.","fill":"Enter the weight of the meat.","spread":"Spread it over every surface, including inside.","rack":"{t}, uncovered on a rack"}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->

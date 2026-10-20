@@ -122,3 +122,5 @@ html.nojs .jsonly { display: none; }
   .detail__blurb { font-size: 1.0625rem; }
 }
 @media (max-width: 560px) { .topbar__tag { display: none; } .footer-inner { flex-direction: column; } }
+.lang-select { font: 500 12px var(--font-mono); color: var(--text-secondary); background: transparent; border: 1px solid var(--border); border-radius: 6px; padding: 2px 6px; margin-left: var(--space-3); max-width: 9.5rem; }
+@media (max-width: 640px) { .topbar__links { gap: var(--space-3); font-size: var(--text-xs); } }

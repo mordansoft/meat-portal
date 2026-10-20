@@ -8,6 +8,8 @@
   <title>Brine Calculator — Salt, Water and Time for Turkey, Chicken, Pork and Brisket</title>
   <meta name="description" content="Equilibrium brine calculator: enter meat weight, water and the saltiness you want. Grams of salt and sugar, brining time by thickness, and the three food-safety rules that actually have a published source.">
   <link rel="canonical" href="https://meat.mordansoft.com/brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/brine-calculator/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
   <meta property="og:title" content="Brine Calculator — Salt, Water and Time for Turkey, Chicken, Pork and Brisket">
@@ -34,7 +36,7 @@
           <a href="/brine-calculator/" aria-current="page">Brine</a>
           <a href="/dry-brine-calculator/">Dry brine</a>
           <a href="/curing-salt-calculator/">Curing salt</a>
-      </span></span>
+      </span><select class="lang-select" aria-label="Language" onchange="location.href=this.value"><option value="/brine-calculator/" selected>English</option></select></span>
     </div>
   </div>
 
@@ -83,7 +85,7 @@
                   <span class="pair"><input class="ms-input" type="number" id="rSalt" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rSaltUnit"><option value="cup" selected>cups</option><option value="tbsp">tbsp</option><option value="g">grams</option><option value="oz">ounces</option></select></span>
                 </label>
                 <label class="fld"><span class="lbl">Water in the recipe</span>
-                  <span class="pair"><input class="ms-input" type="number" id="rWater" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rWaterUnit"><option value="gal" selected>gallons</option><option value="qt">quarts</option><option value="l">litres</option><option value="ml">ml</option></select></span>
+                  <span class="pair"><input class="ms-input" type="number" id="rWater" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rWaterUnit"><option value="gal" selected>gallons</option><option value="qt">quarts</option><option value="l">litres</option><option value="ml">millilitres</option></select></span>
                 </label>
               </span>
               <label class="fld"><span class="lbl">Meat weight, in grams (optional)</span>
@@ -106,35 +108,22 @@
               </div>
               <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
                 <b>Too thick for a plain brine</b>
-                <p>At this thickness the salt needs longer than the two days a brine without
-                curing salt may safely run. Use the
-                <a href="/curing-salt-calculator/">curing calculator</a>, or cut the piece down.</p>
+                <p>At this thickness the salt needs longer than the two days a brine without curing salt may safely run. Use the <a href="/curing-salt-calculator/">curing calculator</a>, or cut the piece down.</p>
               </div>
             </div>
             <div class="calc-banner nojsonly">
-              <b>The arithmetic, if you would rather do it yourself.</b>
-              Salt in grams = (meat grams + water grams) × target % ÷ 100. For 2 kg of meat in
-              2 kg of water at 1.2%, that is 48 g of salt. The tables below cover the rest.
+              <b>The arithmetic, if you would rather do it yourself.</b> Salt in grams = (meat grams + water grams) × target % ÷ 100. For 2 kg of meat in 2 kg of water at 1.2%, that is 48 g of salt. The tables below cover the rest.
             </div>
           </div>
         </div>
 
         <div class="prose">
         <h2>Why every brine recipe you find disagrees</h2>
-        <p>One says a cup of salt per gallon of water. The next says 3%. The third says 1%.
-        They are not contradicting each other — they are measuring <em>different things</em>.
-        A percentage of the water is not a percentage of the meat, and neither is a percentage
-        of the two together. This page states its basis on every line:
-        <strong>salt as a percentage of meat and water combined</strong>.</p>
+        <p>One says a cup of salt per gallon of water. The next says 3%. The third says 1%. They are not contradicting each other — they are measuring <em>different things</em>. A percentage of the water is not a percentage of the meat, and neither is a percentage of the two together. This page states its basis on every line: <strong>salt as a percentage of meat and water combined</strong>.</p>
 
         <h2>Why you cannot over-salt this way</h2>
-        <p>In an equilibrium brine the meat and the liquid trade salt until both sit at the same
-        concentration. The meat approaches the strength of the brine and <strong>cannot pass
-        it</strong>. Leave it in an extra six hours and nothing happens to the seasoning — which
-        is the real advantage over the old “strong brine for four hours, then soak it out”
-        method, where an hour too long ruins dinner.</p>
-        <p>The two-day limit is not about salt. It is about how long raw meat may sit wet and
-        cold before spoilage becomes the problem.</p>
+        <p>In an equilibrium brine the meat and the liquid trade salt until both sit at the same concentration. The meat approaches the strength of the brine and <strong>cannot pass it</strong>. Leave it in an extra six hours and nothing happens to the seasoning — which is the real advantage over the old “strong brine for four hours, then soak it out” method, where an hour too long ruins dinner.</p>
+        <p>The two-day limit is not about salt. It is about how long raw meat may sit wet and cold before spoilage becomes the problem.</p>
 
         <h2>Starting points by cut</h2>
         <p>Percentage of meat and water combined.</p>
@@ -148,12 +137,10 @@
             <tr><td>Salmon and other oily fish</td><td class="num">1.5–2.5%</td><td class="num">2.0%</td></tr>
           </tbody>
         </table></div>
-        <p class="calc-disclaimer">Taste ranges from practice, not a published standard. Below
-        about 1% the brine stops earning its fridge space; above 2% most people find poultry salty.</p>
+        <p class="calc-disclaimer">Taste ranges from practice, not a published standard. Below about 1% the brine stops earning its fridge space; above 2% most people find poultry salty.</p>
 
         <h2>Time comes from thickness, not weight</h2>
-        <p>Salt moves inward from every wetted surface at roughly the square root of time, so
-        thickness decides the clock. A flat 2 kg of chops is done long before a 2 kg roast.</p>
+        <p>Salt moves inward from every wetted surface at roughly the square root of time, so thickness decides the clock. A flat 2 kg of chops is done long before a 2 kg roast.</p>
         <div class="tbl-scroll"><table class="tbl">
           <thead><tr><th>Thickness at the thickest point</th><th>In a brine</th></tr></thead>
           <tbody>
@@ -163,14 +150,10 @@
             <tr><td>Whole turkey, 5–8 kg</td><td class="num">18–36 h</td></tr>
           </tbody>
         </table></div>
-        <p class="calc-disclaimer">Practice figures. The widely repeated “quarter inch a day”
-        rule was written for a strong 2.5–3% cure; a 1–1.5% brine moves more slowly, so take the
-        upper end of each range when evenness matters.</p>
+        <p class="calc-disclaimer">Practice figures. The widely repeated “quarter inch a day” rule was written for a strong 2.5–3% cure; a 1–1.5% brine moves more slowly, so take the upper end of each range when evenness matters.</p>
 
         <h2>What is actually regulated</h2>
-        <p>The three rules below have a published source. Everything else on this page — how
-        salty, how much sugar, how long for flavour — is a cook's choice, which is exactly why
-        the numbers differ everywhere you look.</p>
+        <p>The three rules below have a published source. Everything else on this page — how salty, how much sugar, how long for flavour — is a cook’s choice, which is exactly why the numbers differ everywhere you look.</p>
         <div class="tbl-scroll"><table class="tbl">
           <thead><tr><th>Rule</th><th>Figure</th><th>Source</th></tr></thead>
           <tbody>
@@ -181,54 +164,33 @@
         </table></div>
         <div class="calc-alert calc-alert--warn">
           <b>Three more rules from the same guidance, with no number attached</b>
-          <p>Cool a brine that was heated before the meat goes in. Do not rinse poultry —
-          splashing spreads contamination around the kitchen. Never salt at room temperature;
-          if the fridge is full, put ice in the container rather than the meat on the counter.</p>
+          <p>Cool a brine that was heated before the meat goes in. Do not rinse poultry — splashing spreads contamination around the kitchen. Never salt at room temperature; if the fridge is full, put ice in the container rather than the meat on the counter.</p>
         </div>
         <h2>When salt alone is not enough</h2>
-        <p>Everything here assumes one thing: <strong>you salt the meat and then you cook
-        it</strong> — within two days, at or below 4&nbsp;°C, finished at a temperature that
-        actually cooks. That covers turkey, chicken, pork, brisket before hot smoking, and fish
-        before hot smoking or baking.</p>
+        <p>Everything here assumes one thing: <strong>you salt the meat and then you cook it</strong> — within two days, at or below 4&nbsp;°C, finished at a temperature that actually cooks. That covers turkey, chicken, pork, brisket before hot smoking, and fish before hot smoking or baking.</p>
         <div class="calc-alert calc-alert--bad">
           <b>Curing salt is required, not optional, for any of these</b>
-          <p>Cold smoking, where the smoke runs below about 32&nbsp;°C / 90&nbsp;°F and nothing
-          ever gets hot enough to make the food safe. Air-dried whole muscle — pancetta, coppa,
-          bresaola. Fermented or air-dried sausage. And any cure running longer than two days.
-          <a href="/curing-salt-calculator/">Use the curing calculator</a> for those.</p>
+          <p>Cold smoking, where the smoke runs below about 32&nbsp;°C / 90&nbsp;°F and nothing ever gets hot enough to make the food safe. Air-dried whole muscle — pancetta, coppa, bresaola. Fermented or air-dried sausage. And any cure running longer than two days. <a href="/curing-salt-calculator/">Use the curing calculator</a> for those.</p>
         </div>
-        <p>Cold-smoked fish is its own case. The FDA asks for a finished water-phase salt level
-        of 3.5% or more, verified by measurement — and water-phase salt is salt relative to
-        moisture, which you cannot check in a home kitchen without a lab. We give no numbers for
-        it, and we would rather say so than guess.</p>
+        <p>Cold-smoked fish is its own case. The FDA asks for a finished water-phase salt level of 3.5% or more, verified by measurement — and water-phase salt is salt relative to moisture, which you cannot check in a home kitchen without a lab. We give no numbers for it, and we would rather say so than guess.</p>
 
         <h2>Throw the brine away</h2>
-        <p>Whatever was on the raw meat is in the liquid now. Pour it out as soon as the meat
-        comes out. Do not re-use it for a second batch, and do not build a sauce on it unless the
-        sauce gets boiled.</p>
+        <p>Whatever was on the raw meat is in the liquid now. Pour it out as soon as the meat comes out. Do not re-use it for a second batch, and do not build a sauce on it unless the sauce gets boiled.</p>
 
         <h2>Sources</h2>
         <ul>
-          <li>USDA — brining and handling poultry: 40&nbsp;°F or below throughout, two days at
-          most, cool the brine first, do not rinse the bird.</li>
+          <li>USDA — brining and handling poultry: 40&nbsp;°F or below throughout, two days at most, cool the brine first, do not rinse the bird.</li>
           <li>FDA Food Code §3-501.16 — cold holding at 41&nbsp;°F / 5&nbsp;°C or below.</li>
-          <li>FDA guidance for smoked fishery products — finished water-phase salt of 3.5% or
-          more, salting step at 40&nbsp;°F or less.</li>
-          <li>9 CFR 424.21(c) and 424.22(b) — nitrite limits, used on the
-          <a href="/curing-salt-calculator/">curing calculator</a>.</li>
+          <li>FDA guidance for smoked fishery products — finished water-phase salt of 3.5% or more, salting step at 40&nbsp;°F or less.</li>
+          <li>9 CFR 424.21(c) and 424.22(b) — nitrite limits, used on the <a href="/curing-salt-calculator/">curing calculator</a>.</li>
         </ul>
-        <p class="calc-disclaimer">Published US rules are written for inspected plants and do not
-        regulate home kitchens. We cite them because the alternative, in a calculation that can
-        make somebody ill, is a forum post. This page describes published guidance and certifies
-        nothing you make.</p>
+        <p class="calc-disclaimer">Published US rules are written for inspected plants and do not regulate home kitchens. We cite them because the alternative, in a calculation that can make somebody ill, is a forum post. This page describes published guidance and certifies nothing you make.</p>
         </div>
 
         <div class="ms-card ms-card--pad calc-cta">
           <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">A brine finishes overnight. A cure does not.</h2>
           <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
-            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches
-            that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that
-            product. Free, offline, no account.</p>
+            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that product. Free, offline, no account.</p>
           <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">See what the app does: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
           <div class="store-badges">
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
@@ -257,87 +219,8 @@
     </div>
   </footer>
   <script>if (window.lucide) lucide.createIcons();</script>
-  <script type="module">
-    import { wetBrine, timeByThickness, strengthOf, inSpoons, SALTS,
-             LB, OZ, GAL, QT, CUP, INCH } from '/assets/js/brine.mjs';
-
-    const $ = (id) => document.getElementById(id);
-    const n = (id) => { const v = parseFloat(String($(id).value).replace(',', '.')); return isFinite(v) ? v : NaN; };
-    const set = (id, t) => { $(id).textContent = t; };
-    const g = (x) => !isFinite(x) ? '\u2014'
-      : x >= 100 ? Math.round(x) + ' g'
-      : x >= 10 ? (Math.round(x * 10) / 10) + ' g'
-      : (Math.round(x * 100) / 100) + ' g';
-    const pc = (x) => isFinite(x) ? (Math.round(x * 100) / 100) + '%' : '\u2014';
-    const wUnits = { g: 1, kg: 1000, lb: LB, oz: OZ };
-    const vUnits = { ml: 1, l: 1000, qt: QT, gal: GAL, cup: CUP };
-
-    function hoursText(h) {
-      if (!h) return '\u2014';
-      const days = h.lo >= 24
-        ? ' (' + (Math.round(h.lo / 24 * 10) / 10) + '\u2013' + (Math.round(h.hi / 24 * 10) / 10) + ' days)'
-        : '';
-      return h.lo + '\u2013' + h.hi + ' h' + days;
-    }
-
-    function recalc() {
-      const meat = n('meat') * (wUnits[$('meatUnit').value] || 1);
-      const water = n('water') * (vUnits[$('waterUnit').value] || 1);
-      const r = wetBrine({ meatGrams: meat, waterGrams: water,
-                           targetPct: n('target'), sugarShareOfSaltPct: n('sugar') || 0 });
-      if (!r) {
-        set('saltOut', '\u2014'); set('saltAlt', 'Fill in the weights above.');
-        set('sugarOut', '\u2014'); set('timeOut', '\u2014');
-        set('pctWater', '\u2014'); set('pctMeat', '\u2014');
-        $('capWarn').hidden = true;
-        return;
-      }
-      const saltKey = $('saltType').value;
-      set('saltOut', g(r.saltGrams) + ' of salt');
-      set('saltAlt', '\u2248 ' + inSpoons(r.saltGrams, saltKey) + ' of '
-        + SALTS[saltKey].label.toLowerCase() + ' \u00b7 '
-        + (Math.round(r.saltGrams / OZ * 100) / 100) + ' oz. Weigh it if you can \u2014 '
-        + 'spoon sizes differ by up to half.');
-      set('sugarOut', r.sugarGrams > 0 ? g(r.sugarGrams) : 'none');
-      set('pctWater', pc(r.pctOfWater));
-      set('pctMeat', pc(r.pctOfMeat));
-
-      const mm = n('thick') * ($('thickUnit').value === 'in' ? INCH : 1);
-      const h = timeByThickness(mm);
-      set('timeOut', h ? hoursText(h) : 'enter a thickness');
-      $('capWarn').hidden = !(h && h.overCap);
-    }
-
-    function recheck() {
-      const saltKey = $('saltType').value, s = SALTS[saltKey];
-      const u = $('rSaltUnit').value, v = n('rSalt');
-      const saltG = u === 'cup' ? v * s.gPerCup : u === 'tbsp' ? v * s.gPerTsp * 3
-                  : u === 'oz' ? v * OZ : v;
-      const waterG = n('rWater') * (vUnits[$('rWaterUnit').value] || 1);
-      const meatG = n('rMeat');
-      const r = strengthOf({ saltGrams: saltG, waterGrams: waterG, meatGrams: meatG > 0 ? meatG : 0 });
-      if (!r) { set('rOut', 'Enter the salt and the water.'); return; }
-      let t = 'That is ' + pc(r.pctOfWater) + ' of the water \u2014 '
-            + g(saltG) + ' of salt in ' + g(waterG) + ' of water.';
-      if (r.pctOfTotal != null) {
-        t += ' With the meat in it, ' + pc(r.pctOfTotal)
-           + ' of meat and water together, which is the basis this page uses.';
-        if (r.pctOfTotal > 3) {
-          t += ' That is a strong brine, meant for a short soak and a rinse, not for leaving overnight.';
-        }
-      } else {
-        t += ' Add the meat weight for the combined figure.';
-      }
-      set('rOut', t);
-    }
-
-    const all = () => { recalc(); recheck(); };
-    ['meat','meatUnit','water','waterUnit','target','sugar','saltType','thick','thickUnit',
-     'rSalt','rSaltUnit','rWater','rWaterUnit','rMeat'].forEach((id) => {
-      $(id).addEventListener('input', all); $(id).addEventListener('change', all);
-    });
-    all();
-  </script>
+  <script type="application/json" id="brine-i18n">{"lang":"en","locale":"en-US","mode":"wet","salts":{"fine":"Table / fine sea salt","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Coarse sea salt"},"t":{"g":"g","oz":"oz","ofSalt":"{g} of salt","none":"none","enterThick":"enter a thickness","hours":"{lo}–{hi} h","days":"({lo}–{hi} days)","cup":"cup","cups":"cups","tbsp":"tbsp","tsp":"tsp","spoons":"≈ {spoons} of {salt} · {oz} oz.","fill":"Fill in the weights above.","weigh":"Weigh it if you can — spoon sizes differ by up to half.","needBoth":"Enter the salt and the water.","isOfWater":"That is {pct} of the water — {salt} of salt in {water} of water.","withMeat":"With the meat in it, {pct} of meat and water together, which is the basis this page uses.","strong":"That is a strong brine, meant for a short soak and a rinse, not for leaving overnight.","addMeat":"Add the meat weight for the combined figure."}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->
