@@ -4,11 +4,55 @@
     <loc>https://meat.mordansoft.com/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
   </url>
   <url>
     <loc>https://meat.mordansoft.com/uk/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
     <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/ru/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/cs/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/sk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/"/>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/"/>
   </url>
   <url>
     <loc>https://meat.mordansoft.com/brine-calculator/</loc>
