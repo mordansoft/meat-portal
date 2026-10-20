@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" class="nojs">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
   <meta name="apple-itunes-app" content="app-id=6812973901">
-  <title>Meat — Calculators for Salting, Brining and Curing, with the Sources Named</title>
-  <meta name="description" content="Free calculators for cooking meat at home: brine, dry brine and curing salt. Grams instead of guesses, timing from thickness, and every safety figure cited to USDA, FDA or 9 CFR.">
+  <title>SaltCure Calculators — Brine, Dry Brine and Curing Salt, with the Sources Named</title>
+  <meta name="description" content="Free calculators for salting meat at home: brine, dry brine and curing salt. Grams instead of guesses, timing from thickness, and every safety figure cited to USDA, FDA or 9 CFR.">
   <link rel="canonical" href="https://meat.mordansoft.com/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MordanSoft">
-  <meta property="og:title" content="Meat — Calculators for Salting, Brining and Curing, with the Sources Named">
-  <meta property="og:description" content="Free calculators for cooking meat at home: brine, dry brine and curing salt. Grams instead of guesses, timing from thickness, and every safety figure cited to USDA, FDA or 9 CFR.">
+  <meta property="og:title" content="SaltCure Calculators — Brine, Dry Brine and Curing Salt, with the Sources Named">
+  <meta property="og:description" content="Free calculators for salting meat at home: brine, dry brine and curing salt. Grams instead of guesses, timing from thickness, and every safety figure cited to USDA, FDA or 9 CFR.">
   <meta property="og:url" content="https://meat.mordansoft.com/">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
@@ -23,124 +26,130 @@
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
   <link rel="stylesheet" href="/assets/css/brine-calc.css">
-  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
-  <script>document.documentElement.classList.remove('nojs');</script>
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
-      <span class="topbar__right"><span class="topbar__links">
-          <a href="/brine-calculator/">Brine</a>
-          <a href="/dry-brine-calculator/">Dry brine</a>
-          <a href="/curing-salt-calculator/">Curing salt</a>
-      </span></span>
+  <header class="sc-top">
+    <div class="ms-container sc-top__in">
+      <a class="sc-brand" href="/"><span class="sc-brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="sc-brand__name">SaltCure</span><span class="sc-brand__tag">/ calculators</span></a>
+      <nav class="sc-nav" aria-label="Menu">
+        <details class="sc-menu"><summary class="sc-nav__l">Calculators <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="sc-menu__pop"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a><hr><a href="/bacon-cure-calculator/">Bacon cure calculator</a><a href="/pink-salt-calculator/">Pink curing salt calculator</a><a href="/dry-cure-calculator/">Dry cure calculator</a><a href="/cure-1-per-kg/">Cure #1 per kg and per pound</a></div></details>
+        <a class="sc-nav__l sc-hide-s" href="/learn/">Learn</a><a class="sc-nav__l sc-nav__cures" href="/my-cures/" aria-label="My cures"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span class="sc-hide-s">My cures</span><span class="sc-count" data-cures-count hidden></span></a><a class="sc-nav__l sc-hide-s" href="https://mordansoft.com/saltcure/">The app</a><select class="lang-select" aria-label="Language" onchange="location.href=this.value"><option value="/" selected>English</option><option value="/uk/">Українська</option></select>
+      </nav>
     </div>
-  </div>
+  </header>
 
   <main>
-    <section class="section" style="padding-top:0">
+    <section class="sc-hero">
       <div class="ms-container">
-        <p style="color:var(--text-secondary)">For a single job: <a href="/bacon-cure-calculator/">Bacon cure calculator</a> · <a href="/pink-salt-calculator/">Pink curing salt calculator</a> · <a href="/dry-cure-calculator/">Dry cure calculator</a> · <a href="/cure-1-per-kg/">How much Cure #1 per kg and per pound</a></p>
+        <span class="sc-eb">// Free · no account · every safety figure sourced</span>
+        <h1>Work out the salt. Then go and cook.</h1>
+        <p class="sc-hero__lead">Grams for your piece of meat, the percentage stated against what it is measured on, and every safety number tied to the rule it came from.</p>
+        <div class="sc-strip" id="sc-strip" hidden></div>
+        <p class="sc-ask">What are you making?</p>
+        <div class="sc-tiles">
+          <a class="sc-card sc-tile" href="/brine-calculator/">
+            <span class="sc-tile__top"><span class="sc-eb">Wet</span><span class="sc-when">Cooked within 2 days</span></span>
+            <svg class="sc-ico" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>
+            <h2>Brine</h2>
+            <p>Meat in salted water. Turkey, chicken, pork, brisket, salmon. Salt, sugar and how long, from the thickness of the piece.</p>
+            <span class="sc-tile__go">Open calculator <svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="sc-card sc-tile" href="/dry-brine-calculator/">
+            <span class="sc-tile__top"><span class="sc-eb">Dry</span><span class="sc-when">Cooked within 2 days</span></span>
+            <svg class="sc-ico" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="1.2"/><circle cx="13" cy="5" r="1.2"/><circle cx="17" cy="10" r="1.2"/><circle cx="10" cy="11" r="1.2"/><path d="M3 16h18v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <h2>Dry brine</h2>
+            <p>No water, no bucket, better skin. Salt as a share of the meat’s own weight.</p>
+            <span class="sc-tile__go">Open calculator <svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="sc-card sc-tile sc-tile--accent" href="/curing-salt-calculator/">
+            <span class="sc-tile__top"><span class="sc-eb">Nitrite</span><span class="sc-when">Cold smoking, drying, over 2 days</span></span>
+            <svg class="sc-ico" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h2>Curing salt</h2>
+            <p>Cure #1 and #2, nitrite in ppm, limits per cut from 9 CFR, and a hard stop when a dose goes over.</p>
+            <span class="sc-tile__go">Open calculator <svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="sc-sec">
       <div class="ms-container">
-        <div class="section__head">
-          <h1 class="section__title">Work out the salt. Then go and cook.</h1>
-          <p class="detail__blurb">Three calculators for salting meat at home. They give grams, they say what the percentage is a percentage <em>of</em>, and every safety figure names the paragraph it came from.</p>
+        <div class="sc-sec__head"><h2>Popular jobs</h2><p>Each one opens the calculator already set up.</p></div>
+        <div class="sc-jobs">
+          <a class="sc-card sc-job" href="/bacon-cure-calculator/"><span><b>Bacon cure calculator</b><small>Dry cure or brine, Cure #1</small></span><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="sc-card sc-job" href="/pink-salt-calculator/"><span><b>Pink curing salt calculator</b><small>How much for your meat</small></span><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="sc-card sc-job" href="/dry-cure-calculator/"><span><b>Dry cure calculator</b><small>Cure, salt and sugar by weight</small></span><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="sc-card sc-job" href="/cure-1-per-kg/"><span><b>Cure #1 per kg and per pound</b><small>And per pound, as a table</small></span><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
+      </div>
+    </section>
 
-        <div class="prose">
-        <p>Search for how much salt goes in a turkey brine and the first page of results will
-        tell you 1%, 3% and 8%. None of them is lying. They are measuring against different
-        things — one against the water, one against the meat, one against both — and almost none
-        of them says which.</p>
-        <p>So every page here states its basis next to the field, in words. And it keeps apart
-        the two kinds of number that get mixed up everywhere else:</p>
-        <ul>
-          <li><strong>How salty</strong> is a matter of taste. No authority regulates it, which
-          is exactly why everyone's figure differs and everyone is right.</li>
-          <li><strong>How cold, how long, and when plain salt stops being enough</strong> is not
-          a matter of taste. Those have published sources, and we name them.</li>
-        </ul>
+    <section class="sc-sec--band">
+      <div class="ms-container">
+        <span class="sc-eb">// Which calculator</span>
+        <h2 style="font-size: var(--text-h2); letter-spacing: -0.02em; margin: var(--space-2) 0 var(--space-3)">Where plain salt stops</h2>
+        <p style="color: var(--text-secondary); max-width: 64ch; margin: 0">How salty is a matter of taste. How cold, how long, and when plain salt stops being enough is not — those have published sources, and we name them.</p>
+        <div class="sc-split">
+          <div class="sc-card">
+            <span class="sc-eb">Plain salt is enough</span>
+            <p class="sc-split__big">You salt the meat and cook it within two days, and it stays cold throughout.</p>
+            <div class="sc-pills"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a></div>
+          </div>
+          <div class="sc-split__arrow" aria-hidden="true"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+          <div class="sc-card">
+            <span class="sc-eb" style="color: var(--accent-text)">You need curing salt</span>
+            <ul><li>Cold smoking</li><li>Air-drying a whole muscle for weeks</li><li>Fermenting a sausage</li><li>Any cure longer than two days</li></ul>
+            <div><a class="ms-btn ms-btn--primary" href="/curing-salt-calculator/">Curing salt calculator</a></div>
+          </div>
         </div>
+        <p class="sc-fine">We would rather say “we do not give a number for this” than guess. Cold-smoked fish is one such case, and it is marked as one on the page where it comes up.</p>
+      </div>
+    </section>
 
-        <div class="cells" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: var(--space-8)">
-          <a class="cell" href="/brine-calculator/" style="text-decoration:none">
-            <span class="eyebrow">Wet</span>
-            <b style="font-size:18px">Brine calculator</b>
-            <span style="font-size:var(--text-sm); color:var(--text-secondary); line-height:var(--leading-normal)">
-              Meat in salted water. Turkey, chicken, pork, brisket, salmon. Salt, sugar and how
-              long, from the thickness of the piece.</span>
-          </a>
-          <a class="cell" href="/dry-brine-calculator/" style="text-decoration:none">
-            <span class="eyebrow">Dry</span>
-            <b style="font-size:18px">Dry brine calculator</b>
-            <span style="font-size:var(--text-sm); color:var(--text-secondary); line-height:var(--leading-normal)">
-              No water, no bucket, better skin. Salt as a share of the meat's own weight.</span>
-          </a>
-          <a class="cell" href="/curing-salt-calculator/" style="text-decoration:none">
-            <span class="eyebrow">Nitrite</span>
-            <b style="font-size:18px">Curing salt calculator</b>
-            <span style="font-size:var(--text-sm); color:var(--text-secondary); line-height:var(--leading-normal)">
-              Cure #1 and #2, nitrite in ppm, limits per cut from 9 CFR, and a hard stop when a
-              dose goes over.</span>
-          </a>
+    <section class="sc-sec">
+      <div class="ms-container">
+        <div class="sc-sec__head"><div><span class="sc-eb">// Learn</span><h2>Curing salt and nitrite, plainly</h2></div><a href="/learn/">All questions</a></div>
+        <div class="sc-learn">
+          <a class="sc-card" href="/learn/what-is-curing-salt/"><span class="sc-eb">01</span><b>What is curing salt?</b><span>Curing salt is ordinary salt with a small, exactly known share of sodium nitrite mixed in. The salt is there to dilute the nitrite so that a home cook can weigh it.</span></a>
+          <a class="sc-card" href="/learn/what-nitrite-does-in-meat/"><span class="sc-eb">02</span><b>What does nitrite do in meat?</b><span>Three jobs: it holds back the bacteria that cause botulism, it gives cured meat its pink colour, and it gives it the “cured” flavour that keeps instead of turning rancid.</span></a>
+          <a class="sc-card" href="/learn/is-nitrite-dangerous/"><span class="sc-eb">03</span><b>Is curing salt dangerous? Which doses are toxic?</b><span>Yes, in two different ways. Straight from the pack it is a poison in amounts that fit in a spoon. In the meat, at the right dose, the concern is long-term, not acute.</span></a>
+          <a class="sc-card" href="/learn/curing-rules-and-sources/"><span class="sc-eb">04</span><b>Which documents the calculators are built on</b><span>Every limit in SaltCure comes from a published US federal rule for meat plants. Those rules do not regulate home kitchens — we use them because they are the clearest public numbers there are, and the alternative is a forum post.</span></a>
         </div>
-
-        <div class="prose">
-        <h2>Where plain salt stops</h2>
-        <p>Salt the meat and cook it — within two days, cold throughout — and ordinary salt is
-        all you need. Cold smoking, air-drying a whole muscle for weeks, fermenting a sausage,
-        or any cure longer than two days is a different process with a different risk, and that
-        is what the <a href="/curing-salt-calculator/">curing calculator</a> is for.</p>
-        <p>We would rather say “we do not give a number for this” than guess. Cold-smoked fish
-        is one such case, and it is marked as one on the page where it comes up.</p>
-
-        <h2>About</h2>
-        <p>Built by the people behind <a href="https://mordansoft.com/saltcure/">SaltCure</a>.
-        The curing numbers come from 9 CFR part 424; handling and temperature from USDA guidance
-        and the FDA Food Code. Those rules are written for inspected plants and do not govern a
-        home kitchen — we use them because in a calculation that can make somebody ill, a
-        published number beats a forum post. Nothing here certifies anything you make.</p>
-        </div>
-
-        <div class="ms-card ms-card--pad calc-cta">
-          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">A brine finishes overnight. A cure does not.</h2>
-          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
-            <b>SaltCure</b> runs the same arithmetic on your phone and keeps the log for the batches
-            that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that
-            product. Free, offline, no account.</p>
-          <div class="store-badges">
+      </div>
+    </section>
+    <section class="sc-sec" style="padding-top: 0">
+      <div class="ms-container">
+        <div class="sc-appband">
+          <span class="sc-eb">// SaltCure for Android and iPhone</span>
+          <h2>A brine finishes overnight. A cure does not.</h2>
+          <p>The same arithmetic on your phone, plus the log for batches that take weeks: reminders to turn it, weigh-ins, weight loss against the band for that product.</p>
+          <p class="mono" style="font-size: 13px">Free · offline · no account</p>
+          <span class="store-badges">
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
-          </div>
+          </span>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
+  <footer class="sc-foot">
+    <div class="ms-container">
+      <div class="sc-foot__grid">
+        <div class="sc-foot__col"><span class="sc-eb">Calculators</span><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/">Curing salt</a><a href="/bacon-cure-calculator/">Bacon cure calculator</a><a href="/pink-salt-calculator/">Pink curing salt calculator</a><a href="/dry-cure-calculator/">Dry cure calculator</a><a href="/cure-1-per-kg/">Cure #1 per kg and per pound</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Learn</span><a href="/learn/">All questions</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Sources</span><a href="https://www.law.cornell.edu/cfr/text/9/part-424">9 CFR part 424</a><a href="https://www.fsis.usda.gov/">USDA FSIS</a><a href="https://www.fda.gov/food/retail-food-protection/fda-food-code">FDA Food Code</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">SaltCure app</span><span class="store-badges"><a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a><a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a></span><a href="https://mordansoft.com/saltcure/support.html">Support</a><a href="https://mordansoft.com/legal/saltcure/privacy.html">Privacy</a><a href="https://mordansoft.com/legal/saltcure/terms.html">Terms</a></div>
       </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      <div class="sc-foot__base">
+        <p>The curing numbers come from 9 CFR part 424; handling and temperature from USDA guidance and the FDA Food Code. Those rules are written for inspected plants and do not govern a home kitchen — we use them because in a calculation that can make somebody ill, a published number beats a forum post. Nothing here certifies anything you make.</p>
+        <span>© 2026 MordanSoft</span>
       </div>
     </div>
   </footer>
-  <script>if (window.lucide) lucide.createIcons();</script>
-
+  <script type="application/json" id="shell-i18n">{"lang":"en","locale":"en-US","cures":{"save":"Save to My cures","saved":"Saved to My cures","open":"Open My cures","print":"Print","local":"Saved in this browser only. No account.","cantSave":"Nothing to save until the dose is within the limit.","title":"My cures — Saved Curing Calculations | SaltCure","desc":"The curing calculations you saved on this device: the grams to weigh, the nitrite in ppm, and the date you saved them.","h1":"My cures","lead":"The calculations you saved, kept in this browser only. Clear the browser data and they are gone — the SaltCure app keeps them for good.","empty":"Nothing saved yet. Work out a cure in the curing calculator and press “Save to My cures”.","emptyCta":"Open the curing calculator","savedOn":"Saved {date}","meat":"Meat","water":"Water","curing":"Curing salt","salt":"Salt","sugar":"Sugar","nitrite":"Nitrite","warned":"The calculator showed a warning for this dose","remove":"Delete","removeAsk":"Delete this calculation?","recalc":"Open the calculator","stripTitle":"Saved on this device","stripAll":"All saved"},"links":{"cures":"/my-cures/","calc":"/curing-salt-calculator/"}}</script>
+  <script type="module" src="/assets/js/cures.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->

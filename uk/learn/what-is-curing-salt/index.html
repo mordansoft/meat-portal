@@ -26,75 +26,80 @@
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
   <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"uk","url":"https://meat.mordansoft.com/uk/learn/what-is-curing-salt/","mainEntity":[{"@type":"Question","name":"Що в ній?","acceptedAnswer":{"@type":"Answer","text":"Нітрит натрію (харчова добавка E250) плюс кухонна сіль. Чистий нітрит натрію надто сильний, щоб зважувати його вдома — на кілограм м'яса потрібно близько 0,16 г, — тому його продають уже розбавленим сіллю."}},{"@type":"Question","name":"Cure #1, Cure #2, Pökelsalz — у чому різниця?","acceptedAnswer":{"@type":"Answer","text":"Cure #1 (Prague Powder #1, Insta Cure #1, «рожева сіль для засолу»): 6,25% нітриту натрію, 93,75% солі. Для всього, що варять, гаряче коптять або солять менше ніж приблизно місяць: бекон, шинка, ковбаски, джерки.Cure #2 (Prague Powder #2): 6,25% нітриту натрію плюс 4% нітрату натрію. Для довго в'ялених виробів — салямі, копи. Нітрат тижнями поступово перетворюється на нітрит.Європейська нітритна сіль (Pökelsalz, Nitritpökelsalz, peklosól): зазвичай 0,4–0,6% нітриту. Приблизно вдесятеро слабша за Cure #1."}},{"@type":"Question","name":"Чому тип так важливий?","acceptedAnswer":{"@type":"Answer","text":"Бо сила відрізняється вдесятеро. Рецепт під Cure #1, зроблений на європейській нітритній солі, отримає десяту частину потрібного нітриту. Рецепт під європейську сіль, зроблений на Cure #1, — удесятеро більше. Завжди дивіться відсоток на своїй пачці — саме тому калькулятори SaltCure спершу питають, яка у вас сіль, і лише потім показують числа."}},{"@type":"Question","name":"Чому вона рожева?","acceptedAnswer":{"@type":"Answer","text":"Барвник додають, щоб ніхто не сплутав її з кухонною сіллю. До рожевого кольору солоного м'яса він не має стосунку. І це не гімалайська рожева сіль — та є звичайною сіллю без нітриту і замінити нітритну не може."}},{"@type":"Question","name":"Як її зберігати?","acceptedAnswer":{"@type":"Answer","text":"В окремій підписаній ємності, подалі від кухонної солі й від дітей. Навіть м'ясокомбінати в США зобов'язані тримати нітритні суміші під наглядом відповідальної особи та з чітким позначенням вмісту нітриту (9 CFR 424.21(c)). Зважуйте на вагах із точністю 0,1 г, ніколи не ложкою."}}]}</script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
-      <span class="topbar__right"><span class="topbar__links">
-          <a href="/uk/brine-calculator/">Розсіл</a>
-          <a href="/uk/dry-brine-calculator/">Сухий розсіл</a>
-          <a href="/uk/curing-salt-calculator/">Нітритна сіль</a>
-      </span><select class="lang-select" aria-label="Мова" onchange="location.href=this.value"><option value="/learn/what-is-curing-salt/">English</option><option value="/uk/learn/what-is-curing-salt/" selected>Українська</option></select></span>
+  <header class="sc-top">
+    <div class="ms-container sc-top__in">
+      <a class="sc-brand" href="/uk/"><span class="sc-brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="sc-brand__name">SaltCure</span><span class="sc-brand__tag">/ калькулятори</span></a>
+      <nav class="sc-nav" aria-label="Меню">
+        <details class="sc-menu"><summary class="sc-nav__l">Калькулятори <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="sc-menu__pop"><a href="/uk/brine-calculator/">Розсіл</a><a href="/uk/dry-brine-calculator/">Сухий розсіл</a><a href="/uk/curing-salt-calculator/">Нітритна сіль</a><hr><a href="/uk/bacon-cure-calculator/">Калькулятор посолу бекону</a><a href="/uk/pink-salt-calculator/">Калькулятор рожевої солі</a><a href="/uk/dry-cure-calculator/">Калькулятор сухого посолу</a><a href="/uk/cure-1-per-kg/">Cure #1 на кілограм і на фунт</a></div></details>
+        <a class="sc-nav__l sc-hide-s" href="/uk/learn/" aria-current="page">Знання</a><a class="sc-nav__l sc-nav__cures" href="/uk/my-cures/" aria-label="Мої посоли"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span class="sc-hide-s">Мої посоли</span><span class="sc-count" data-cures-count hidden></span></a><a class="sc-nav__l sc-hide-s" href="https://mordansoft.com/uk/saltcure/">Застосунок</a><select class="lang-select" aria-label="Мова" onchange="location.href=this.value"><option value="/learn/what-is-curing-salt/">English</option><option value="/uk/learn/what-is-curing-salt/" selected>Українська</option></select>
+      </nav>
     </div>
-  </div>
+  </header>
 
   <main>
     <section class="section">
       <div class="ms-container">
         <div class="section__head">
-          <p class="eyebrow"><a href="/uk/learn/">← Усі питання</a></p>
+          <nav class="sc-crumbs" aria-label="Breadcrumb"><a href="/uk/learn/">Усі питання</a><span aria-hidden="true">/</span><span>01</span></nav>
           <h1 class="section__title">Що таке нітритна сіль?</h1>
           <p class="detail__blurb">Нітритна сіль — це звичайна сіль, у яку підмішано невелику, точно відому частку нітриту натрію. Сіль тут для того, щоб розбавити нітрит і його можна було зважити вдома.</p>
         </div>
+        <div class="sc-article">
+        <nav class="sc-toc" aria-label="Усі питання"><a href="#q1">Що в ній?</a><a href="#q2">Cure #1, Cure #2, Pökelsalz — у чому різниця?</a><a href="#q3">Чому тип так важливий?</a><a href="#q4">Чому вона рожева?</a><a href="#q5">Як її зберігати?</a><a href="#sources">Джерела</a></nav>
         <div class="prose">
-        <h2>Що в ній?</h2>
+        <h2 id="q1">Що в ній?</h2>
         <p>Нітрит натрію (харчова добавка E250) плюс кухонна сіль. Чистий нітрит натрію надто сильний, щоб зважувати його вдома — на кілограм м'яса потрібно близько 0,16 г, — тому його продають уже розбавленим сіллю.</p>
-        <h2>Cure #1, Cure #2, Pökelsalz — у чому різниця?</h2>
+        <h2 id="q2">Cure #1, Cure #2, Pökelsalz — у чому різниця?</h2>
         <ul><li><strong>Cure #1</strong> (Prague Powder #1, Insta Cure #1, «рожева сіль для засолу»): 6,25% нітриту натрію, 93,75% солі. Для всього, що варять, гаряче коптять або солять менше ніж приблизно місяць: бекон, шинка, ковбаски, джерки.</li><li><strong>Cure #2</strong> (Prague Powder #2): 6,25% нітриту натрію плюс 4% нітрату натрію. Для довго в'ялених виробів — салямі, копи. Нітрат тижнями поступово перетворюється на нітрит.</li><li><strong>Європейська нітритна сіль</strong> (Pökelsalz, Nitritpökelsalz, peklosól): зазвичай 0,4–0,6% нітриту. Приблизно вдесятеро слабша за Cure #1.</li></ul>
-        <h2>Чому тип так важливий?</h2>
+        <h2 id="q3">Чому тип так важливий?</h2>
         <p>Бо сила відрізняється вдесятеро. Рецепт під Cure #1, зроблений на європейській нітритній солі, отримає десяту частину потрібного нітриту. Рецепт під європейську сіль, зроблений на Cure #1, — удесятеро більше. Завжди дивіться відсоток на своїй пачці — саме тому калькулятори SaltCure спершу питають, яка у вас сіль, і лише потім показують числа.</p>
-        <h2>Чому вона рожева?</h2>
+        <h2 id="q4">Чому вона рожева?</h2>
         <p>Барвник додають, щоб ніхто не сплутав її з кухонною сіллю. До рожевого кольору солоного м'яса він не має стосунку. І це не гімалайська рожева сіль — та є звичайною сіллю без нітриту і замінити нітритну не може.</p>
-        <h2>Як її зберігати?</h2>
+        <h2 id="q5">Як її зберігати?</h2>
         <p>В окремій підписаній ємності, подалі від кухонної солі й від дітей. Навіть м'ясокомбінати в США зобов'язані тримати нітритні суміші під наглядом відповідальної особи та з чітким позначенням вмісту нітриту (9 CFR 424.21(c)). Зважуйте на вагах із точністю 0,1 г, ніколи не ложкою.</p>
-        <h2>Джерела</h2>
+        <a class="sc-card sc-trycalc" href="/uk/curing-salt-calculator/"><span><span class="sc-eb">Калькулятори</span><b>Калькулятор нітритної солі</b></span><svg class="sc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <h2 id="sources">Джерела</h2>
         <ul>
           <li>9 CFR 424.21(c) — дозволені засоби для засолу і вимога до зберігання нітритних сумішей. <a href="https://www.law.cornell.edu/cfr/text/9/424.21">law.cornell.edu</a></li>
           <li>Склад Cure #1 і Cure #2 — галузевий стандарт США (те, що в пачці), а не норма права.</li>
         </ul>
         <p class="calc-disclaimer">Ця сторінка пояснює опубліковані правила та дослідження. Це не медична порада, і вона нічого з того, що ви готуєте, не засвідчує. Якщо хтось міг проковтнути нітритну сіль або нітрит — одразу телефонуйте 103 або 112.</p>
-        <p><a href="/uk/learn/what-nitrite-does-in-meat/">Що нітрит робить у м'ясі?</a> · <a href="/uk/learn/is-nitrite-dangerous/">Чи небезпечна нітритна сіль? Які дози токсичні?</a> · <a href="/uk/learn/curing-rules-and-sources/">На яких документах побудовані калькулятори</a></p>
+        <a class="sc-card sc-next" href="/uk/learn/what-nitrite-does-in-meat/"><span>02 · Що нітрит робить у м'ясі?</span><svg class="sc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
         </div>
 
-        <div class="ms-card ms-card--pad calc-cta">
-          <div class="store-badges">
+        <div class="sc-appstrip">
+          <span class="sc-appstrip__ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></span>
+          <span class="sc-appstrip__t"><b>Посол на тижні?</b><span>SaltCure робить ті самі розрахунки в телефоні й веде журнал: нагадує перевернути, записує зважування, порівнює втрату ваги з нормою для цього продукту. Безкоштовно, без інтернету, без акаунта.</span></span>
+          <span class="store-badges">
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
             <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
-          </div>
+          </span>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
+  <footer class="sc-foot">
+    <div class="ms-container">
+      <div class="sc-foot__grid">
+        <div class="sc-foot__col"><span class="sc-eb">Калькулятори</span><a href="/uk/brine-calculator/">Розсіл</a><a href="/uk/dry-brine-calculator/">Сухий розсіл</a><a href="/uk/curing-salt-calculator/">Нітритна сіль</a><a href="/uk/bacon-cure-calculator/">Калькулятор посолу бекону</a><a href="/uk/pink-salt-calculator/">Калькулятор рожевої солі</a><a href="/uk/dry-cure-calculator/">Калькулятор сухого посолу</a><a href="/uk/cure-1-per-kg/">Cure #1 на кілограм і на фунт</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Знання</span><a href="/uk/learn/">Усі питання</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Джерела</span><a href="https://www.law.cornell.edu/cfr/text/9/part-424">9 CFR part 424</a><a href="https://www.fsis.usda.gov/">USDA FSIS</a><a href="https://www.fda.gov/food/retail-food-protection/fda-food-code">FDA Food Code</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Застосунок SaltCure</span><span class="store-badges"><a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a><a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a></span><a href="https://mordansoft.com/saltcure/support.html">Підтримка</a><a href="https://mordansoft.com/legal/saltcure/privacy.html">Конфіденційність</a><a href="https://mordansoft.com/legal/saltcure/terms.html">Умови</a></div>
       </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      <div class="sc-foot__base">
+        <p>Числа для посолу з нітритом узяті з 9 CFR part 424, поводження з м'ясом і температури — з настанов USDA та FDA Food Code. Ці правила написані для промислових цехів під наглядом і не регулюють домашню кухню — ми спираємося на них, бо в розрахунку, від якого людина може захворіти, опубліковане число краще за пост на форумі. Ніщо тут не є сертифікацією того, що ви приготуєте.</p>
+        <span>© 2026 MordanSoft</span>
       </div>
     </div>
   </footer>
+  <script type="application/json" id="shell-i18n">{"lang":"uk","locale":"uk-UA","cures":{"save":"Зберегти в «Мої посоли»","saved":"Збережено в «Мої посоли»","open":"Відкрити «Мої посоли»","print":"Друкувати","local":"Зберігається лише в цьому браузері. Без акаунта.","cantSave":"Зберегти можна, лише коли доза в межах ліміту.","title":"Мої посоли — збережені розрахунки | SaltCure","desc":"Розрахунки посолу, які ви зберегли на цьому пристрої: скільки грамів зважити, нітрит у ppm і дата збереження.","h1":"Мої посоли","lead":"Розрахунки, які ви зберегли, — лише в цьому браузері. Очистите дані браузера — і їх не стане; застосунок SaltCure зберігає їх назавжди.","empty":"Поки нічого не збережено. Порахуйте посол у калькуляторі нітритної солі й натисніть «Зберегти в „Мої посоли“».","emptyCta":"Відкрити калькулятор нітритної солі","savedOn":"Збережено {date}","meat":"М'ясо","water":"Вода","curing":"Нітритна сіль","salt":"Сіль","sugar":"Цукор","nitrite":"Нітрит","warned":"Для цієї дози калькулятор показував попередження","remove":"Видалити","removeAsk":"Видалити цей розрахунок?","recalc":"Відкрити калькулятор","stripTitle":"Збережено на цьому пристрої","stripAll":"Усі збережені"},"links":{"cures":"/uk/my-cures/","calc":"/uk/curing-salt-calculator/"}}</script>
+  <script type="module" src="/assets/js/cures.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->

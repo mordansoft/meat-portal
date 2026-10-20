@@ -44,6 +44,7 @@
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -293,27 +294,20 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/">
-        <span class="brand__mark">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
-            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
-            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
-            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
-          </svg>
-        </span>
-        <span class="brand__name">meat<b>.</b></span>
-      </a>
-      <span class="topbar__right"><span class="xnav"><a href="/sr/brine-calculator/">Саламура</a><a href="/sr/dry-brine-calculator/">Сува саламура</a><a href="/sr/curing-salt-calculator/" aria-current="page">Нитритна со</a></span><select class="lang-select" aria-label="Језик" onchange="location.href=this.value"><option value="/curing-salt-calculator/">English</option><option value="/uk/curing-salt-calculator/">Українська</option><option value="/ru/curing-salt-calculator/">Русский</option><option value="/pl/curing-salt-calculator/">Polski</option><option value="/cs/curing-salt-calculator/">Čeština</option><option value="/sk/curing-salt-calculator/">Slovenčina</option><option value="/be/curing-salt-calculator/">Беларуская</option><option value="/bg/curing-salt-calculator/">Български</option><option value="/hr/curing-salt-calculator/">Hrvatski</option><option value="/sr/curing-salt-calculator/" selected>Српски</option><option value="/sl/curing-salt-calculator/">Slovenščina</option><option value="/es/curing-salt-calculator/">Español</option><option value="/it/curing-salt-calculator/">Italiano</option><option value="/kk/curing-salt-calculator/">Қазақша</option><option value="/fr/curing-salt-calculator/">Français</option><option value="/pt-br/curing-salt-calculator/">Português (Brasil)</option><option value="/tr/curing-salt-calculator/">Türkçe</option><option value="/de/curing-salt-calculator/">Deutsch</option><option value="/id/curing-salt-calculator/">Bahasa Indonesia</option></select></span>
+  <header class="sc-top">
+    <div class="ms-container sc-top__in">
+      <a class="sc-brand" href="/"><span class="sc-brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="sc-brand__name">SaltCure</span></a>
+      <nav class="sc-nav" aria-label="Језик">
+        <details class="sc-menu"><summary class="sc-nav__l">Нитритна со <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="sc-menu__pop"><a href="/sr/brine-calculator/">Саламура</a><a href="/sr/dry-brine-calculator/">Сува саламура</a><a href="/sr/curing-salt-calculator/" aria-current="page">Нитритна со</a><hr><a href="/sr/bacon-cure-calculator/">Калкулатор за бекон</a><a href="/sr/pink-salt-calculator/">Калкулатор розе соли</a><a href="/sr/dry-cure-calculator/">Калкулатор за суво сољење</a><a href="/sr/cure-1-per-kg/">Cure #1 по килограму и по фунти</a></div></details>
+        <select class="lang-select" aria-label="Језик" onchange="location.href=this.value"><option value="/curing-salt-calculator/">English</option><option value="/uk/curing-salt-calculator/">Українська</option><option value="/ru/curing-salt-calculator/">Русский</option><option value="/pl/curing-salt-calculator/">Polski</option><option value="/cs/curing-salt-calculator/">Čeština</option><option value="/sk/curing-salt-calculator/">Slovenčina</option><option value="/be/curing-salt-calculator/">Беларуская</option><option value="/bg/curing-salt-calculator/">Български</option><option value="/hr/curing-salt-calculator/">Hrvatski</option><option value="/sr/curing-salt-calculator/" selected>Српски</option><option value="/sl/curing-salt-calculator/">Slovenščina</option><option value="/es/curing-salt-calculator/">Español</option><option value="/it/curing-salt-calculator/">Italiano</option><option value="/kk/curing-salt-calculator/">Қазақша</option><option value="/fr/curing-salt-calculator/">Français</option><option value="/pt-br/curing-salt-calculator/">Português (Brasil)</option><option value="/tr/curing-salt-calculator/">Türkçe</option><option value="/de/curing-salt-calculator/">Deutsch</option><option value="/id/curing-salt-calculator/">Bahasa Indonesia</option></select>
+      </nav>
     </div>
-  </div>
+  </header>
 
   <main>
     <section class="section">
       <div class="ms-container">
-        <a class="ms-btn ms-btn--link detail__back" href="https://mordansoft.com/saltcure/"><i data-lucide="arrow-left"></i> SaltCure</a>
+        <nav class="sc-crumbs" aria-label="Breadcrumb"><a href="/">SaltCure</a><span aria-hidden="true">/</span><span>Калкулатор нитритне соли</span></nav>
         <div class="section__head">
           <h1 class="section__title">Калкулатор за саламурење</h1>
           <p class="detail__blurb">Колико нитритне соли измерити за бекон, џерки, панчету или саламу. Суво сољење или саламура, доза нитрита проверена према објављеним лимитима USDA/FSIS — исти прорачун као у апликацији SaltCure.</p>
@@ -322,48 +316,31 @@
         <div class="calc-wrap">
           <div class="calc-col" id="calc-app"></div>
           <div class="calc-out">
-            <div class="cc"><div class="cc__h"><span class="eyebrow" id="t-results"></span></div><div id="out" aria-live="polite" style="margin-top: var(--space-3)"></div></div>
+            <div class="cc"><div class="cc__h"><span class="eyebrow" id="t-results"></span></div><div id="out" aria-live="polite" style="margin-top: var(--space-3)"></div><div class="sc-save" id="sc-save"></div></div>
             <p class="calc-disclaimer" id="disclaimer" style="margin-top: var(--space-4)"></p>
             <p class="calc-hint"><a href="https://mordansoft.com/saltcure/#faq" id="faq-link"></a></p>
           </div>
         </div>
         <article class="seo-prose">
       <h2>Сродне странице</h2>
-      <p><a href="/sr/bacon-cure-calculator/">Калкулатор за бекон</a> · <a href="/sr/pink-salt-calculator/">Калкулатор розе соли</a> · <a href="/sr/dry-cure-calculator/">Калкулатор за суво сољење</a> · <a href="/sr/cure-1-per-kg/">Cure #1 по килограму и по фунти</a></p>
+      <div class="sc-jobs"><a class="sc-card sc-job" href="/sr/bacon-cure-calculator/"><b>Калкулатор за бекон</b><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sc-card sc-job" href="/sr/pink-salt-calculator/"><b>Калкулатор розе соли</b><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sc-card sc-job" href="/sr/dry-cure-calculator/"><b>Калкулатор за суво сољење</b><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="sc-card sc-job" href="/sr/cure-1-per-kg/"><b>Cure #1 по килограму и по фунти</b><svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </article>
-        <div class="ms-card ms-card--pad calc-cta">
-          <h2 class="feature__title" id="cta-title"></h2>
-          <p class="feature__text" id="cta-text"></p>
-          <div class="store-badges">
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
-          </div>
-        </div>
+        
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
-            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
-            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
-            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
-          </svg>
-        </span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
+  <footer class="sc-foot">
+    <div class="ms-container">
+      <div class="sc-foot__grid">
+        <div class="sc-foot__col"><a href="/sr/brine-calculator/">Саламура</a><a href="/sr/dry-brine-calculator/">Сува саламура</a><a href="/sr/curing-salt-calculator/">Нитритна со</a><a href="/sr/bacon-cure-calculator/">Калкулатор за бекон</a><a href="/sr/pink-salt-calculator/">Калкулатор розе соли</a><a href="/sr/dry-cure-calculator/">Калкулатор за суво сољење</a><a href="/sr/cure-1-per-kg/">Cure #1 по килограму и по фунти</a></div>
+        
+        <div class="sc-foot__col"><a href="https://www.law.cornell.edu/cfr/text/9/part-424">9 CFR part 424</a><a href="https://www.fsis.usda.gov/">USDA FSIS</a><a href="https://www.fda.gov/food/retail-food-protection/fda-food-code">FDA Food Code</a></div>
+        <div class="sc-foot__col"><span class="store-badges"><a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a><a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a></span><a href="https://mordansoft.com/saltcure/support.html">Support</a><a href="https://mordansoft.com/legal/saltcure/privacy.html">Privacy</a><a href="https://mordansoft.com/legal/saltcure/terms.html">Terms</a></div>
       </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      <div class="sc-foot__base">
+        
+        <span>© 2026 MordanSoft</span>
       </div>
     </div>
   </footer>
@@ -381,6 +358,7 @@
     }());
   </script>
 
+  
   <script type="module" src="/curing-salt-calculator/app.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>

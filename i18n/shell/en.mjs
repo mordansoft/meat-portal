@@ -38,6 +38,5 @@ export default {
     recalc: 'Open the calculator',
     stripTitle: 'Saved on this device',
     stripAll: 'All saved',
-    printTip: 'Weigh the curing salt on a 0.1 g scale — never by spoon.',
   },
 };

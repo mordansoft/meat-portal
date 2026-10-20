@@ -6,7 +6,7 @@ import { DS, MARK } from './gen-brine.mjs';
 
 const BASE = 'https://meat.mordansoft.com';
 
-export async function buildLearn({ ROOT, LIVE, LOC, brineLangs }) {
+export async function buildLearn({ ROOT, LIVE, LOC, brineLangs, SHELL }) {
   const langs = LIVE.filter((c) => existsSync(`${ROOT}i18n/learn/${c}.mjs`));
   const K = Object.fromEntries(await Promise.all(langs.map(async (c) => [c, (await import(`../i18n/learn/${c}.mjs`)).default])));
   const shape = (d) => d.articles.map((a) => `${a.slug}:${a.qa.length}:${a.sources.length}`).join(',');
@@ -56,51 +56,23 @@ ${alternates}
   <link rel="stylesheet" href="${DS}/tokens/base.css">
   <link rel="stylesheet" href="${DS}/components/core/core.css">
   <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/"><span class="brand__mark">${MARK}</span><span class="brand__name">meat<b>.</b></span></a>
-      <span class="topbar__right"><span class="topbar__links">
-          <a href="${nav('brine-calculator')}">${L.site.nav.brine}</a>
-          <a href="${nav('dry-brine-calculator')}">${L.site.nav.dryBrine}</a>
-          <a href="${prefix(c)}/curing-salt-calculator/">${L.site.nav.curing}</a>
-      </span>${langMenu}</span>
-    </div>
-  </div>
+  ${SHELL.topbar(c, { active: 'learn', langMenu })}
 
   <main>
     <section class="section">
       <div class="ms-container">
 ${body}
-        <div class="ms-card ms-card--pad calc-cta">
-          <div class="store-badges">
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
-          </div>
-        </div>
+        ${SHELL.appStrip(c)}
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true">${MARK}</span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
-      </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
-      </div>
-    </div>
-  </footer>
+  ${SHELL.footer(c)}
+  ${SHELL.browserData(c)}
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
 <!-- /web analytics -->
@@ -118,7 +90,7 @@ ${body}
 
   for (const c of langs) {
     const D = K[c], I = D.index;
-    const list = D.articles.map((a) => `          <li><a href="${pathOf(c, a.slug)}"><strong>${a.h1}</strong></a><br>${a.lead}</li>`).join('\n');
+    const list = D.articles.map((a, i) => `          <a class="sc-card" href="${pathOf(c, a.slug)}"><span class="sc-eb">0${i + 1}</span><b>${a.h1}</b><span>${a.lead}</span></a>`).join('\n');
     write(c, '', page(c, '', {
       title: I.title, desc: I.desc,
       jsonld: { '@context': 'https://schema.org', '@type': 'CollectionPage', name: I.h1, url: urlOf(c, ''), inLanguage: c },
@@ -126,35 +98,40 @@ ${body}
           <h1 class="section__title">${I.h1}</h1>
           <p class="detail__blurb">${I.lead}</p>
         </div>
-        <div class="prose">
-        <ul class="learn-list">
+        <div class="sc-learn">
 ${list}
-        </ul>
-        <p class="calc-disclaimer">${I.disclaimer}</p>
         </div>
+        <p class="calc-disclaimer" style="margin-top: var(--space-8); max-width: 72ch">${I.disclaimer}</p>
 `,
     }));
 
     for (const a of D.articles) {
-      const qa = a.qa.map((x) => `        <h2>${x.q}</h2>\n        ${localLinks(c, x.a)}`).join('\n');
-      const others = D.articles.filter((o) => o.slug !== a.slug).map((o) => `<a href="${pathOf(c, o.slug)}">${o.h1}</a>`).join(' · ');
+      const qa = a.qa.map((x, i) => `        <h2 id="q${i + 1}">${x.q}</h2>\n        ${localLinks(c, x.a)}`).join('\n');
+      const toc = a.qa.map((x, i) => `<a href="#q${i + 1}">${x.q}</a>`).join('') + `<a href="#sources">${I.sources}</a>`;
+      const ai = D.articles.indexOf(a), next = D.articles[(ai + 1) % D.articles.length];
+      const calc = LOC[c].pages['curing-salt-calculator'];
+      const ARROW = '<svg class="sc-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
       write(c, a.slug, page(c, a.slug, {
         title: a.title, desc: a.desc,
         jsonld: { '@context': 'https://schema.org', '@type': 'FAQPage', inLanguage: c, url: urlOf(c, a.slug),
           mainEntity: a.qa.map((x) => ({ '@type': 'Question', name: strip(x.q), acceptedAnswer: { '@type': 'Answer', text: strip(x.a) } })) },
         body: `        <div class="section__head">
-          <p class="eyebrow"><a href="${pathOf(c, '')}">← ${I.back}</a></p>
+          <nav class="sc-crumbs" aria-label="Breadcrumb"><a href="${pathOf(c, '')}">${I.back}</a><span aria-hidden="true">/</span><span>0${ai + 1}</span></nav>
           <h1 class="section__title">${a.h1}</h1>
           <p class="detail__blurb">${a.lead}</p>
         </div>
+        <div class="sc-article">
+        <nav class="sc-toc" aria-label="${I.back}">${toc}</nav>
         <div class="prose">
 ${qa}
-        <h2>${I.sources}</h2>
+        <a class="sc-card sc-trycalc" href="${prefix(c)}/curing-salt-calculator/"><span><span class="sc-eb">${SHELL.SH[c] ? SHELL.SH[c].nav.calculators : ''}</span><b>${calc.link}</b></span>${ARROW}</a>
+        <h2 id="sources">${I.sources}</h2>
         <ul>
 ${a.sources.map((s) => `          <li>${s}</li>`).join('\n')}
         </ul>
         <p class="calc-disclaimer">${I.disclaimer}</p>
-        <p>${others}</p>
+        <a class="sc-card sc-next" href="${pathOf(c, next.slug)}"><span>0${D.articles.indexOf(next) + 1} · ${next.h1}</span>${ARROW}</a>
+        </div>
         </div>
 `,
       }));

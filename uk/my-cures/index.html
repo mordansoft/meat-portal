@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
+  <title>Мої посоли — збережені розрахунки | SaltCure</title>
+  <meta name="description" content="Розрахунки посолу, які ви зберегли на цьому пристрої: скільки грамів зважити, нітрит у ppm і дата збереження.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://meat.mordansoft.com/uk/my-cures/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/my-cures/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/my-cures/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/my-cures/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Мої посоли — збережені розрахунки | SaltCure">
+  <meta property="og:description" content="Розрахунки посолу, які ви зберегли на цьому пристрої: скільки грамів зважити, нітрит у ppm і дата збереження.">
+  <meta property="og:url" content="https://meat.mordansoft.com/uk/my-cures/">
+  <meta property="og:locale" content="uk_UA">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="sc-top">
+    <div class="ms-container sc-top__in">
+      <a class="sc-brand" href="/uk/"><span class="sc-brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="sc-brand__name">SaltCure</span><span class="sc-brand__tag">/ калькулятори</span></a>
+      <nav class="sc-nav" aria-label="Меню">
+        <details class="sc-menu"><summary class="sc-nav__l">Калькулятори <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><div class="sc-menu__pop"><a href="/uk/brine-calculator/">Розсіл</a><a href="/uk/dry-brine-calculator/">Сухий розсіл</a><a href="/uk/curing-salt-calculator/">Нітритна сіль</a><hr><a href="/uk/bacon-cure-calculator/">Калькулятор посолу бекону</a><a href="/uk/pink-salt-calculator/">Калькулятор рожевої солі</a><a href="/uk/dry-cure-calculator/">Калькулятор сухого посолу</a><a href="/uk/cure-1-per-kg/">Cure #1 на кілограм і на фунт</a></div></details>
+        <a class="sc-nav__l sc-hide-s" href="/uk/learn/">Знання</a><a class="sc-nav__l sc-nav__cures" href="/uk/my-cures/" aria-current="page" aria-label="Мої посоли"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg><span class="sc-hide-s">Мої посоли</span><span class="sc-count" data-cures-count hidden></span></a><a class="sc-nav__l sc-hide-s" href="https://mordansoft.com/uk/saltcure/">Застосунок</a><select class="lang-select" aria-label="Мова" onchange="location.href=this.value"><option value="/my-cures/">English</option><option value="/uk/my-cures/" selected>Українська</option></select>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Мої посоли</h1>
+          <p class="detail__blurb">Розрахунки, які ви зберегли, — лише в цьому браузері. Очистите дані браузера — і їх не стане; застосунок SaltCure зберігає їх назавжди.</p>
+        </div>
+        <div class="sc-cures" id="sc-cures" aria-live="polite"></div>
+        <div class="sc-appstrip">
+          <span class="sc-appstrip__ico" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg></span>
+          <span class="sc-appstrip__t"><b>Посол на тижні?</b><span>SaltCure робить ті самі розрахунки в телефоні й веде журнал: нагадує перевернути, записує зважування, порівнює втрату ваги з нормою для цього продукту. Безкоштовно, без інтернету, без акаунта.</span></span>
+          <span class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sc-foot">
+    <div class="ms-container">
+      <div class="sc-foot__grid">
+        <div class="sc-foot__col"><span class="sc-eb">Калькулятори</span><a href="/uk/brine-calculator/">Розсіл</a><a href="/uk/dry-brine-calculator/">Сухий розсіл</a><a href="/uk/curing-salt-calculator/">Нітритна сіль</a><a href="/uk/bacon-cure-calculator/">Калькулятор посолу бекону</a><a href="/uk/pink-salt-calculator/">Калькулятор рожевої солі</a><a href="/uk/dry-cure-calculator/">Калькулятор сухого посолу</a><a href="/uk/cure-1-per-kg/">Cure #1 на кілограм і на фунт</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Знання</span><a href="/uk/learn/">Усі питання</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Джерела</span><a href="https://www.law.cornell.edu/cfr/text/9/part-424">9 CFR part 424</a><a href="https://www.fsis.usda.gov/">USDA FSIS</a><a href="https://www.fda.gov/food/retail-food-protection/fda-food-code">FDA Food Code</a></div>
+        <div class="sc-foot__col"><span class="sc-eb">Застосунок SaltCure</span><span class="store-badges"><a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a><a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a></span><a href="https://mordansoft.com/saltcure/support.html">Підтримка</a><a href="https://mordansoft.com/legal/saltcure/privacy.html">Конфіденційність</a><a href="https://mordansoft.com/legal/saltcure/terms.html">Умови</a></div>
+      </div>
+      <div class="sc-foot__base">
+        <p>Числа для посолу з нітритом узяті з 9 CFR part 424, поводження з м'ясом і температури — з настанов USDA та FDA Food Code. Ці правила написані для промислових цехів під наглядом і не регулюють домашню кухню — ми спираємося на них, бо в розрахунку, від якого людина може захворіти, опубліковане число краще за пост на форумі. Ніщо тут не є сертифікацією того, що ви приготуєте.</p>
+        <span>© 2026 MordanSoft</span>
+      </div>
+    </div>
+  </footer>
+  <script type="application/json" id="shell-i18n">{"lang":"uk","locale":"uk-UA","cures":{"save":"Зберегти в «Мої посоли»","saved":"Збережено в «Мої посоли»","open":"Відкрити «Мої посоли»","print":"Друкувати","local":"Зберігається лише в цьому браузері. Без акаунта.","cantSave":"Зберегти можна, лише коли доза в межах ліміту.","title":"Мої посоли — збережені розрахунки | SaltCure","desc":"Розрахунки посолу, які ви зберегли на цьому пристрої: скільки грамів зважити, нітрит у ppm і дата збереження.","h1":"Мої посоли","lead":"Розрахунки, які ви зберегли, — лише в цьому браузері. Очистите дані браузера — і їх не стане; застосунок SaltCure зберігає їх назавжди.","empty":"Поки нічого не збережено. Порахуйте посол у калькуляторі нітритної солі й натисніть «Зберегти в „Мої посоли“».","emptyCta":"Відкрити калькулятор нітритної солі","savedOn":"Збережено {date}","meat":"М'ясо","water":"Вода","curing":"Нітритна сіль","salt":"Сіль","sugar":"Цукор","nitrite":"Нітрит","warned":"Для цієї дози калькулятор показував попередження","remove":"Видалити","removeAsk":"Видалити цей розрахунок?","recalc":"Відкрити калькулятор","stripTitle":"Збережено на цьому пристрої","stripAll":"Усі збережені"},"links":{"cures":"/uk/my-cures/","calc":"/uk/curing-salt-calculator/"}}</script>
+  <script type="module" src="/assets/js/cures.mjs"></script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>

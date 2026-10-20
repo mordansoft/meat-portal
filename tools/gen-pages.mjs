@@ -7,6 +7,8 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { buildBrine, BRINE_PAGES } from './gen-brine.mjs';
 import { buildLearn } from './gen-learn.mjs';
+import { buildHome } from './gen-home.mjs';
+import { makeShell } from './shell.mjs';
 import { cureGramsForPpm, calcDryCure, limitsOf, G_PER_LB } from '../curing-salt-calculator/curing.mjs';
 
 const LIVE = ['en', 'uk', 'ru', 'pl', 'cs', 'sk', 'be', 'bg', 'hr', 'sr', 'sl', 'es', 'it', 'kk', 'fr', 'pt-BR', 'tr', 'de', 'id'];
@@ -18,7 +20,8 @@ const tpl = readFileSync(`${ROOT}tools/template.html`, 'utf8');
 const LOC = Object.fromEntries(await Promise.all(LIVE.map(async (c) => [c, (await import(`../i18n/${c}.mjs`)).default])));
 const EN = LOC.en;
 // Brine / dry-brine pages exist in a language once i18n/brine/<lang>.mjs does; until then its links go to English.
-const BRINE = LIVE.filter((c) => existsSync(`${ROOT}i18n/brine/${c}.mjs`));
+const SHELL = await makeShell({ ROOT, LIVE, LOC });
+const BRINE = SHELL.brineLangs;
 const brinePath = (c, slug) => (BRINE.includes(c) ? pathOf(c, slug) : `/${slug}/`);
 
 // ── key parity with the English master ─────────────────────────────────────
@@ -84,7 +87,8 @@ function build(c, page) {
       h2('h_src'), p('p_src'), `<p>${S.cfrIntro}</p>`].join('\n      '),
   };
 
-  const related = `<h2>${S.related}</h2>\n      <p>${PAGES.filter((x) => x.slug !== page.slug).map((x) => `<a href="${pathOf(c, x.slug)}">${L.pages[x.slug].link}</a>`).join(' · ')}</p>`;
+  const ARROW = '<svg class="sc-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+  const related = `<h2>${S.related}</h2>\n      <div class="sc-jobs">${PAGES.filter((x) => x.slug !== page.slug).map((x) => `<a class="sc-card sc-job" href="${pathOf(c, x.slug)}"><b>${L.pages[x.slug].link}</b>${ARROW}</a>`).join('')}</div>`;
   const prose = PROSE[page.slug]();
   const article = `        <article class="seo-prose">\n      ${prose ? prose + '\n      ' : ''}${related}\n        </article>\n`;
 
@@ -94,7 +98,6 @@ function build(c, page) {
     `  <link rel="alternate" hreflang="x-default" href="${urlOf('en', page.slug)}">`].join('\n');
   const langMenu = `<select class="lang-select" aria-label="${S.language}" onchange="location.href=this.value">${LIVE.map((x) =>
     `<option value="${pathOf(x, page.slug)}"${x === c ? ' selected' : ''}>${LOC[x].name}</option>`).join('')}</select>`;
-  const nav = `<span class="xnav"><a href="${brinePath(c, 'brine-calculator')}">${S.nav.brine}</a><a href="${brinePath(c, 'dry-brine-calculator')}">${S.nav.dryBrine}</a><a href="${pathOf(c, 'curing-salt-calculator')}"${page.slug === 'curing-salt-calculator' ? ' aria-current="page"' : ''}>${S.nav.curing}</a></span>`;
   const attrs = Object.entries(page.preset).map(([k, v]) => ` data-${k}="${v}"`).join('');
 
   let h = tpl;
@@ -109,11 +112,15 @@ function build(c, page) {
   must(/(<meta property="og:url" content=")[^"]*(">)/, `$1${url}$2`);
   must(/(<meta property="og:locale" content=")[^"]*(">)/, `$1${L.locale.replace('-', '_')}$2`);
   must(/("name":")[^"]*(","url":")[^"]*(")/, `$1${esc(L.pages['curing-salt-calculator'].h1)} — SaltCure$2${url}$3,"inLanguage":"${c}"`);
-  must(/<span class="xnav">.*?<\/span><a class="lang-switch"[^>]*>[^<]*<\/a>/, nav + langMenu);
+  must(/<!--SC:TOPBAR-->/, SHELL.topbar(c, { active: page.slug, langMenu }));
+  must(/<!--SC:CRUMBS-->/, `<nav class="sc-crumbs" aria-label="Breadcrumb"><a href="${SHELL.link.home(c)}">${SHELL.SH[c] ? SHELL.SH[c].crumbs.home : S.back}</a><span aria-hidden="true">/</span><span>${P.link}</span></nav>`);
+  must(/<!--SC:FOOTER-->/, SHELL.footer(c));
+  must(/<!--SC:DATA-->/, SHELL.browserData(c));
+  if (SHELL.link.learn(c)) must(/href="https:\/\/mordansoft\.com\/saltcure\/#faq"/, `href="${SHELL.link.learn(c)}"`);
   must(/<h1 class="section__title">.*?<\/h1>/, `<h1 class="section__title">${P.h1}</h1>`);
   must(/(<h1 class="section__title">.*?<\/h1>\s*<p class="detail__blurb">).*?(<\/p>)/s, (_, a, b) => a + P.lead + b + (S.usNote ? `\n          <p class="us-note">${S.usNote}</p>` : ''));
   must(/<div class="calc-col" id="calc-app"><\/div>/, `<div class="calc-col" id="calc-app"${attrs}></div>`);
-  must(/        <div class="ms-card ms-card--pad calc-cta">/, `${article}        <div class="ms-card ms-card--pad calc-cta">`);
+  must(/        <!--SC:APP-->/, `${article}        ${SHELL.appStrip(c)}`);
   must(/  <\/style>/, `${CSS}  </style>`);
 
   const out = `${ROOT}${L.dir ? L.dir + '/' : ''}${page.slug}`;
@@ -139,14 +146,16 @@ const CSS = `
 
 const built = [];
 for (const c of LIVE) for (const page of PAGES) built.push(build(c, page));
-built.push(...await buildBrine({ ROOT, LIVE: BRINE, LOC }));
-const learn = await buildLearn({ ROOT, LIVE, LOC, brineLangs: BRINE });
+built.push(...await buildBrine({ ROOT, LIVE: BRINE, LOC, SHELL }));
+const learn = await buildLearn({ ROOT, LIVE, LOC, brineLangs: BRINE, SHELL });
+const home = await buildHome({ ROOT, LIVE, LOC, SHELL, PAGES });
+built.push(...home.built);
 built.push(...learn.built);
 
 // sitemap: the home page + every generated page with its language alternates
 const alt = (slug, langs = LIVE) => langs.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${urlOf(x, slug)}"/>`).join('\n');
 const sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
-  `  <url><loc>${BASE}/</loc></url>`,
+  ...home.sitemap,
   ...BRINE.flatMap((c) => BRINE_PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug, BRINE)}\n  </url>`)),
   ...LIVE.flatMap((c) => PAGES.map((pg) => `  <url>\n    <loc>${urlOf(c, pg.slug)}</loc>\n${alt(pg.slug)}\n  </url>`)),
   ...learn.langs.flatMap((c) => learn.slugs.map((slug) => `  <url>\n    <loc>${learn.urlOf(c, slug)}</loc>\n${learn.langs.map((x) => `    <xhtml:link rel="alternate" hreflang="${x}" href="${learn.urlOf(x, slug)}"/>`).join('\n')}\n  </url>`)),

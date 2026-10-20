@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
   <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
 
   <!-- Lucide icons -->
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
@@ -263,27 +264,12 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/">
-        <span class="brand__mark">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
-            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
-            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
-            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
-          </svg>
-        </span>
-        <span class="brand__name">meat<b>.</b></span>
-      </a>
-      <span class="topbar__right"><span class="xnav"><a href="/brine-calculator/">Brine</a><a href="/dry-brine-calculator/">Dry brine</a><a href="/curing-salt-calculator/" aria-current="page">Curing salt</a></span><a class="lang-switch" href="/uk/curing-salt-calculator/" lang="uk">УКР</a></span>
-    </div>
-  </div>
+  <!--SC:TOPBAR-->
 
   <main>
     <section class="section">
       <div class="ms-container">
-        <a class="ms-btn ms-btn--link detail__back" href="https://mordansoft.com/saltcure/"><i data-lucide="arrow-left"></i> SaltCure</a>
+        <!--SC:CRUMBS-->
         <div class="section__head">
           <h1 class="section__title">Curing calculator</h1>
           <p class="detail__blurb">How much curing salt to weigh for bacon, jerky, pancetta or salami. Dry cure or wet brine, the nitrite dose checked against the published USDA/FSIS limits — the same engine as in the SaltCure app.</p>
@@ -291,47 +277,17 @@
         <div class="calc-wrap">
           <div class="calc-col" id="calc-app"></div>
           <div class="calc-out">
-            <div class="cc"><div class="cc__h"><span class="eyebrow" id="t-results"></span></div><div id="out" aria-live="polite" style="margin-top: var(--space-3)"></div></div>
+            <div class="cc"><div class="cc__h"><span class="eyebrow" id="t-results"></span></div><div id="out" aria-live="polite" style="margin-top: var(--space-3)"></div><div class="sc-save" id="sc-save"></div></div>
             <p class="calc-disclaimer" id="disclaimer" style="margin-top: var(--space-4)"></p>
             <p class="calc-hint"><a href="https://mordansoft.com/saltcure/#faq" id="faq-link"></a></p>
           </div>
         </div>
-        <div class="ms-card ms-card--pad calc-cta">
-          <h2 class="feature__title" id="cta-title"></h2>
-          <p class="feature__text" id="cta-text"></p>
-          <div class="store-badges">
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
-            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
-          </div>
-        </div>
+        <!--SC:APP-->
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true">
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect>
-            <rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect>
-            <rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect>
-            <rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect>
-          </svg>
-        </span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
-      </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
-      </div>
-    </div>
-  </footer>
+  <!--SC:FOOTER-->
 
   <script>
     if (window.lucide) lucide.createIcons();
@@ -346,6 +302,7 @@
     }());
   </script>
 
+  <!--SC:DATA-->
   <script type="module" src="/curing-salt-calculator/app.mjs"></script>
 <!-- web analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>

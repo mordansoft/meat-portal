@@ -12,7 +12,7 @@ export const MARK = '<svg width="48" height="48" viewBox="0 0 48 48" fill="none"
 
 const keysOf = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? keysOf(v, `${p}${k}.`) : [`${p}${k}`]));
 
-export async function buildBrine({ ROOT, LIVE, LOC }) {
+export async function buildBrine({ ROOT, LIVE, LOC, SHELL }) {
   const B = Object.fromEntries(await Promise.all(LIVE.map(async (c) => [c, (await import(`../i18n/brine/${c}.mjs`)).default])));
   const enKeys = new Set(keysOf(B.en));
   for (const c of LIVE) {
@@ -224,20 +224,12 @@ ${alternates}
   <link rel="stylesheet" href="${DS}/tokens/base.css">
   <link rel="stylesheet" href="${DS}/components/core/core.css">
   <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
   <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
   <script>document.documentElement.classList.remove('nojs');</script>
 </head>
 <body>
-  <div class="topbar">
-    <div class="ms-container topbar__inner">
-      <a class="brand" href="/"><span class="brand__mark">${MARK}</span><span class="brand__name">meat<b>.</b></span></a>
-      <span class="topbar__right"><span class="topbar__links">
-          <a href="${links.wet}"${cur('brine-calculator')}>${L.site.nav.brine}</a>
-          <a href="${links.dry}"${cur('dry-brine-calculator')}>${L.site.nav.dryBrine}</a>
-          <a href="${links.curing}">${L.site.nav.curing}</a>
-      </span>${langMenu}</span>
-    </div>
-  </div>
+  ${SHELL.topbar(c, { active: page.slug, langMenu })}
 
   <main>
     <section class="section">
@@ -289,23 +281,8 @@ ${alternates}
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="ms-container footer-inner">
-      <div class="footer-brand">
-        <span class="footer-brand__mark" aria-hidden="true">${MARK}</span>
-        <div>
-          <div class="footer-brand__name">Mordan<b>Soft</b></div>
-          <div class="footer-copy">© 2026 MordanSoft</div>
-        </div>
-      </div>
-      <div class="footer-legal">
-        <h4>Legal</h4>
-        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
-        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
-        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
-      </div>
-    </div>
-  </footer>
+  ${SHELL.footer(c)}
+  ${SHELL.browserData(c)}
   <script>if (window.lucide) lucide.createIcons();</script>
   <script type="application/json" id="brine-i18n">${i18n}</script>
   <script type="module" src="/assets/js/brine-page.mjs"></script>

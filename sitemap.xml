@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://meat.mordansoft.com/</loc></url>
+  <url>
+    <loc>https://meat.mordansoft.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+  </url>
+  <url>
+    <loc>https://meat.mordansoft.com/uk/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/"/>
+  </url>
   <url>
     <loc>https://meat.mordansoft.com/brine-calculator/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/brine-calculator/"/>
