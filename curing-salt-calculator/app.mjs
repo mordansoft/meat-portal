@@ -228,24 +228,44 @@ function renderSugar(c) {
   $('sugar').addEventListener('input', (e) => { s.sugar = Math.round(+e.target.value * 10) / 10; softUpdate(); });
 }
 
+// Tells /assets/js/cures.mjs what the result card shows, so "Save to My cures" stores exactly that.
+// null = nothing to save (no curing salt picked, bad input, or the dose is past the limit).
+const emit = (detail) => document.dispatchEvent(new CustomEvent('saltcure:calc', { detail }));
+
 function renderResults(lim, c) {
   const out = $('out');
-  if (!c) { out.innerHTML = `<p class="calc-empty">${T.needSalt}</p>`; return; }
-  if (c.bad === 'pct') { out.innerHTML = `<p class="calc-empty">${T.pctRange}</p>`; return; }
-  if (c.bad === 'weight') { out.innerHTML = `<p class="calc-empty">${T.invalid}</p>`; return; }
+  if (!c) { out.innerHTML = `<p class="calc-empty">${T.needSalt}</p>`; emit(null); return; }
+  if (c.bad === 'pct') { out.innerHTML = `<p class="calc-empty">${T.pctRange}</p>`; emit(null); return; }
+  if (c.bad === 'weight') { out.innerHTML = `<p class="calc-empty">${T.invalid}</p>`; emit(null); return; }
   const { r, over } = c;
   const alerts = [];
+  const warned = [];
   const rec = lim.recommendedPpm > 0 ? lim.recommendedPpm : lim.hardStopPpm;
-  if (s.reducedFrom !== null) alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, fill(A.calcNitriteWarnOverBody, { ppm: s.reducedFrom, limit: lim.hardStopPpm })));
+  if (s.reducedFrom !== null) {
+    alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, fill(A.calcNitriteWarnOverBody, { ppm: s.reducedFrom, limit: lim.hardStopPpm })));
+    // what gets saved is the reduced dose, so the card carries the warning for that dose, not "over the limit"
+    const adv = nitriteAdvice({ ppm: r.nitritePpm, limits: lim, meat: s.meat });
+    if (adviceNeedsPopup(adv) && adv.band === 'high') warned.push(A.calcNitriteWarnHighTitle);
+  }
   else if (over) alerts.push(alertBox('bad', A.calcNitriteWarnOverTitle, fill(T.overCheck, { p: c.target, l: lim.hardStopPpm })));
   else {
     const adv = nitriteAdvice({ ppm: r.nitritePpm, limits: lim, meat: s.meat });
     if (adviceNeedsPopup(adv)) {
-      if (adv.band === 'high') alerts.push(alertBox('warn', A.calcNitriteWarnHighTitle, fill(A.calcNitriteWarnHighBody, { ppm: r.nitritePpm, limit: lim.hardStopPpm, rec })));
-      if (adv.band === 'low') alerts.push(alertBox('bad', A.calcNitriteWarnLowTitle, fill(A.calcNitriteWarnLowBody, { ppm: r.nitritePpm, min: NITRITE_PROTECTIVE_MIN_PPM, rec })));
-      if (adv.band === 'noneUnsafe') alerts.push(alertBox('bad', A.calcNitriteWarnNoneTitle, fill(A.calcNitriteWarnNoneBody, { rec }) + (s.meat === 'salami' ? ' ' + A.calcNitriteWarnNoneSalami : '')));
+      if (adv.band === 'high') { alerts.push(alertBox('warn', A.calcNitriteWarnHighTitle, fill(A.calcNitriteWarnHighBody, { ppm: r.nitritePpm, limit: lim.hardStopPpm, rec }))); warned.push(A.calcNitriteWarnHighTitle); }
+      if (adv.band === 'low') { alerts.push(alertBox('bad', A.calcNitriteWarnLowTitle, fill(A.calcNitriteWarnLowBody, { ppm: r.nitritePpm, min: NITRITE_PROTECTIVE_MIN_PPM, rec }))); warned.push(A.calcNitriteWarnLowTitle); }
+      if (adv.band === 'noneUnsafe') { alerts.push(alertBox('bad', A.calcNitriteWarnNoneTitle, fill(A.calcNitriteWarnNoneBody, { rec }) + (s.meat === 'salami' ? ' ' + A.calcNitriteWarnNoneSalami : ''))); warned.push(A.calcNitriteWarnNoneTitle); }
     }
   }
+  emit(over ? null : {
+    dish: meatLabel(s.meat), method: s.wet ? T.wet : T.dry,
+    meat: `${toDisplayW(s.meatG)} ${T[s.unit]}`, water: s.wet ? `${toDisplayV(s.waterMl)} ${T[vUnit()]}` : null,
+    cure: `${T[s.cure]} · ${new Intl.NumberFormat(NUM, { maximumFractionDigits: 2 }).format(nitPct())}%`,
+    cureG: `${fmtG(r.cureGrams)} ${T.g}`, saltG: `${Math.round(r.saltGrams)} ${T.g}`, sugarG: `${Math.round(r.sugarGrams)} ${T.g}`,
+    ppm: `${r.nitritePpm} ppm`, warnings: warned, weighTip: T.weighTip, url: location.pathname,
+    // the notes the result card shows must travel with the saved card and its printout
+    banner: s.meat === 'jerky' ? T.jerky : s.meat === 'biltong' ? T.biltong : '',
+    usNote: L.site.usNote || '', disclaimer: T.disclaimer,
+  });
   const cells = [
     [T.cCuring, over ? '—' : fmtG(r.cureGrams), T.g],
     [T.cSalt, String(Math.round(r.saltGrams)), T.g],
