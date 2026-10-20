@@ -1,7 +1,9 @@
 // Сверка чисел и плейсхолдеров в i18n/<lang>.mjs против en.mjs. Запуск: node tools/check-numbers.mjs ru pl
 const dir = new URL("..", import.meta.url).pathname.replace(/\/$/, "");
-const langs = process.argv.slice(2);
-const en = (await import(`${dir}/i18n/en.mjs`)).default;
+// node tools/check-numbers.mjs [--brine] ru pl — --brine checks i18n/brine/ instead of i18n/.
+const sub = process.argv.includes('--brine') ? 'brine/' : '';
+const langs = process.argv.slice(2).filter((x) => !x.startsWith('--'));
+const en = (await import(`${dir}/i18n/${sub}en.mjs`)).default;
 
 function flat(o, p = '', out = {}) {
   for (const [k, v] of Object.entries(o)) {
@@ -18,7 +20,7 @@ const phs = (s) => (s.match(/\{[^}]*\}/g) || []).sort();
 const E = flat(en);
 let bad = 0;
 for (const lang of langs) {
-  const L = flat((await import(`${dir}/i18n/${lang}.mjs`)).default);
+  const L = flat((await import(`${dir}/i18n/${sub}${lang}.mjs`)).default);
   for (const [k, v] of Object.entries(E)) {
     if (['lang', 'locale', 'name', 'dir'].includes(k) || k.startsWith('site.usNote')) continue;
     const t = L[k];

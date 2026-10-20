@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sk" class="nojs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
+  <title>Kalkulačka solenia nasucho — soľ podľa hmotnosti pre morku, kurča, steak a bravčové</title>
+  <meta name="description" content="Kalkulačka solenia nasucho: soľ ako percento hmotnosti samotného mäsa, v gramoch, s časom podľa hrúbky a pravidlami bezpečnosti, ktoré majú zverejnený zdroj. Bez vody a bez odhadov.">
+  <link rel="canonical" href="https://meat.mordansoft.com/sk/dry-brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/dry-brine-calculator/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/dry-brine-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/dry-brine-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/dry-brine-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/dry-brine-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/dry-brine-calculator/">
+  <link rel="alternate" hreflang="be" href="https://meat.mordansoft.com/be/dry-brine-calculator/">
+  <link rel="alternate" hreflang="bg" href="https://meat.mordansoft.com/bg/dry-brine-calculator/">
+  <link rel="alternate" hreflang="hr" href="https://meat.mordansoft.com/hr/dry-brine-calculator/">
+  <link rel="alternate" hreflang="sr" href="https://meat.mordansoft.com/sr/dry-brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/dry-brine-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Kalkulačka solenia nasucho — soľ podľa hmotnosti pre morku, kurča, steak a bravčové">
+  <meta property="og:description" content="Kalkulačka solenia nasucho: soľ ako percento hmotnosti samotného mäsa, v gramoch, s časom podľa hrúbky a pravidlami bezpečnosti, ktoré majú zverejnený zdroj. Bez vody a bez odhadov.">
+  <meta property="og:url" content="https://meat.mordansoft.com/sk/dry-brine-calculator/">
+  <meta property="og:locale" content="sk_SK">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>document.documentElement.classList.remove('nojs');</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
+      <span class="topbar__right"><span class="topbar__links">
+          <a href="/sk/brine-calculator/">Lák</a>
+          <a href="/sk/dry-brine-calculator/" aria-current="page">Solenie nasucho</a>
+          <a href="/sk/curing-salt-calculator/">Soliaca zmes</a>
+      </span><select class="lang-select" aria-label="Jazyk" onchange="location.href=this.value"><option value="/dry-brine-calculator/">English</option><option value="/uk/dry-brine-calculator/">Українська</option><option value="/ru/dry-brine-calculator/">Русский</option><option value="/pl/dry-brine-calculator/">Polski</option><option value="/cs/dry-brine-calculator/">Čeština</option><option value="/sk/dry-brine-calculator/" selected>Slovenčina</option><option value="/be/dry-brine-calculator/">Беларуская</option><option value="/bg/dry-brine-calculator/">Български</option><option value="/hr/dry-brine-calculator/">Hrvatski</option><option value="/sr/dry-brine-calculator/">Српски</option></select></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Kalkulačka solenia nasucho</h1>
+          <p class="detail__blurb">Bez vody, bez vedra, bez hľadania miesta v chladničke na chladiaci box. Soľ ako percento hmotnosti samotného mäsa — vtrieť, nechať nezakryté a koža bude chrumkavejšia.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="calc-col">
+            <div class="cc">
+              <span class="eyebrow">Solenie nasucho</span>
+              <label class="fld"><span class="lbl">Hmotnosť mäsa</span>
+                <span class="pair"><input class="ms-input" type="number" id="meat" value="5000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>gramy</option><option value="kg">kilogramy</option><option value="lb">libry</option><option value="oz">unce</option></select></span>
+              </label>
+              <label class="fld"><span class="lbl">Soľ — <u>percento hmotnosti mäsa</u></span>
+                <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
+                <span class="hint">1,0–1,5 % pre hydinu · 0,8–1,2 % pre steak · 1,5–2,0 % pre bravčové pliecko a pečienku. Rozsahy chuti, nie hranice bezpečnosti.</span>
+              </label>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Cukor, podiel zo soli</span>
+                  <input class="ms-input" type="number" id="sugar" value="33" min="0" max="100" step="1" inputmode="decimal">
+                </label>
+                <label class="fld"><span class="lbl">Tvoja soľ</span><select class="ms-input" id="saltType"><option value="fine" selected>Kuchynská / jemná morská soľ</option><option value="mortonK">Morton kosher</option><option value="diamondK">Diamond Crystal kosher</option><option value="coarse">Hrubá morská soľ</option></select>
+                  <span class="hint">Lyžička jemnej soli váži zhruba dvakrát viac ako lyžička Diamond Crystal — preto sa recepty v lyžiciach tak zle prenášajú.</span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Hrúbka v najhrubšom mieste</span>
+                <span class="pair"><input class="ms-input" type="number" id="thick" value="80" min="0" step="any" inputmode="decimal"><select class="ms-input" id="thickUnit"><option value="mm" selected>mm</option><option value="in">palce</option></select></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="cc cc--strong jsonly" aria-live="polite">
+              <span class="eyebrow">Odváž</span>
+              <div class="headline" id="saltOut">—</div>
+              <p class="calc-hint" id="saltAlt"></p>
+              <div class="cells">
+                <div class="cell"><span class="eyebrow">Cukor</span><b id="sugarOut">—</b></div>
+                <div class="cell"><span class="eyebrow">V chladničke</span><b id="timeOut" style="font-size:16px">—</b></div>
+              </div>
+              <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
+                <b>Príliš hrubé na obyčajné solenie nasucho</b>
+                <p>Kus tejto veľkosti potrebuje dlhšie než dva dni, počas ktorých smie solenie bez dusitanovej soli bezpečne bežať. Použi <a href="/sk/curing-salt-calculator/">kalkulačku nakladania</a> alebo ho rozkroj.</p>
+              </div>
+            </div>
+            <div class="calc-banner nojsonly">
+              <b>Výpočet.</b> Soľ v gramoch = gramy mäsa × percento ÷ 100. Morka 5 kg pri 1,2 % potrebuje 60 g soli.
+            </div>
+          </div>
+        </div>
+
+        <div class="prose">
+        <h2>Než uveríš číslu, over základ</h2>
+        <p>Solenie nasucho je soľ voči <strong>hmotnosti mäsa</strong>. Lák je soľ voči <strong>mäsu a vode spolu</strong>. Rovnakých „1,5 %“ znamená dve rôzne večere podľa toho, čo autor myslel — a väčšina to neuvádza. Na tejto stránke je základom vždy mäso.</p>
+        <h2>Nasucho, alebo v láku?</h2>
+        <p>Lák pridáva vodu. Vták vyjde ťažší a šťavnatejší, chuť trochu zriedená a koža — po dni v tekutine — sa pri pečení vzpiera. Solenie nasucho vytiahne vlhkosť, rozpustí v nej soľ a vtiahne ju späť už ochutenú. Povrch oschne. Koža chrumká.</p>
+        <p>Pre pečeného vtáka nezakrytého na mriežke je solenie nasucho zvyčajne lepšia večera. Nepotrebuje ani nádobu, ani galón vody, ani miesto v chladničke. Väčšina hľadá lák zo zvyku. <a href="/sk/brine-calculator/">Kalkulačka láku je tu</a>, ak si prišiel kvôli nej.</p>
+        <h2>Východiskové hodnoty podľa kusa</h2>
+        <p>Percento hmotnosti samotného mäsa.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Kus</th><th>Rozsah</th><th>Východisková hodnota</th></tr></thead>
+          <tbody>
+            <tr><td>Celá morka</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Celé kurča, kuracie diely</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Steak, kotlety — pred vyprážaním</td><td class="num">0,8–1,2%</td><td class="num">1,0%</td></tr>
+            <tr><td>Bravčové pliecko, pečienka</td><td class="num">1,5–2,0%</td><td class="num">1,75%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Prax, nie zverejnený štandard.</p>
+        <h2>Čas podľa hrúbky</h2>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Hrúbka v najhrubšom mieste</th><th>Nasucho</th></tr></thead>
+          <tbody>
+            <tr><td>Do 25 mm / 1 palca</td><td class="num">8–12 h</td></tr>
+            <tr><td>25–50 mm / 1–2 palce</td><td class="num">12–24 h</td></tr>
+            <tr><td>Celý vták</td><td class="num">24–48 h</td></tr>
+          </tbody>
+        </table></div>
+        <p>Solenie nasucho je pomalšie ako lák — menej soli v hre a žiadna voda, ktorá by ju niesla. Nezakryté na mriežke nie je detail: je to celý dôvod, prečo to robiť takto.</p>
+        <h2>Čo je naozaj upravené predpismi</h2>
+        <p>Tri pravidlá nižšie majú zverejnený zdroj. Všetko ostatné na tejto stránke — ako slané, koľko cukru, ako dlho kvôli chuti — je voľba kuchára, a preto sa čísla všade líšia.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Pravidlo</th><th>Hodnota</th><th>Zdroj</th></tr></thead>
+          <tbody>
+            <tr><td>Mäso a lák, po celý čas</td><td class="num">4,4&nbsp;°C / 40&nbsp;°F alebo menej</td><td>USDA, odporúčania k láku</td></tr>
+            <tr><td>Chladné uchovávanie potravín, ktoré vyžadujú kontrolu teploty</td><td class="num">5&nbsp;°C / 41&nbsp;°F alebo menej</td><td>FDA Food Code §3-501.16</td></tr>
+            <tr><td>Najdlhšie solenie bez dusitanovej soli, ktoré sa považuje za bezpečné</td><td class="num">2 dni</td><td>USDA — solenie nepredlžuje trvanlivosť čerstvej hydiny</td></tr>
+          </tbody>
+        </table></div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Ďalšie tri pravidlá z rovnakých odporúčaní, bez čísel</b>
+          <p>Lák, ktorý sa zohrieval, nechaj vychladnúť, kým doň dáš mäso. Hydinu neoplachuj — špliechance roznášajú baktérie po kuchyni. Nikdy nesoľ pri izbovej teplote; keď je chladnička plná, daj do nádoby ľad, namiesto aby si nechal mäso na linke.</p>
+        </div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Vtáka neumývaj</b>
+          <p>Ani pred solením, ani po ňom. Oplachovanie surovej hydiny rozstrekuje baktérie po kuchyni. Prebytočnú soľ zotri papierovou utierkou.</p>
+        </div>
+        <h2>Kedy samotná soľ nestačí</h2>
+        <p>Všetko tu predpokladá jedno: <strong>mäso osolíš a potom ho tepelne upravíš</strong> — do dvoch dní, pri 4&nbsp;°C alebo menej, a dovedieš ho na teplotu, ktorá ho naozaj prepečie. To platí pre morku, kurča, bravčové, brisket pred horúcim údením a rybu pred horúcim údením alebo pečením.</p>
+        <div class="calc-alert calc-alert--bad">
+          <b>Pre čokoľvek z tohto je dusitanová soľ povinná, nie voliteľná</b>
+          <p>Studené údenie, keď dym zostáva pod asi 32&nbsp;°C / 90&nbsp;°F a nič sa nezohreje natoľko, aby jedlo bolo bezpečné. Sušené celé kusy — pancetta, coppa, bresaola. Fermentované alebo sušené salámy. A akékoľvek nakladanie dlhšie ako dva dni. Na to je <a href="/sk/curing-salt-calculator/">kalkulačka nakladania</a>.</p>
+        </div>
+        <h2>Zdroje</h2>
+        <ul>
+          <li>USDA — lák a zaobchádzanie s hydinou: po celý čas 40&nbsp;°F alebo menej, najviac dva dni, lák najprv schladiť, hydinu neoplachovať.</li>
+          <li>FDA Food Code §3-501.16 — chladné uchovávanie pri 41&nbsp;°F / 5&nbsp;°C alebo menej.</li>
+          <li>Odporúčania FDA pre údené ryby — soľ vo vodnej fáze hotového výrobku najmenej 3,5 %, solenie pri 40&nbsp;°F alebo menej.</li>
+          <li>9 CFR 424.21(c) a 424.22(b) — limity dusitanu, použité v <a href="/sk/curing-salt-calculator/">kalkulačke nakladania</a>.</li>
+        </ul>
+        <p class="calc-disclaimer">Zverejnené predpisy USA sú písané pre prevádzky pod inšpekciou a domácu kuchyňu neupravujú. Odkazujeme na ne, pretože alternatívou vo výpočte, kvôli ktorému môže niekto ochorieť, je príspevok na fóre. Táto stránka opisuje zverejnené odporúčania a nič z toho, čo pripravuješ, neosvedčuje.</p>
+        </div>
+
+        <div class="ms-card ms-card--pad calc-cta">
+          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">Lák je hotový cez noc. Nakladanie nie.</h2>
+          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
+            <b>SaltCure</b> počíta to isté v telefóne a vedie denník šarží, ktoré trvajú týždne: pripomienky na obracanie, váženia, úbytok hmotnosti oproti norme pre daný výrobok. Zadarmo, offline, bez účtu.</p>
+          <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">Čo aplikácia vie: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
+        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
+        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script type="application/json" id="brine-i18n">{"lang":"sk","locale":"sk-SK","mode":"dry","salts":{"fine":"Kuchynská / jemná morská soľ","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Hrubá morská soľ"},"t":{"g":"g","oz":"oz","ofSalt":"{g} soli","none":"bez cukru","enterThick":"zadaj hrúbku","hours":"{lo}–{hi} h","days":"({lo}–{hi} dní)","cup":"hrnček (cup)","cups":"hrnčeky (cup)","tbsp":"lyžice","tsp":"lyžičky","spoons":"≈ {spoons} ({salt}) · {oz} oz.","fill":"Zadaj hmotnosť mäsa.","spread":"Rozotri po všetkých plochách, aj vnútri.","rack":"{t}, nezakryté na mriežke"}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>

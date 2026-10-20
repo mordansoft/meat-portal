@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="cs" class="nojs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
+  <title>Kalkulačka láku — sůl, voda a čas pro krůtu, kuře, vepřové a brisket</title>
+  <meta name="description" content="Kalkulačka rovnovážného láku: zadej hmotnost masa, vodu a požadovanou slanost. Gramy soli a cukru, čas podle tloušťky a tři pravidla bezpečnosti potravin, která mají zveřejněný zdroj.">
+  <link rel="canonical" href="https://meat.mordansoft.com/cs/brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/brine-calculator/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/brine-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/brine-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/brine-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/brine-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/brine-calculator/">
+  <link rel="alternate" hreflang="be" href="https://meat.mordansoft.com/be/brine-calculator/">
+  <link rel="alternate" hreflang="bg" href="https://meat.mordansoft.com/bg/brine-calculator/">
+  <link rel="alternate" hreflang="hr" href="https://meat.mordansoft.com/hr/brine-calculator/">
+  <link rel="alternate" hreflang="sr" href="https://meat.mordansoft.com/sr/brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/brine-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Kalkulačka láku — sůl, voda a čas pro krůtu, kuře, vepřové a brisket">
+  <meta property="og:description" content="Kalkulačka rovnovážného láku: zadej hmotnost masa, vodu a požadovanou slanost. Gramy soli a cukru, čas podle tloušťky a tři pravidla bezpečnosti potravin, která mají zveřejněný zdroj.">
+  <meta property="og:url" content="https://meat.mordansoft.com/cs/brine-calculator/">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>document.documentElement.classList.remove('nojs');</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
+      <span class="topbar__right"><span class="topbar__links">
+          <a href="/cs/brine-calculator/" aria-current="page">Lák</a>
+          <a href="/cs/dry-brine-calculator/">Solení nasucho</a>
+          <a href="/cs/curing-salt-calculator/">Solicí směs</a>
+      </span><select class="lang-select" aria-label="Jazyk" onchange="location.href=this.value"><option value="/brine-calculator/">English</option><option value="/uk/brine-calculator/">Українська</option><option value="/ru/brine-calculator/">Русский</option><option value="/pl/brine-calculator/">Polski</option><option value="/cs/brine-calculator/" selected>Čeština</option><option value="/sk/brine-calculator/">Slovenčina</option><option value="/be/brine-calculator/">Беларуская</option><option value="/bg/brine-calculator/">Български</option><option value="/hr/brine-calculator/">Hrvatski</option><option value="/sr/brine-calculator/">Српски</option></select></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Kalkulačka láku</h1>
+          <p class="detail__blurb">Zadej hmotnost masa, vodu, kterou ho zaliješ, a jak slaný má být výsledek. Dostaneš gramy, ne odhady — a čas se řídí tloušťkou kusu, ne jeho hmotností.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="calc-col">
+            <div class="cc">
+              <span class="eyebrow">Rovnovážný lák</span>
+              <label class="fld"><span class="lbl">Hmotnost masa</span>
+                <span class="pair"><input class="ms-input" type="number" id="meat" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>gramy</option><option value="kg">kilogramy</option><option value="lb">libry</option><option value="oz">unce</option></select></span>
+              </label>
+              <label class="fld"><span class="lbl">Voda</span>
+                <span class="pair"><input class="ms-input" type="number" id="water" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="waterUnit"><option value="ml" selected>mililitry</option><option value="l">litry</option><option value="qt">kvarty</option><option value="gal">galony</option><option value="cup">hrnky (cup)</option></select></span>
+                <span class="hint">Tolik, aby maso bylo ponořené. Jeden díl vody na jeden díl masa podle hmotnosti se nejsnáz opakuje a na to jsou počítané časy níže.</span>
+              </label>
+              <label class="fld"><span class="lbl">Cílová slanost — <u>procento z masa a vody dohromady</u></span>
+                <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
+                <span class="hint">1,0–1,5 % pro drůbež · 1,2–1,8 % pro vepřové a brisket · 1,5–2,5 % pro lososa. Rozsahy chuti, ne hranice bezpečnosti.</span>
+              </label>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Cukr, podíl ze soli</span>
+                  <input class="ms-input" type="number" id="sugar" value="33" min="0" max="100" step="1" inputmode="decimal">
+                  <span class="hint">0 — bez cukru. Jen pro chuť a zbarvení — v těchto množstvích nic nekonzervuje.</span>
+                </label>
+                <label class="fld"><span class="lbl">Tvoje sůl</span><select class="ms-input" id="saltType"><option value="fine" selected>Kuchyňská / jemná mořská sůl</option><option value="mortonK">Morton kosher</option><option value="diamondK">Diamond Crystal kosher</option><option value="coarse">Hrubá mořská sůl</option></select>
+                  <span class="hint">Mění jen přepočet na lžíce. Gramy jsou pro každou sůl stejné — proto vážíme.</span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Tloušťka v nejsilnějším místě</span>
+                <span class="pair"><input class="ms-input" type="number" id="thick" value="60" min="0" step="any" inputmode="decimal"><select class="ms-input" id="thickUnit"><option value="mm" selected>mm</option><option value="in">palce</option></select></span>
+              </label>
+            </div>
+
+            <div class="cc">
+              <span class="eyebrow">Ověř recept, který už máš</span>
+              <p class="calc-hint" style="margin-top:6px">Našel jsi „hrnek soli na galon“? Zadej ho a uvidíš, jaká je to ve skutečnosti síla.</p>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Sůl v receptu</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rSalt" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rSaltUnit"><option value="cup" selected>hrnky (cup)</option><option value="tbsp">lžíce</option><option value="g">gramy</option><option value="oz">unce</option></select></span>
+                </label>
+                <label class="fld"><span class="lbl">Voda v receptu</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rWater" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rWaterUnit"><option value="gal" selected>galony</option><option value="qt">kvarty</option><option value="l">litry</option><option value="ml">mililitry</option></select></span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Hmotnost masa v gramech (nepovinné)</span>
+                <input class="ms-input" type="number" id="rMeat" value="" min="0" step="any" inputmode="decimal" placeholder="pro společné procento">
+              </label>
+              <p class="calc-banner jsonly" id="rOut">—</p>
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="cc cc--strong jsonly" aria-live="polite">
+              <span class="eyebrow">Naváž</span>
+              <div class="headline" id="saltOut">—</div>
+              <p class="calc-hint" id="saltAlt"></p>
+              <div class="cells">
+                <div class="cell"><span class="eyebrow">Cukr</span><b id="sugarOut">—</b></div>
+                <div class="cell"><span class="eyebrow">Čas</span><b id="timeOut" style="font-size:16px">—</b></div>
+                <div class="cell"><span class="eyebrow">% z vody</span><b id="pctWater">—</b></div>
+                <div class="cell"><span class="eyebrow">% z masa</span><b id="pctMeat">—</b></div>
+              </div>
+              <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
+                <b>Příliš silné na obyčejný lák</b>
+                <p>Při této tloušťce potřebuje sůl déle než dva dny, po které smí lák bez dusitanové soli bezpečně běžet. Použij <a href="/cs/curing-salt-calculator/">kalkulačku nakládání</a>, nebo kus rozkroj.</p>
+              </div>
+            </div>
+            <div class="calc-banner nojsonly">
+              <b>Výpočet, pokud si ho chceš udělat sám.</b> Sůl v gramech = (gramy masa + gramy vody) × cílové % ÷ 100. Pro 2 kg masa ve 2 kg vody při 1,2 % je to 48 g soli. Zbytek pokrývají tabulky níže.
+            </div>
+          </div>
+        </div>
+
+        <div class="prose">
+        <h2>Proč si recepty na lák navzájem odporují</h2>
+        <p>Jeden říká hrnek soli na galon vody. Další 3 %. Třetí 1 %. Neodporují si — měří <em>různé věci</em>. Procento z vody není procento z masa a ani jedno není procento z obou dohromady. Tato stránka v každém řádku uvádí základ: <strong>sůl jako procento z masa a vody dohromady</strong>.</p>
+
+        <h2>Proč takhle nejde přesolit</h2>
+        <p>V rovnovážném láku si maso a tekutina vyměňují sůl, dokud se koncentrace nevyrovná. Maso se blíží síle láku a <strong>nemůže ji překročit</strong>. Nech ho v láku o šest hodin déle a se slaností se nic nestane. To je skutečná výhoda proti staré metodě „silný lák na čtyři hodiny, pak vymáčet“, kde hodina navíc zkazí večeři.</p>
+        <p>Limit dvou dnů není o soli. Je o tom, jak dlouho může syrové maso ležet mokré a studené, než se problémem stane kažení.</p>
+
+        <h2>Výchozí hodnoty podle kusu</h2>
+        <p>Procento z masa a vody dohromady.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Kus</th><th>Rozsah</th><th>Výchozí hodnota</th></tr></thead>
+          <tbody>
+            <tr><td>Celá krůta</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Celé kuře, kuřecí díly</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Vepřová pečeně, kotlety, plec</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Hovězí brisket před uzením</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Losos a jiné tučné ryby</td><td class="num">1,5–2,5%</td><td class="num">2,0%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Rozsahy chuti z praxe, ne zveřejněný standard. Pod asi 1 % lák nestojí za místo v lednici; nad 2 % většině lidí připadá drůbež slaná.</p>
+
+        <h2>Čas se řídí tloušťkou, ne hmotností</h2>
+        <p>Sůl proniká dovnitř z každého zvlhčeného povrchu zhruba s druhou odmocninou času, takže hodiny určuje tloušťka. Plochá 2 kg kotlet jsou hotová dlouho před 2 kg pečeně.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Tloušťka v nejsilnějším místě</th><th>V láku</th></tr></thead>
+          <tbody>
+            <tr><td>Do 25 mm / 1 palce — kotlety, filety</td><td class="num">4–8 h</td></tr>
+            <tr><td>25–50 mm / 1–2 palce — kuřecí díly, pečeně</td><td class="num">8–18 h</td></tr>
+            <tr><td>50–100 mm / 2–4 palce — celé kuře, malý brisket</td><td class="num">12–24 h</td></tr>
+            <tr><td>Celá krůta, 5–8 kg</td><td class="num">18–36 h</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Čísla z praxe. Rozšířené pravidlo „čtvrt palce za den“ platilo pro silné nakládání 2,5–3 %; lák 1–1,5 % proniká pomaleji, takže když záleží na rovnoměrnosti, ber horní hranici.</p>
+
+        <h2>Co je skutečně upraveno předpisy</h2>
+        <p>Tři pravidla níže mají zveřejněný zdroj. Všechno ostatní na této stránce — jak slané, kolik cukru, jak dlouho kvůli chuti — je volba kuchaře, a proto se čísla všude liší.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Pravidlo</th><th>Hodnota</th><th>Zdroj</th></tr></thead>
+          <tbody>
+            <tr><td>Maso a lák, po celou dobu</td><td class="num">4,4&nbsp;°C / 40&nbsp;°F nebo méně</td><td>USDA, doporučení k láku</td></tr>
+            <tr><td>Chladné uchovávání potravin vyžadujících kontrolu teploty</td><td class="num">5&nbsp;°C / 41&nbsp;°F nebo méně</td><td>FDA Food Code §3-501.16</td></tr>
+            <tr><td>Nejdelší solení bez dusitanové soli, které se považuje za bezpečné</td><td class="num">2 dny</td><td>USDA — solení neprodlužuje trvanlivost čerstvé drůbeže</td></tr>
+          </tbody>
+        </table></div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Další tři pravidla ze stejných doporučení, bez čísel</b>
+          <p>Lák, který se ohříval, nech vychladnout, než do něj dáš maso. Drůbež neoplachuj — cákance roznášejí bakterie po kuchyni. Nikdy nesol při pokojové teplotě; když je lednice plná, dej do nádoby led, místo abys nechal maso na lince.</p>
+        </div>
+        <h2>Kdy sůl sama nestačí</h2>
+        <p>Všechno tady předpokládá jedno: <strong>maso osolíš a pak ho tepelně upravíš</strong> — do dvou dnů, při 4&nbsp;°C nebo méně, a dovedeš ho na teplotu, která ho skutečně propeče. To platí pro krůtu, kuře, vepřové, brisket před horkým uzením a rybu před horkým uzením nebo pečením.</p>
+        <div class="calc-alert calc-alert--bad">
+          <b>Pro cokoli z tohoto je dusitanová sůl povinná, ne volitelná</b>
+          <p>Studené uzení, kdy kouř zůstává pod asi 32&nbsp;°C / 90&nbsp;°F a nic se nezahřeje natolik, aby jídlo bylo bezpečné. Sušené celé kusy — pancetta, coppa, bresaola. Fermentované nebo sušené salámy. A jakékoli nakládání delší než dva dny. Na to je <a href="/cs/curing-salt-calculator/">kalkulačka nakládání</a>.</p>
+        </div>
+        <p>Studeně uzená ryba je samostatný případ. FDA požaduje v hotovém výrobku nejméně 3,5 % soli ve vodní fázi, ověřené měřením — a sůl ve vodní fázi se počítá vůči vlhkosti, což doma bez laboratoře neověříš. Čísla k tomu nedáváme a raději to řekneme, než abychom hádali.</p>
+
+        <h2>Lák vylij</h2>
+        <p>Všechno, co bylo na syrovém mase, je teď v tekutině. Vylij ji, jakmile maso vyndáš. Nepoužívej ji znovu a nedělej z ní omáčku, pokud ji neprovaříš.</p>
+
+        <h2>Zdroje</h2>
+        <ul>
+          <li>USDA — lák a zacházení s drůbeží: po celou dobu 40&nbsp;°F nebo méně, nejvýš dva dny, lák nejdřív zchladit, drůbež neoplachovat.</li>
+          <li>FDA Food Code §3-501.16 — chladné uchovávání při 41&nbsp;°F / 5&nbsp;°C nebo méně.</li>
+          <li>Doporučení FDA pro uzené ryby — sůl ve vodní fázi hotového výrobku nejméně 3,5 %, solení při 40&nbsp;°F nebo méně.</li>
+          <li>9 CFR 424.21(c) a 424.22(b) — limity dusitanu, použité v <a href="/cs/curing-salt-calculator/">kalkulačce nakládání</a>.</li>
+        </ul>
+        <p class="calc-disclaimer">Zveřejněné předpisy USA jsou psané pro provozy pod inspekcí a domácí kuchyni neupravují. Odkazujeme na ně, protože alternativou ve výpočtu, kvůli kterému může někdo onemocnět, je příspěvek na fóru. Tato stránka popisuje zveřejněná doporučení a nic z toho, co připravuješ, neosvědčuje.</p>
+        </div>
+
+        <div class="ms-card ms-card--pad calc-cta">
+          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">Lák je hotový přes noc. Nakládání ne.</h2>
+          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
+            <b>SaltCure</b> počítá totéž v telefonu a vede deník šarží, které trvají týdny: připomínky k obracení, vážení, úbytek hmotnosti proti normě pro daný výrobek. Zdarma, offline, bez účtu.</p>
+          <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">Co aplikace umí: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
+        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
+        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script type="application/json" id="brine-i18n">{"lang":"cs","locale":"cs-CZ","mode":"wet","salts":{"fine":"Kuchyňská / jemná mořská sůl","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Hrubá mořská sůl"},"t":{"g":"g","oz":"oz","ofSalt":"{g} soli","none":"bez cukru","enterThick":"zadej tloušťku","hours":"{lo}–{hi} h","days":"({lo}–{hi} dní)","cup":"hrnek (cup)","cups":"hrnky (cup)","tbsp":"lžíce","tsp":"lžičky","spoons":"≈ {spoons} ({salt}) · {oz} oz.","fill":"Vyplň hmotnosti výše.","weigh":"Pokud můžeš, zvaž to — lžíce se liší až o polovinu.","needBoth":"Zadej sůl a vodu.","isOfWater":"To je {pct} z vody — {salt} soli v {water} vody.","withMeat":"S masem je to {pct} z masa a vody dohromady, což je základ, který tato stránka používá.","strong":"To je silný lák — na krátké máčení a opláchnutí, ne na noc.","addMeat":"Přidej hmotnost masa pro společné procento."}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>

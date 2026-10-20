@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pl" class="nojs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
+  <title>Kalkulator solanki — sól, woda i czas dla indyka, kurczaka, wieprzowiny i brisketu</title>
+  <meta name="description" content="Kalkulator solanki równowagowej: podaj wagę mięsa, wodę i pożądaną słoność. Gramy soli i cukru, czas według grubości i trzy zasady bezpieczeństwa żywności, które mają opublikowane źródło.">
+  <link rel="canonical" href="https://meat.mordansoft.com/pl/brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/brine-calculator/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/brine-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/brine-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/brine-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/brine-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/brine-calculator/">
+  <link rel="alternate" hreflang="be" href="https://meat.mordansoft.com/be/brine-calculator/">
+  <link rel="alternate" hreflang="bg" href="https://meat.mordansoft.com/bg/brine-calculator/">
+  <link rel="alternate" hreflang="hr" href="https://meat.mordansoft.com/hr/brine-calculator/">
+  <link rel="alternate" hreflang="sr" href="https://meat.mordansoft.com/sr/brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/brine-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Kalkulator solanki — sól, woda i czas dla indyka, kurczaka, wieprzowiny i brisketu">
+  <meta property="og:description" content="Kalkulator solanki równowagowej: podaj wagę mięsa, wodę i pożądaną słoność. Gramy soli i cukru, czas według grubości i trzy zasady bezpieczeństwa żywności, które mają opublikowane źródło.">
+  <meta property="og:url" content="https://meat.mordansoft.com/pl/brine-calculator/">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>document.documentElement.classList.remove('nojs');</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
+      <span class="topbar__right"><span class="topbar__links">
+          <a href="/pl/brine-calculator/" aria-current="page">Solanka</a>
+          <a href="/pl/dry-brine-calculator/">Solenie na sucho</a>
+          <a href="/pl/curing-salt-calculator/">Sól peklująca</a>
+      </span><select class="lang-select" aria-label="Język" onchange="location.href=this.value"><option value="/brine-calculator/">English</option><option value="/uk/brine-calculator/">Українська</option><option value="/ru/brine-calculator/">Русский</option><option value="/pl/brine-calculator/" selected>Polski</option><option value="/cs/brine-calculator/">Čeština</option><option value="/sk/brine-calculator/">Slovenčina</option><option value="/be/brine-calculator/">Беларуская</option><option value="/bg/brine-calculator/">Български</option><option value="/hr/brine-calculator/">Hrvatski</option><option value="/sr/brine-calculator/">Српски</option></select></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Kalkulator solanki</h1>
+          <p class="detail__blurb">Podaj wagę mięsa, ilość wody, którą je zalejesz, i jak słony ma być wynik. Dostaniesz gramy, a nie zgadywanie — a czas zależy od grubości kawałka, nie od jego wagi.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="calc-col">
+            <div class="cc">
+              <span class="eyebrow">Solanka równowagowa</span>
+              <label class="fld"><span class="lbl">Waga mięsa</span>
+                <span class="pair"><input class="ms-input" type="number" id="meat" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>gramy</option><option value="kg">kilogramy</option><option value="lb">funty</option><option value="oz">uncje</option></select></span>
+              </label>
+              <label class="fld"><span class="lbl">Woda</span>
+                <span class="pair"><input class="ms-input" type="number" id="water" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="waterUnit"><option value="ml" selected>mililitry</option><option value="l">litry</option><option value="qt">kwarty</option><option value="gal">galony</option><option value="cup">szklanki (cup)</option></select></span>
+                <span class="hint">Tyle, by przykryć mięso. Jedna część wody na jedną część mięsa wagowo najłatwiej powtórzyć i na to liczone są czasy poniżej.</span>
+              </label>
+              <label class="fld"><span class="lbl">Docelowa słoność — <u>procent mięsa i wody razem</u></span>
+                <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
+                <span class="hint">1,0–1,5% dla drobiu · 1,2–1,8% dla wieprzowiny i brisketu · 1,5–2,5% dla łososia. To zakresy smaku, nie granice bezpieczeństwa.</span>
+              </label>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Cukier, udział w soli</span>
+                  <input class="ms-input" type="number" id="sugar" value="33" min="0" max="100" step="1" inputmode="decimal">
+                  <span class="hint">0 — bez cukru. Tylko dla smaku i rumienienia — w tych ilościach niczego nie konserwuje.</span>
+                </label>
+                <label class="fld"><span class="lbl">Twoja sól</span><select class="ms-input" id="saltType"><option value="fine" selected>Sól kuchenna / drobna morska</option><option value="mortonK">Morton kosher</option><option value="diamondK">Diamond Crystal kosher</option><option value="coarse">Gruboziarnista sól morska</option></select>
+                  <span class="hint">Zmienia tylko przeliczenie na łyżki. Gramy są te same dla każdej soli — dlatego ważymy.</span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Grubość w najgrubszym miejscu</span>
+                <span class="pair"><input class="ms-input" type="number" id="thick" value="60" min="0" step="any" inputmode="decimal"><select class="ms-input" id="thickUnit"><option value="mm" selected>mm</option><option value="in">cale</option></select></span>
+              </label>
+            </div>
+
+            <div class="cc">
+              <span class="eyebrow">Sprawdź przepis, który już masz</span>
+              <p class="calc-hint" style="margin-top:6px">Znalazłeś „szklankę soli na galon”? Wpisz i zobacz, jakie to naprawdę stężenie.</p>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Sól w przepisie</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rSalt" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rSaltUnit"><option value="cup" selected>szklanki (cup)</option><option value="tbsp">łyżki</option><option value="g">gramy</option><option value="oz">uncje</option></select></span>
+                </label>
+                <label class="fld"><span class="lbl">Woda w przepisie</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rWater" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rWaterUnit"><option value="gal" selected>galony</option><option value="qt">kwarty</option><option value="l">litry</option><option value="ml">mililitry</option></select></span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Waga mięsa w gramach (opcjonalnie)</span>
+                <input class="ms-input" type="number" id="rMeat" value="" min="0" step="any" inputmode="decimal" placeholder="dla wspólnego procentu">
+              </label>
+              <p class="calc-banner jsonly" id="rOut">—</p>
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="cc cc--strong jsonly" aria-live="polite">
+              <span class="eyebrow">Odważ</span>
+              <div class="headline" id="saltOut">—</div>
+              <p class="calc-hint" id="saltAlt"></p>
+              <div class="cells">
+                <div class="cell"><span class="eyebrow">Cukier</span><b id="sugarOut">—</b></div>
+                <div class="cell"><span class="eyebrow">Czas</span><b id="timeOut" style="font-size:16px">—</b></div>
+                <div class="cell"><span class="eyebrow">% wody</span><b id="pctWater">—</b></div>
+                <div class="cell"><span class="eyebrow">% mięsa</span><b id="pctMeat">—</b></div>
+              </div>
+              <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
+                <b>Za grube na zwykłą solankę</b>
+                <p>Przy tej grubości sól potrzebuje więcej niż dwóch dni, przez które solanka bez peklosoli może bezpiecznie trwać. Użyj <a href="/pl/curing-salt-calculator/">kalkulatora peklowania</a> albo pokrój kawałek.</p>
+              </div>
+            </div>
+            <div class="calc-banner nojsonly">
+              <b>Arytmetyka, jeśli wolisz policzyć sam.</b> Sól w gramach = (gramy mięsa + gramy wody) × docelowy % ÷ 100. Dla 2 kg mięsa w 2 kg wody przy 1,2% to 48 g soli. Resztę pokrywają tabele poniżej.
+            </div>
+          </div>
+        </div>
+
+        <div class="prose">
+        <h2>Dlaczego każdy przepis na solankę mówi co innego</h2>
+        <p>Jeden mówi: szklanka soli na galon wody. Następny — 3%. Trzeci — 1%. Nie przeczą sobie — mierzą <em>różne rzeczy</em>. Procent wody to nie procent mięsa, a żaden z nich to nie procent obu razem. Ta strona w każdej linii podaje podstawę: <strong>sól jako procent mięsa i wody razem</strong>.</p>
+
+        <h2>Dlaczego tak nie da się przesolić</h2>
+        <p>W solance równowagowej mięso i płyn wymieniają się solą, aż stężenie się wyrówna. Mięso zbliża się do stężenia solanki i <strong>nie może go przekroczyć</strong>. Zostaw je o sześć godzin dłużej — ze słonością nic się nie stanie. To prawdziwa przewaga nad starą metodą „mocna solanka na cztery godziny, potem wymoczyć”, gdzie godzina za dużo psuje obiad.</p>
+        <p>Limit dwóch dni nie dotyczy soli. Dotyczy tego, jak długo surowe mięso może leżeć mokre i zimne, zanim problemem stanie się psucie.</p>
+
+        <h2>Wartości wyjściowe według kawałka</h2>
+        <p>Procent mięsa i wody razem.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Kawałek</th><th>Zakres</th><th>Punkt wyjścia</th></tr></thead>
+          <tbody>
+            <tr><td>Cały indyk</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Cały kurczak, części kurczaka</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Schab, kotlety, łopatka wieprzowa</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Mostek wołowy (brisket) przed wędzeniem</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Łosoś i inne tłuste ryby</td><td class="num">1,5–2,5%</td><td class="num">2,0%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Zakresy smaku z praktyki, nie opublikowany standard. Poniżej około 1% solanka nie jest warta miejsca w lodówce; powyżej 2% większości drób wydaje się słony.</p>
+
+        <h2>Czas zależy od grubości, nie od wagi</h2>
+        <p>Sól wnika do środka z każdej zwilżonej powierzchni mniej więcej proporcjonalnie do pierwiastka z czasu, więc zegar ustala grubość. Płaskie 2 kg kotletów są gotowe długo przed 2 kg pieczeni.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Grubość w najgrubszym miejscu</th><th>W solance</th></tr></thead>
+          <tbody>
+            <tr><td>Do 25 mm / 1 cala — kotlety, filety</td><td class="num">4–8 h</td></tr>
+            <tr><td>25–50 mm / 1–2 cali — części kurczaka, schab</td><td class="num">8–18 h</td></tr>
+            <tr><td>50–100 mm / 2–4 cali — cały kurczak, mały brisket</td><td class="num">12–24 h</td></tr>
+            <tr><td>Cały indyk, 5–8 kg</td><td class="num">18–36 h</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Liczby z praktyki. Popularna zasada „ćwierć cala dziennie” dotyczyła mocnego peklowania 2,5–3%; solanka 1–1,5% wnika wolniej, więc gdy liczy się równomierność, bierz górną granicę.</p>
+
+        <h2>Co naprawdę jest uregulowane</h2>
+        <p>Trzy zasady poniżej mają opublikowane źródło. Cała reszta na tej stronie — jak słono, ile cukru, jak długo dla smaku — to wybór kucharza i właśnie dlatego liczby wszędzie się różnią.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Zasada</th><th>Wartość</th><th>Źródło</th></tr></thead>
+          <tbody>
+            <tr><td>Mięso i solanka, przez cały czas</td><td class="num">4,4&nbsp;°C / 40&nbsp;°F lub mniej</td><td>USDA, zalecenia dotyczące solanki</td></tr>
+            <tr><td>Przechowywanie w chłodzie żywności wymagającej kontroli temperatury</td><td class="num">5&nbsp;°C / 41&nbsp;°F lub mniej</td><td>FDA Food Code §3-501.16</td></tr>
+            <tr><td>Najdłuższe solenie bez peklosoli uznawane za bezpieczne</td><td class="num">2 dni</td><td>USDA — solenie nie wydłuża trwałości świeżego drobiu</td></tr>
+          </tbody>
+        </table></div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Jeszcze trzy zasady z tych samych zaleceń, bez liczb</b>
+          <p>Podgrzewaną solankę ostudź, zanim włożysz mięso. Nie myj drobiu — rozpryski roznoszą bakterie po kuchni. Nigdy nie sol w temperaturze pokojowej; jeśli lodówka jest pełna, włóż lód do pojemnika, zamiast kłaść mięso na blacie.</p>
+        </div>
+        <h2>Kiedy sama sól nie wystarczy</h2>
+        <p>Wszystko tutaj zakłada jedno: <strong>solisz mięso, a potem je gotujesz</strong> — w ciągu dwóch dni, w 4&nbsp;°C lub niżej, i doprowadzasz do temperatury, która naprawdę je dogotuje. Dotyczy to indyka, kurczaka, wieprzowiny, brisketu przed wędzeniem na gorąco oraz ryby przed wędzeniem na gorąco lub pieczeniem.</p>
+        <div class="calc-alert calc-alert--bad">
+          <b>Do każdego z poniższych peklosól jest konieczna, a nie opcjonalna</b>
+          <p>Wędzenie na zimno, gdy dym ma mniej niż około 32&nbsp;°C / 90&nbsp;°F i nic nie nagrzewa się na tyle, by żywność stała się bezpieczna. Suszone całe kawałki — pancetta, coppa, bresaola. Kiełbasy fermentowane lub suszone. I każde peklowanie trwające dłużej niż dwa dni. Do tego służy <a href="/pl/curing-salt-calculator/">kalkulator peklowania</a>.</p>
+        </div>
+        <p>Ryba wędzona na zimno to osobny przypadek. FDA wymaga w gotowym produkcie co najmniej 3,5% soli w fazie wodnej, potwierdzonych pomiarem — a sól w fazie wodnej liczy się względem wilgoci, czego w domu bez laboratorium nie sprawdzisz. Nie podajemy dla niej liczb i wolimy to powiedzieć, niż zgadywać.</p>
+
+        <h2>Solankę wylej</h2>
+        <p>Wszystko, co było na surowym mięsie, jest teraz w płynie. Wylej go, gdy tylko wyjmiesz mięso. Nie używaj ponownie i nie rób na nim sosu, chyba że sos zostanie zagotowany.</p>
+
+        <h2>Źródła</h2>
+        <ul>
+          <li>USDA — solanka i postępowanie z drobiem: przez cały czas 40&nbsp;°F lub mniej, najwyżej dwa dni, najpierw ostudzić solankę, nie myć ptaka.</li>
+          <li>FDA Food Code §3-501.16 — przechowywanie w chłodzie w 41&nbsp;°F / 5&nbsp;°C lub mniej.</li>
+          <li>Zalecenia FDA dla ryb wędzonych — sól w fazie wodnej gotowego produktu co najmniej 3,5%, solenie w 40&nbsp;°F lub mniej.</li>
+          <li>9 CFR 424.21(c) i 424.22(b) — limity azotynu, użyte w <a href="/pl/curing-salt-calculator/">kalkulatorze peklowania</a>.</li>
+        </ul>
+        <p class="calc-disclaimer">Opublikowane przepisy USA dotyczą zakładów objętych inspekcją i nie regulują domowej kuchni. Powołujemy się na nie, bo alternatywą w obliczeniu, przez które ktoś może zachorować, jest wpis na forum. Ta strona opisuje opublikowane zalecenia i niczego, co przygotowujesz, nie poświadcza.</p>
+        </div>
+
+        <div class="ms-card ms-card--pad calc-cta">
+          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">Solanka jest gotowa przez noc. Peklowanie — nie.</h2>
+          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
+            <b>SaltCure</b> liczy to samo w telefonie i prowadzi dziennik partii, które trwają tygodniami: przypomnienia o przewracaniu, ważenia, ubytek wagi na tle normy dla danego wyrobu. Za darmo, offline, bez konta.</p>
+          <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">Co potrafi aplikacja: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
+        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
+        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script type="application/json" id="brine-i18n">{"lang":"pl","locale":"pl-PL","mode":"wet","salts":{"fine":"Sól kuchenna / drobna morska","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Gruboziarnista sól morska"},"t":{"g":"g","oz":"oz","ofSalt":"{g} soli","none":"bez cukru","enterThick":"podaj grubość","hours":"{lo}–{hi} h","days":"({lo}–{hi} dni)","cup":"szklanka (cup)","cups":"szklanki (cup)","tbsp":"łyżki","tsp":"łyżeczki","spoons":"≈ {spoons} ({salt}) · {oz} oz.","fill":"Uzupełnij wagi powyżej.","weigh":"Jeśli możesz — zważ: łyżki różnią się nawet o połowę.","needBoth":"Podaj sól i wodę.","isOfWater":"To {pct} wody — {salt} soli w {water} wody.","withMeat":"Z mięsem to {pct} mięsa i wody razem, czyli podstawa, której używa ta strona.","strong":"To mocna solanka — do krótkiego moczenia i opłukania, nie na noc.","addMeat":"Dodaj wagę mięsa, by zobaczyć wspólny procent."}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>

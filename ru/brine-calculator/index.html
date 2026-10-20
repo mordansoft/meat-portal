@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru" class="nojs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/brand/logo-tile.svg">
+  <meta name="apple-itunes-app" content="app-id=6812973901">
+  <title>Калькулятор рассола — соль, вода и время для индейки, курицы, свинины и брискета</title>
+  <meta name="description" content="Калькулятор равновесного рассола: введи вес мяса, воду и нужную солёность. Граммы соли и сахара, время по толщине и три правила пищевой безопасности, у которых есть опубликованный источник.">
+  <link rel="canonical" href="https://meat.mordansoft.com/ru/brine-calculator/">
+  <link rel="alternate" hreflang="en" href="https://meat.mordansoft.com/brine-calculator/">
+  <link rel="alternate" hreflang="uk" href="https://meat.mordansoft.com/uk/brine-calculator/">
+  <link rel="alternate" hreflang="ru" href="https://meat.mordansoft.com/ru/brine-calculator/">
+  <link rel="alternate" hreflang="pl" href="https://meat.mordansoft.com/pl/brine-calculator/">
+  <link rel="alternate" hreflang="cs" href="https://meat.mordansoft.com/cs/brine-calculator/">
+  <link rel="alternate" hreflang="sk" href="https://meat.mordansoft.com/sk/brine-calculator/">
+  <link rel="alternate" hreflang="be" href="https://meat.mordansoft.com/be/brine-calculator/">
+  <link rel="alternate" hreflang="bg" href="https://meat.mordansoft.com/bg/brine-calculator/">
+  <link rel="alternate" hreflang="hr" href="https://meat.mordansoft.com/hr/brine-calculator/">
+  <link rel="alternate" hreflang="sr" href="https://meat.mordansoft.com/sr/brine-calculator/">
+  <link rel="alternate" hreflang="x-default" href="https://meat.mordansoft.com/brine-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MordanSoft">
+  <meta property="og:title" content="Калькулятор рассола — соль, вода и время для индейки, курицы, свинины и брискета">
+  <meta property="og:description" content="Калькулятор равновесного рассола: введи вес мяса, воду и нужную солёность. Граммы соли и сахара, время по толщине и три правила пищевой безопасности, у которых есть опубликованный источник.">
+  <meta property="og:url" content="https://meat.mordansoft.com/ru/brine-calculator/">
+  <meta property="og:locale" content="ru_RU">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/fonts.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/colors.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/typography.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/spacing.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/elevation.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/tokens/base.css">
+  <link rel="stylesheet" href="/_ds/mordansoft-design-system-7351f888-c996-4acc-8aa6-e3cd4b4e66b4/components/core/core.css">
+  <link rel="stylesheet" href="/assets/css/brine-calc.css">
+  <script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script>document.documentElement.classList.remove('nojs');</script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="ms-container topbar__inner">
+      <a class="brand" href="/"><span class="brand__mark"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span><span class="brand__name">meat<b>.</b></span></a>
+      <span class="topbar__right"><span class="topbar__links">
+          <a href="/ru/brine-calculator/" aria-current="page">Рассол</a>
+          <a href="/ru/dry-brine-calculator/">Сухой рассол</a>
+          <a href="/ru/curing-salt-calculator/">Нитритная соль</a>
+      </span><select class="lang-select" aria-label="Язык" onchange="location.href=this.value"><option value="/brine-calculator/">English</option><option value="/uk/brine-calculator/">Українська</option><option value="/ru/brine-calculator/" selected>Русский</option><option value="/pl/brine-calculator/">Polski</option><option value="/cs/brine-calculator/">Čeština</option><option value="/sk/brine-calculator/">Slovenčina</option><option value="/be/brine-calculator/">Беларуская</option><option value="/bg/brine-calculator/">Български</option><option value="/hr/brine-calculator/">Hrvatski</option><option value="/sr/brine-calculator/">Српски</option></select></span>
+    </div>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="ms-container">
+        <div class="section__head">
+          <h1 class="section__title">Калькулятор рассола</h1>
+          <p class="detail__blurb">Введи вес мяса, воду, которой его зальёшь, и насколько солёным хочешь результат. Получишь граммы, а не догадки — а время зависит от толщины куска, а не от его веса.</p>
+        </div>
+
+        <div class="calc-wrap">
+          <div class="calc-col">
+            <div class="cc">
+              <span class="eyebrow">Равновесный рассол</span>
+              <label class="fld"><span class="lbl">Вес мяса</span>
+                <span class="pair"><input class="ms-input" type="number" id="meat" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="meatUnit"><option value="g" selected>граммы</option><option value="kg">килограммы</option><option value="lb">фунты</option><option value="oz">унции</option></select></span>
+              </label>
+              <label class="fld"><span class="lbl">Вода</span>
+                <span class="pair"><input class="ms-input" type="number" id="water" value="2000" min="0" step="any" inputmode="decimal"><select class="ms-input" id="waterUnit"><option value="ml" selected>миллилитры</option><option value="l">литры</option><option value="qt">кварты</option><option value="gal">галлоны</option><option value="cup">чашки</option></select></span>
+                <span class="hint">Столько, чтобы покрыть мясо. Одна часть воды на одну часть мяса по весу — проще всего повторить, и именно на это рассчитано время ниже.</span>
+              </label>
+              <label class="fld"><span class="lbl">Целевая солёность — <u>процент от мяса и воды вместе</u></span>
+                <input class="ms-input" type="number" id="target" value="1.2" min="0" max="6" step="0.1" inputmode="decimal">
+                <span class="hint">1,0–1,5% для птицы · 1,2–1,8% для свинины и брискета · 1,5–2,5% для лосося. Это диапазоны вкуса, а не границы безопасности.</span>
+              </label>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Сахар, доля от соли</span>
+                  <input class="ms-input" type="number" id="sugar" value="33" min="0" max="100" step="1" inputmode="decimal">
+                  <span class="hint">0 — без сахара. Только для вкуса и румяной корочки — в таких количествах он ничего не консервирует.</span>
+                </label>
+                <label class="fld"><span class="lbl">Твоя соль</span><select class="ms-input" id="saltType"><option value="fine" selected>Поваренная / мелкая морская соль</option><option value="mortonK">Morton kosher</option><option value="diamondK">Diamond Crystal kosher</option><option value="coarse">Крупная морская соль</option></select>
+                  <span class="hint">Меняет только пересчёт в ложки. Граммы одинаковые для любой соли — поэтому мы и взвешиваем.</span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Толщина в самом толстом месте</span>
+                <span class="pair"><input class="ms-input" type="number" id="thick" value="60" min="0" step="any" inputmode="decimal"><select class="ms-input" id="thickUnit"><option value="mm" selected>мм</option><option value="in">дюймы</option></select></span>
+              </label>
+            </div>
+
+            <div class="cc">
+              <span class="eyebrow">Проверь рецепт, который у тебя уже есть</span>
+              <p class="calc-hint" style="margin-top:6px">Нашёл «чашку соли на галлон»? Введи и посмотри, какая это на самом деле крепость.</p>
+              <span class="cols">
+                <label class="fld"><span class="lbl">Соль в рецепте</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rSalt" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rSaltUnit"><option value="cup" selected>чашки</option><option value="tbsp">ст. л.</option><option value="g">граммы</option><option value="oz">унции</option></select></span>
+                </label>
+                <label class="fld"><span class="lbl">Вода в рецепте</span>
+                  <span class="pair"><input class="ms-input" type="number" id="rWater" value="1" min="0" step="any" inputmode="decimal"><select class="ms-input" id="rWaterUnit"><option value="gal" selected>галлоны</option><option value="qt">кварты</option><option value="l">литры</option><option value="ml">миллилитры</option></select></span>
+                </label>
+              </span>
+              <label class="fld"><span class="lbl">Вес мяса, в граммах (необязательно)</span>
+                <input class="ms-input" type="number" id="rMeat" value="" min="0" step="any" inputmode="decimal" placeholder="для общего процента">
+              </label>
+              <p class="calc-banner jsonly" id="rOut">—</p>
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="cc cc--strong jsonly" aria-live="polite">
+              <span class="eyebrow">Отвесь</span>
+              <div class="headline" id="saltOut">—</div>
+              <p class="calc-hint" id="saltAlt"></p>
+              <div class="cells">
+                <div class="cell"><span class="eyebrow">Сахар</span><b id="sugarOut">—</b></div>
+                <div class="cell"><span class="eyebrow">Время</span><b id="timeOut" style="font-size:16px">—</b></div>
+                <div class="cell"><span class="eyebrow">% от воды</span><b id="pctWater">—</b></div>
+                <div class="cell"><span class="eyebrow">% от мяса</span><b id="pctMeat">—</b></div>
+              </div>
+              <div class="calc-alert calc-alert--bad" id="capWarn" hidden>
+                <b>Слишком толсто для обычного рассола</b>
+                <p>При такой толщине соли нужно больше времени, чем два дня, которые рассол без нитритной соли может безопасно идти. Воспользуйся <a href="/ru/curing-salt-calculator/">калькулятором посола</a> или разрежь кусок.</p>
+              </div>
+            </div>
+            <div class="calc-banner nojsonly">
+              <b>Арифметика, если хочешь посчитать сам.</b> Соль в граммах = (граммы мяса + граммы воды) × целевой % ÷ 100. Для 2 кг мяса в 2 кг воды при 1,2% это 48 г соли. Остальное — в таблицах ниже.
+            </div>
+          </div>
+        </div>
+
+        <div class="prose">
+        <h2>Почему все рецепты рассола расходятся</h2>
+        <p>Один говорит: чашка соли на галлон воды. Следующий — 3%. Третий — 1%. Они не противоречат друг другу — они меряют <em>разное</em>. Процент от воды — не процент от мяса, и ни один из них — не процент от обоих вместе. Эта страница в каждой строке указывает основу: <strong>соль как процент от мяса и воды вместе</strong>.</p>
+
+        <h2>Почему так невозможно пересолить</h2>
+        <p>В равновесном рассоле мясо и жидкость обмениваются солью, пока концентрация не выровняется. Мясо приближается к крепости рассола и <strong>не может её превысить</strong>. Оставь его на шесть часов дольше — с солёностью ничего не случится. В этом настоящее преимущество перед старым методом «крепкий рассол на четыре часа, потом вымочить», где лишний час портит ужин.</p>
+        <p>Предел в два дня — не про соль. Он про то, сколько сырое мясо может лежать мокрым и холодным, прежде чем проблемой станет порча.</p>
+
+        <h2>Стартовые значения по кускам</h2>
+        <p>Процент от мяса и воды вместе.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Кусок</th><th>Диапазон</th><th>Рабочая точка</th></tr></thead>
+          <tbody>
+            <tr><td>Целая индейка</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Целая курица, части курицы</td><td class="num">1,0–1,5%</td><td class="num">1,2%</td></tr>
+            <tr><td>Свиная корейка, отбивные, лопатка</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Говяжий брискет перед копчением</td><td class="num">1,2–1,8%</td><td class="num">1,5%</td></tr>
+            <tr><td>Лосось и другая жирная рыба</td><td class="num">1,5–2,5%</td><td class="num">2,0%</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Диапазоны вкуса из практики, а не опубликованный стандарт. Ниже примерно 1% рассол не оправдывает места в холодильнике; выше 2% большинству птица кажется солёной.</p>
+
+        <h2>Время зависит от толщины, а не от веса</h2>
+        <p>Соль проникает внутрь с каждой смоченной поверхности примерно пропорционально квадратному корню из времени, так что часы определяет толщина. Плоские 2 кг отбивных готовы задолго до 2 кг запечённого куска.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Толщина в самом толстом месте</th><th>В рассоле</th></tr></thead>
+          <tbody>
+            <tr><td>До 25 мм / 1 дюйма — отбивные, филе</td><td class="num">4–8 ч</td></tr>
+            <tr><td>25–50 мм / 1–2 дюйма — части курицы, корейка</td><td class="num">8–18 ч</td></tr>
+            <tr><td>50–100 мм / 2–4 дюйма — целая курица, небольшой брискет</td><td class="num">12–24 ч</td></tr>
+            <tr><td>Целая индейка, 5–8 кг</td><td class="num">18–36 ч</td></tr>
+          </tbody>
+        </table></div>
+        <p class="calc-disclaimer">Цифры из практики. Популярное правило «четверть дюйма в день» писали для крепкого посола 2,5–3%; рассол на 1–1,5% проникает медленнее, так что, когда важна равномерность, бери верхнюю границу.</p>
+
+        <h2>Что на самом деле регламентировано</h2>
+        <p>У трёх правил ниже есть опубликованный источник. Всё остальное на этой странице — насколько солоно, сколько сахара, сколько времени ради вкуса — выбор повара, и именно поэтому числа везде разные.</p>
+        <div class="tbl-scroll"><table class="tbl">
+          <thead><tr><th>Правило</th><th>Число</th><th>Источник</th></tr></thead>
+          <tbody>
+            <tr><td>Мясо и рассол, всё время</td><td class="num">4,4&nbsp;°C / 40&nbsp;°F или ниже</td><td>USDA, рекомендации по рассолу</td></tr>
+            <tr><td>Холодное хранение продуктов, которым нужен контроль температуры</td><td class="num">5&nbsp;°C / 41&nbsp;°F или ниже</td><td>FDA Food Code §3-501.16</td></tr>
+            <tr><td>Самый долгий посол без нитритной соли, который считается безопасным</td><td class="num">2 дня</td><td>USDA — соление не продлевает срок годности свежей птицы</td></tr>
+          </tbody>
+        </table></div>
+        <div class="calc-alert calc-alert--warn">
+          <b>Ещё три правила из тех же рекомендаций, без чисел</b>
+          <p>Рассол, который грели, остуди, прежде чем класть мясо. Не мой птицу — брызги разносят бактерии по кухне. Никогда не соли при комнатной температуре; если холодильник забит, положи лёд в ёмкость, а не мясо на стол.</p>
+        </div>
+        <h2>Когда одной соли мало</h2>
+        <p>Всё здесь опирается на одно: <strong>ты солишь мясо, а потом его готовишь</strong> — в течение двух дней, при 4&nbsp;°C или ниже, и доводишь до температуры, которая действительно проваривает. Это индейка, курица, свинина, брискет перед горячим копчением и рыба перед горячим копчением или запеканием.</p>
+        <div class="calc-alert calc-alert--bad">
+          <b>Для любого из этого нитритная соль обязательна, а не по желанию</b>
+          <p>Холодное копчение, когда дым держится ниже примерно 32&nbsp;°C / 90&nbsp;°F и ничто не нагревается настолько, чтобы еда стала безопасной. Вяленые цельные куски — панчетта, коппа, брезаола. Ферментированные или сыровяленые колбасы. И любой посол дольше двух дней. Для этого — <a href="/ru/curing-salt-calculator/">калькулятор посола</a>.</p>
+        </div>
+        <p>Рыба холодного копчения — отдельный случай. FDA требует в готовом продукте от 3,5% соли в водной фазе, подтверждённых измерением, — а соль в водной фазе считают относительно влаги, и дома без лаборатории её не проверить. Чисел для этого мы не даём: лучше так и сказать, чем угадывать.</p>
+
+        <h2>Рассол — выливай</h2>
+        <p>Всё, что было на сыром мясе, теперь в жидкости. Вылей её, как только достанешь мясо. Не используй второй раз и не делай на ней соус, если соус не будет прокипячён.</p>
+
+        <h2>Источники</h2>
+        <ul>
+          <li>USDA — рассол и обращение с птицей: всё время 40&nbsp;°F или ниже, не дольше двух дней, сначала остудить рассол, не мыть птицу.</li>
+          <li>FDA Food Code §3-501.16 — холодное хранение при 41&nbsp;°F / 5&nbsp;°C или ниже.</li>
+          <li>Рекомендации FDA по копчёной рыбе — соль в водной фазе готового продукта от 3,5%, посол при 40&nbsp;°F или ниже.</li>
+          <li>9 CFR 424.21(c) и 424.22(b) — лимиты нитрита, использованные в <a href="/ru/curing-salt-calculator/">калькуляторе посола</a>.</li>
+        </ul>
+        <p class="calc-disclaimer">Опубликованные правила США написаны для предприятий под инспекцией и не регулируют домашнюю кухню. Мы ссылаемся на них, потому что альтернатива в расчёте, из-за которого кто-то может заболеть, — пост на форуме. Эта страница описывает опубликованные рекомендации и ничего из того, что ты готовишь, не удостоверяет.</p>
+        </div>
+
+        <div class="ms-card ms-card--pad calc-cta">
+          <h2 style="font-size: var(--text-h4); font-weight:600; color:var(--text-primary); margin:0">Рассол готов за ночь. Посол — нет.</h2>
+          <p style="font-size: var(--text-base); color:var(--text-secondary); line-height:var(--leading-normal); margin: var(--space-3) 0 var(--space-5); max-width:60ch">
+            <b>SaltCure</b> делает те же расчёты на телефоне и ведёт журнал партий, которые идут неделями: напоминания перевернуть, взвешивания, потеря веса против нормы для этого продукта. Бесплатно, офлайн, без аккаунта.</p>
+          <p style="font-size: var(--text-sm); color:var(--text-muted); margin: 0 0 var(--space-4)">Что умеет приложение: <a href="https://mordansoft.com/saltcure/">SaltCure</a>.</p>
+          <div class="store-badges">
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/play/" target="_blank" rel="noopener"><img src="/assets/badges/google-play.svg" alt="Google Play"></a>
+            <a class="store-badge" href="https://mordansoft.com/saltcure/go/app-store/" target="_blank" rel="noopener"><img src="/assets/badges/app-store.svg" alt="App Store"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="ms-container footer-inner">
+      <div class="footer-brand">
+        <span class="footer-brand__mark" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="6" y="10" width="26" height="26" rx="7" fill="currentColor" opacity="0.22"></rect><rect x="12" y="14" width="26" height="26" rx="7" fill="currentColor" opacity="0.45"></rect><rect x="18" y="18" width="24" height="24" rx="7" fill="#E0632C"></rect><rect x="24" y="24" width="12" height="12" rx="3.5" fill="#000000" opacity="0.16"></rect></svg></span>
+        <div>
+          <div class="footer-brand__name">Mordan<b>Soft</b></div>
+          <div class="footer-copy">© 2026 MordanSoft</div>
+        </div>
+      </div>
+      <div class="footer-legal">
+        <h4>Legal</h4>
+        <a href="https://mordansoft.com/saltcure/support.html">SaltCure — Support</a>
+        <a href="https://mordansoft.com/legal/saltcure/privacy.html">SaltCure — Privacy</a>
+        <a href="https://mordansoft.com/legal/saltcure/terms.html">SaltCure — Terms</a>
+      </div>
+    </div>
+  </footer>
+  <script>if (window.lucide) lucide.createIcons();</script>
+  <script type="application/json" id="brine-i18n">{"lang":"ru","locale":"ru-RU","mode":"wet","salts":{"fine":"Поваренная / мелкая морская соль","mortonK":"Morton kosher","diamondK":"Diamond Crystal kosher","coarse":"Крупная морская соль"},"t":{"g":"г","oz":"унц.","ofSalt":"{g} соли","none":"без сахара","enterThick":"введи толщину","hours":"{lo}–{hi} ч","days":"({lo}–{hi} сут.)","cup":"чашка","cups":"чашки","tbsp":"ст. л.","tsp":"ч. л.","spoons":"≈ {spoons} ({salt}) · {oz} унц.","fill":"Заполни веса выше.","weigh":"Если можешь — взвесь: ложки отличаются до половины.","needBoth":"Введи соль и воду.","isOfWater":"Это {pct} от воды — {salt} соли в {water} воды.","withMeat":"Вместе с мясом — {pct} от мяса и воды, именно на этой основе считает эта страница.","strong":"Это крепкий рассол — для короткого вымачивания с промыванием, а не на ночь.","addMeat":"Добавь вес мяса, чтобы увидеть общий процент."}}</script>
+  <script type="module" src="/assets/js/brine-page.mjs"></script>
+<!-- web analytics -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5a3f2bc95732486688415649c2f82eee"}'></script>
+<!-- /web analytics -->
+</body>
+</html>
