@@ -27,8 +27,7 @@ export async function buildLearn({ ROOT, LIVE, LOC, brineLangs, SHELL }) {
     const url = urlOf(c, slug);
     const alternates = [...langs.map((x) => `  <link rel="alternate" hreflang="${x}" href="${urlOf(x, slug)}">`),
       `  <link rel="alternate" hreflang="x-default" href="${urlOf('en', slug)}">`].join('\n');
-    const langMenu = langs.length > 1 ? `<select class="lang-select" aria-label="${L.site.language}" onchange="location.href=this.value">${langs.map((x) =>
-      `<option value="${pathOf(x, slug)}"${x === c ? ' selected' : ''}>${LOC[x].name}</option>`).join('')}</select>` : '';
+    const langMenu = SHELL.langMenu(c, langs, (x) => pathOf(x, slug));
     const nav = (s) => (brineLangs.includes(c) ? `${prefix(c)}/${s}/` : `/${s}/`);
     return `<!DOCTYPE html>
 <html lang="${c}">

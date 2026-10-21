@@ -65,8 +65,7 @@ ${alternates}
 </body>
 </html>
 `;
-  const langMenu = (c, langs, pathOf) => (langs.length > 1 ? `<select class="lang-select" aria-label="${LOC[c].site.language}" onchange="location.href=this.value">${langs.map((x) =>
-    `<option value="${pathOf(x)}"${x === c ? ' selected' : ''}>${LOC[x].name}</option>`).join('')}</select>` : '');
+  const langMenu = (c, langs, pathOf) => SHELL.langMenu(c, langs, pathOf);
   const alts = (langs, pathOf) => [...langs.map((x) => `  <link rel="alternate" hreflang="${x}" href="${BASE}${pathOf(x)}">`),
     `  <link rel="alternate" hreflang="x-default" href="${BASE}${pathOf('en')}">`].join('\n');
   const write = (path, html) => { const dir = `${ROOT}${path.slice(1)}`; mkdirSync(dir, { recursive: true }); writeFileSync(`${dir}index.html`, html); built.push(path); };

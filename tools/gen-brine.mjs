@@ -193,8 +193,7 @@ export async function buildBrine({ ROOT, LIVE, LOC, SHELL }) {
     const url = urlOf(c, page.slug);
     const alternates = [...LIVE.map((x) => `  <link rel="alternate" hreflang="${x}" href="${urlOf(x, page.slug)}">`),
       `  <link rel="alternate" hreflang="x-default" href="${urlOf('en', page.slug)}">`].join('\n');
-    const langMenu = `<select class="lang-select" aria-label="${L.site.language}" onchange="location.href=this.value">${LIVE.map((x) =>
-      `<option value="${pathOf(x, page.slug)}"${x === c ? ' selected' : ''}>${LOC[x].name}</option>`).join('')}</select>`;
+    const langMenu = SHELL.langMenu(c, LIVE, (x) => pathOf(x, page.slug));
     const cur = (slug) => (slug === page.slug ? ' aria-current="page"' : '');
     const i18n = JSON.stringify({ lang: c, locale: L.locale, mode: WET ? 'wet' : 'dry', salts: S, t: { ...C.js, ...P.js } }).replace(/</g, '\\u003c');
 

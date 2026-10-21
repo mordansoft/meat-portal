@@ -1,0 +1,1 @@
+{"version": "0.0.1", "configurations": [{"name": "meat-local", "runtimeExecutable": "python3", "runtimeArgs": ["-m", "http.server", "4878"], "port": 4878}]}

@@ -10,6 +10,22 @@ export const SITE_CSS = '/assets/css/site.css';
 const STORE = { play: 'https://mordansoft.com/saltcure/go/play/', ios: 'https://mordansoft.com/saltcure/go/app-store/' };
 const LANDINGS = ['bacon-cure-calculator', 'pink-salt-calculator', 'dry-cure-calculator', 'cure-1-per-kg'];
 const CHEVRON = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+export const FLAGS = {
+  en: '🇬🇧', uk: '🇺🇦', ru: '🇷🇺', pl: '🇵🇱', cs: '🇨🇿', sk: '🇸🇰', be: '🇧🇾', bg: '🇧🇬',
+  hr: '🇭🇷', sr: '🇷🇸', sl: '🇸🇮', es: '🇪🇸', it: '🇮🇹', kk: '🇰🇿', fr: '🇫🇷', 'pt-BR': '🇧🇷',
+  tr: '🇹🇷', de: '🇩🇪', id: '🇮🇩',
+};
+export function langMenuHTML(cur, langs, LOC, pathFor, label = 'Language') {
+  const curName = LOC[cur]?.name || cur;
+  const curFlag = FLAGS[cur] || '';
+  const items = langs.map((x) => {
+    const nm = LOC[x]?.name || x;
+    const fl = FLAGS[x] || '';
+    const sel = x === cur ? ' aria-current="page"' : '';
+    return `<a href="${pathFor(x)}" lang="${x}"${sel}><span class="sc-lang__flag" aria-hidden="true">${fl}</span><span>${nm}</span></a>`;
+  }).join('');
+  return `<details class="sc-lang"><summary class="sc-nav__l" aria-label="${label}"><span class="sc-lang__flag" aria-hidden="true">${curFlag}</span><span class="sc-hide-s">${curName}</span> ${CHEVRON}</summary><div class="sc-lang__pop">${items}</div></details>`;
+}
 const BOOKMARK = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>';
 
 const keysOf = (o, p = '') => Object.entries(o).flatMap(([k, v]) => (v && typeof v === 'object' ? keysOf(v, `${p}${k}.`) : [`${p}${k}`]));
@@ -106,5 +122,12 @@ export async function makeShell({ ROOT, LIVE, LOC }) {
   <script type="module" src="/assets/js/cures.mjs"></script>`;
   }
 
-  return { SH, langs, brineLangs, learnLangs, link, topbar, footer, appStrip, browserData, prefix };
+  // Language dropdown for the topbar. `langs` is the subset to list; `pathFor(x)` returns the URL
+  // for that language. Omit when `langs` has one or zero entries.
+  function langMenu(c, langsOf, pathFor) {
+    if (!langsOf || langsOf.length < 2) return '';
+    return langMenuHTML(c, langsOf, LOC, pathFor, LOC[c]?.site?.language || 'Language');
+  }
+
+  return { SH, langs, brineLangs, learnLangs, link, topbar, footer, appStrip, browserData, prefix, langMenu };
 }
